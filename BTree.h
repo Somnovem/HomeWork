@@ -92,10 +92,8 @@ public:
 	}
 	void deleteNode(BTreeNode*& root, TKey key)
 	{
-		// pointer to store the parent of the current node
 		BTreeNode* parent = nullptr;
 
-		// start with the root node
 		BTreeNode* curr = root;
 
 		searchKey(curr, key, parent);
@@ -105,7 +103,6 @@ public:
 			return;
 		}
 
-		// Case 1: node to be deleted has no children, i.e., it is a leaf node
 		if (curr->left == nullptr && curr->right == nullptr)
 		{
 			if (curr != root)
@@ -124,26 +121,19 @@ public:
 		}
 		else if (curr->left && curr->right)
 		{
-			// find its inorder successor node
 			BTreeNode* successor = minValueNode(curr->right);
 
 			// store successor value
 			TKey val = successor->key;
 			TVal value = successor->value;
-			// recursively delete the successor. Note that the successor
-			// will have at most one child (right child)
 			deleteNode(root, successor->key);
 
 			// copy value of the successor to the current node
 			curr->key = val;
 			curr->value = value;
 		}
-		// Case 3: node to be deleted has only one child
 		else {
-			// choose a child node
 			BTreeNode* child = (curr->left) ? curr->left : curr->right;
-			// if the node to be deleted is not a root node, set its parent
-			// to its child
 			if (curr != root)
 			{
 				if (curr == parent->left) {
@@ -153,11 +143,9 @@ public:
 					parent->right = child;
 				}
 			}
-			// if the node to be deleted is a root node, then set the root to the child
 			else {
 				root = child;
 			}
-			// deallocate the memory
 			free(curr);
 		}
 	}
