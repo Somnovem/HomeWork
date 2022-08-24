@@ -62,17 +62,7 @@ public:
 
 	SharedPointer(const SharedPointer& ptr)
 	{ 
-		this->ptr = new T;
-		if (!this->ptr)
-		{
-			throw __OUT_OF_MEMORY__();
-		}
 		this->ptr = ptr.ptr;
-		this->count = new int;
-		if (!this->count)
-		{
-			throw __OUT_OF_MEMORY__();
-		}
 		this->count = ptr.count;
 		++(*this->count);
 	}
@@ -84,12 +74,7 @@ public:
 			return *this;
 		}
 		delete this->ptr;
-		this->ptr = new T;
-		if (!this->ptr)
-		{
-			throw __OUT_OF_MEMORY__();
-		}
-		this->ptr = *ptr.ptr;
+		this->ptr = ptr.ptr;
 		this->count = ptr.count;
 		++(*this->count);
 	}
