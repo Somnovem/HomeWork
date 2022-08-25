@@ -16,6 +16,10 @@ public:
 				string temp;
 				while (in >> temp)
 				{
+					if (!((int)(temp[temp.length() - 1]) > 64 && (int)(temp[temp.length() - 1]) < 91) || !((int)(temp[temp.length() - 1]) > 96 && (int)(temp[temp.length() - 1]) < 123))
+					{
+						temp.pop_back();
+					}
 					vocabulary[temp]++;
 				}
 			}
