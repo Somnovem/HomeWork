@@ -26,13 +26,39 @@ public:
 		delete this->name;
 		delete[] this->mark;
 	}
-
+	Student(const Student& s)
+	{
+		setName(s.name);
+		setAge(s.age);
+		this->sizeMark = s.sizeMark;
+		this->mark = new int[this->sizeMark];
+		for (size_t i = 0; i < this->sizeMark; i++)
+		{
+			this->mark[i] = s.mark[i];
+		}
+	}
 	void init(const char* n, int a)
 	{
 		setName(n);
 		setAge(a);
 	}
 
+	Student& operator=(const Student& s)
+	{
+		if (&s == this)
+		{
+			return *this;
+		}
+		delete this;
+		setName(s.name);
+		setAge(s.age);
+		this->sizeMark = s.sizeMark;
+		this->mark = new int[this->sizeMark];
+		for (size_t i = 0; i < this->sizeMark; i++)
+		{
+			this->mark[i] = s.mark[i];
+		}
+	}
 	void save(ofstream& out)
 	{
 		out.write((char*)this, sizeof(Student));
@@ -97,6 +123,17 @@ public:
 
 	void print() const;
 
+	bool operator<(const Student& s) const
+	{
+		hash<string> h1, h2;
+		string s1 = (string)name + to_string(age);
+		string s2 = (string)s.name + to_string(s.age);
+		return h1(s1) < h2(s2);
+	}
+	bool operator>(const Student& s) const
+	{
+		return strcmp(this->name, s.name) > 0;
+	}
 };
 
 
