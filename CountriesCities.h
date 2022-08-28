@@ -113,6 +113,7 @@ void App::menu()
 					system("pause");
 					continue;
 				}
+				system("cls");
 				(*a).print();
 			}
 			system("pause");
