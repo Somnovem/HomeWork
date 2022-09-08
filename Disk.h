@@ -101,6 +101,12 @@ public:
 			cout << "No disk" << endl;
 			return false;
 		}
+		if (disk->getDamage())
+		{
+			cout << "Disk is severely damaged" << endl;
+			system("pause");
+			return false;
+		}
 		disk->format();
 		if (s.size() > disk->getFreeSize() )
 		{
@@ -108,12 +114,6 @@ public:
 			system("pause");
 			return false;
 		}
-		if (disk->getDamage())
-		{
-			cout << "Disk is severely damaged" << endl;
-			system("pause");
-			return false;
-		} 
 		{
 			srand(time(NULL));
 			string buff(s);
