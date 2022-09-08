@@ -96,10 +96,10 @@ public:
 	void open(Disk* disk) { this->disk = disk; }
 	bool write(const string& s)
 	{
-		if (disk)
+		if (disk == nullptr)
 		{
 			cout << "No disk" << endl;
-			return 0;
+			return false;
 		}
 		disk->format();
 		if (s.size() > disk->getFreeSize() )
@@ -130,7 +130,6 @@ public:
 			return false;
 		}
 		return true;
-
 	}
 	void getInfo()
 	{
