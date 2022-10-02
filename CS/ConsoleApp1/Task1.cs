@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Task1
 {
-    internal class Program 
+   
+    class Tas1 
     {
-        static void Main()
+       public void Work()
         {
             while (true) 
             {

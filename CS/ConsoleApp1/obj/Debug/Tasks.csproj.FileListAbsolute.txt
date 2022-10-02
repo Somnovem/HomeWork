@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\obj\Debug\Tasks.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\obj\Debug\Tasks.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\obj\Debug\Tasks.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ConsoleApp1\bin\Debug\ConsoleApp1.pdb

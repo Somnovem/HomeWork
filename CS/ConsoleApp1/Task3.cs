@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    internal class Program
+    internal class Tas3
     {
-        static void Main(string[] args)
+        public void Work(string[] args)
         {
             int result = 0;
             int decimal_place = 1000;

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E908380F-2C4A-4261-8AC1-4BCA51A4038C}</ProjectGuid>
+    <ProjectGuid>{C6682D3E-73D9-40B6-9D6A-D3B1BEC46C13}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task2</RootNamespace>
-    <AssemblyName>Task2</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.cs" />
+    <Compile Include="ArrayStrings.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Task1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task2.cs" />
+    <Compile Include="Task3.cs" />
+    <Compile Include="Task4.cs" />
+    <Compile Include="Task5.cs" />
+    <Compile Include="Task6.cs" />
+    <Compile Include="Task7.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    internal class Program
+    internal class Tas2
     {
-        static void Main(string[] args)
+       public void Work(string[] args)
         {
             while (true)
             {
