@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task12;
+using TASK8;
 namespace ConsoleApp1
 {
     internal class Controller
     {
         static void Main()
         {
-            Tas12 temp = new Tas12();
-            temp.Work();
+            WebSite MySite = new WebSite(new DateTime(2022, 4, 10));
+            Console.WriteLine(WebSite.browser);
+            MySite.Name = "Google";
+            MySite.Url = "google";
+            MySite.Ip = "8.8.8.8";
+            MySite.Print();
         }
     }
 }
