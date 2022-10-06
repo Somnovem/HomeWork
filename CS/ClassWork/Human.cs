@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassWork
 {
-    internal class Human
+    internal abstract class Human 
     {
          int id;
          string firstname;
@@ -14,40 +14,30 @@ namespace ClassWork
          DateTime birthday;
 
         public Human() { }
-        public Human(int id, string firstname, string lastname, DateTime birthday)
+        public Human(int id, string firstname, string lastname, DateTime birthday) 
         {
             this.id = id;
             this.firstname = firstname;
             this.lastname = lastname;
             this.birthday = birthday;
         }
-        //public virtual void Print()
-        //{
-        //    Console.WriteLine($"First name: {firstname}");
-        //    Console.WriteLine($"Last name:  {lastname}");
-        //    Console.WriteLine($"ID: {id}");
-        //    Console.WriteLine($"Birthday: {birthday.ToShortDateString()}");
-        //}
+        public abstract void getSalary();
         public override string ToString()
         {
             return $"First name: {firstname}\n" + $"Last name:  {lastname}\n" + $"ID: {id}\n" + $"Birthday: {birthday.ToShortDateString()}\n";
         }
     }
 
-    internal class /*sealed*/ Employee :Human
+    internal abstract class Employee :Human
     {
-        int salary;
+       public  int salary;
         new int id;
         public Employee() { }
         public Employee(int id, string firstname, string lastname, DateTime birthday,int salary) : base(id,firstname,lastname,birthday)
         {
             this.salary = salary;
         }
-        //public virtual new void Print()
-        //{
-        //    base.Print();
-        //    Console.WriteLine($"Salary: {salary}");
-        //}
+
         public override string ToString()
         {
             return base.ToString() + $"Salary: {salary}\n";
@@ -63,11 +53,12 @@ namespace ClassWork
         {
             this.bugget = bugget;
         }
-        //public override void Print()
-        //{
-        //    base.Print();
-        //    Console.WriteLine($"Budget: {bugget}");
-        //}
+
+        public override void getSalary()
+        {
+            Console.WriteLine($"Economist got his {salary}");
+        }
+
         public override string ToString()
         {
             return base.ToString() + $"Budget: {bugget}\n";
@@ -82,14 +73,13 @@ namespace ClassWork
         {
             this.rank = rank;
         }
-        //public override void Print()
-        //{
-        //    base.Print();
-        //    Console.WriteLine($"Rank: {rank}");
-        //}
         public override string ToString()
         {
             return base.ToString() + $"Rank: {rank} \n";
+        }
+        public override void getSalary()
+        {
+            Console.WriteLine($"Specialist got his {salary}");
         }
     }
 
@@ -101,11 +91,6 @@ namespace ClassWork
         {
             this.areaOfCleaning = areaOfCleaning;
         }
-        //public override void Print()
-        //{
-        //    base.Print();
-        //    Console.WriteLine($"Area Of Cleaning: {areaOfCleaning}");
-        //}
         public override void Method()
         {
             base.Method();
@@ -114,5 +99,14 @@ namespace ClassWork
         {
             return base.ToString() + $"Area Of Cleaning: {areaOfCleaning} \n";
         }
+        public override void getSalary()
+        {
+            Console.WriteLine($"Cleaning Master got his {salary}");
+        }
+    }
+
+    class MyClass
+    {
+    // toString() will return the string equivalent of the name of the type/class/object 
     }
 }

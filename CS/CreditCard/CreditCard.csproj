@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8202CFB-6671-46D9-B765-6170B0E4B2F2}</ProjectGuid>
+    <ProjectGuid>{19424D73-74DE-485B-9CB1-50EDB316A518}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClassWork</RootNamespace>
-    <AssemblyName>ClassWork</AssemblyName>
+    <RootNamespace>CreditCard</RootNamespace>
+    <AssemblyName>CreditCard</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreditCard.cs" />
-    <Compile Include="Human.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="Practice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
