@@ -45,9 +45,9 @@ namespace ConsoleApp1
             {
             IWorker worker = workers[rand.Next(1,workers.Count)];
                 worker.Work(house);
-                if (house.parts.Count != 0)
+                if (house.CountParts() != 0)
                 {
-                    if (house.parts.Last() is Roof)
+                    if (house.Last() is Roof)
                     {
                         finished = true;
                     }
@@ -64,27 +64,26 @@ namespace ConsoleApp1
             var currentParts = house.GetParts();
             if (!currentParts.ContainsKey("Basement"))
             {
-                house.parts.Add(new Basement());
+                house.Add(new Basement());
             }
             else if(!currentParts.ContainsKey("Wall") || currentParts["Wall"] < 4)
             {
-                house.parts.Add(new Wall());
+                house.Add(new Wall());
             }
             else if (!currentParts.ContainsKey("Doors"))
             {
-                house.parts.Add(new Doors());
+                house.Add(new Doors());
             }
             else if (!currentParts.ContainsKey("Window") || currentParts["Window"] < 4)
             {
-                house.parts.Add(new Window());
+                house.Add(new Window());
             }
             else if (!currentParts.ContainsKey("Roof"))
             {
-                house.parts.Add(new Roof());
+                house.Add(new Roof());
             }
         }
     }
-
     internal class TeamLead : IWorker
     {
         public void Work(House house)
@@ -106,13 +105,15 @@ namespace ConsoleApp1
     }
 
 
+
     internal interface IPart
     {
 
     }
+
     internal class House: IPart
     {
-        public List<IPart> parts = new List<IPart> { };
+        List<IPart> parts = new List<IPart> { };
         public Dictionary<string, Int32> GetParts()
         {
         Dictionary<string, Int32> result = new Dictionary<string, Int32>();
@@ -128,6 +129,18 @@ namespace ConsoleApp1
                 }
             }
             return result;
+        }
+        public void Add(IPart part)
+        {
+        parts.Add(part);
+        }
+        public int CountParts()
+        {
+        return parts.Count;
+        }
+        public IPart Last()
+        {
+            return parts.Last();
         }
     }
     internal class Basement : IPart
