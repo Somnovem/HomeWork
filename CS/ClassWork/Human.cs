@@ -45,7 +45,7 @@ namespace ClassWork
         public virtual void Method() { }
     }
 
-    class Economist : Employee
+    internal class Economist : Employee
     {
         int bugget;
         public Economist() { }
@@ -65,7 +65,7 @@ namespace ClassWork
         }
     }
 
-    class Specialist : Employee
+   internal class Specialist : Employee
     {
         int rank;
         public Specialist() { }
@@ -83,9 +83,12 @@ namespace ClassWork
         }
     }
 
-    class CleaningManager : Employee
+    internal class CleaningManager : Employee, IWorker  
     {
         int areaOfCleaning;
+
+        public bool isWorking { get; }
+
         public CleaningManager() { }
         public CleaningManager(int id, string firstname, string lastname, DateTime birthday, int salary, int areaOfCleaning) : base(id, firstname, lastname, birthday, salary)
         {
@@ -103,10 +106,16 @@ namespace ClassWork
         {
             Console.WriteLine($"Cleaning Master got his {salary}");
         }
+
+        public void RunWorker()
+        {
+            Console.WriteLine("Worker"); ;
+        }
     }
 
-    class MyClass
+    internal interface IWorker
     {
-    // toString() will return the string equivalent of the name of the type/class/object 
+        bool isWorking { get; }
+        void RunWorker();
     }
 }

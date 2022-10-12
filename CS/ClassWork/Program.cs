@@ -15,13 +15,37 @@ namespace ClassWork
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
-            CreditCard.CreditCard card = new CreditCard.CreditCard("123456789123456", "Igor Lachenkov", new DateTime(2022, 5, 25), 745, (decimal)15000.0);
-            card += 1500;
-            Console.WriteLine(card);
-            card++;
-            Console.WriteLine(card);
-            card--;
-            Console.WriteLine(card["USD"]);
+
+            /////////////// 11.10.2022 /////////////////////////
+            ///
+
+            //IWorker employee = new CleaningManager(45,"Wasya","Smth",new DateTime(2000,6,30),15000,400);
+            //employee.RunWorker();
+
+
+            //ABC abc = new ABC();
+            //abc.Print();
+            //IA ia = new ABC();
+            //ia.Print();
+            //(abc as IB).Print();
+
+            //Group group = new Group();
+            //Console.WriteLine("Student list: ");
+            //foreach (Student item in group)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine("---------------------------------");
+            //}
+            //group.Sort(new StudentCardComparer());
+            //Console.WriteLine("/////////////////////////////////////////////////// ////////////////////////////////////////");
+            //foreach (Student item in group)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            StudentCard st1 = new StudentCard();
+            StudentCard st2 = new StudentCard();
+            st2 = (StudentCard)(st1.Clone());
         }
     }
 }

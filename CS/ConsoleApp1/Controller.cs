@@ -10,12 +10,19 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            WebSite MySite = new WebSite(new DateTime(2022, 4, 10));
-            Console.WriteLine(WebSite.browser);
-            MySite.Name = "Google";
-            MySite.Url = "google";
-            MySite.Ip = "8.8.8.8";
-            MySite.Print();
+            Team team = new Team();
+            House house =team.BuildHouse();
+            var res = house.GetParts();
+            foreach (var item in res)
+            {
+                Console.WriteLine(item.Key + " : " + item.Value);
+            }
+            //WebSite MySite = new WebSite(new DateTime(2022, 4, 10));
+            //Console.WriteLine(WebSite.browser);
+            //MySite.Name = "Google";
+            //MySite.Url = "google";
+            //MySite.Ip = "8.8.8.8";
+            //MySite.Print();
         }
     }
 }
