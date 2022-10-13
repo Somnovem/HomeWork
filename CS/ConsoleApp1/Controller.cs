@@ -10,13 +10,15 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            Team team = new Team();
-            House house =team.BuildHouse();
-            var res = house.GetParts();
-            foreach (var item in res)
-            {
-                Console.WriteLine(item.Key + " : " + item.Value);
-            }
+            GeometricalShapeCollection GSC = new GeometricalShapeCollection();
+            GSC.Menu();
+            //Team team = new Team();
+            //House house =team.BuildHouse();
+            //var res = house.GetParts();
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Key + " : " + item.Value);
+            //}
             //WebSite MySite = new WebSite(new DateTime(2022, 4, 10));
             //Console.WriteLine(WebSite.browser);
             //MySite.Name = "Google";
