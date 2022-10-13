@@ -10,21 +10,11 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            GeometricalShapeCollection GSC = new GeometricalShapeCollection();
-            GSC.Menu();
-            //Team team = new Team();
-            //House house =team.BuildHouse();
-            //var res = house.GetParts();
-            //foreach (var item in res)
-            //{
-            //    Console.WriteLine(item.Key + " : " + item.Value);
-            //}
-            //WebSite MySite = new WebSite(new DateTime(2022, 4, 10));
-            //Console.WriteLine(WebSite.browser);
-            //MySite.Name = "Google";
-            //MySite.Url = "google";
-            //MySite.Ip = "8.8.8.8";
-            //MySite.Print();
+            PriorityQueue<int,string> priorityQueue = new PriorityQueue<int,string>();
+            priorityQueue.Add(1, "Deez");
+            priorityQueue.Add(2, "NUTS");
+            Console.WriteLine(priorityQueue.ElementAt(1));
+            Console.WriteLine(priorityQueue.ElementAt(2));
         }
     }
 }

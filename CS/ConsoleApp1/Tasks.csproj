@@ -65,6 +65,7 @@
     <Compile Include="Geometry.cs" />
     <Compile Include="House.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Queues.cs" />
     <Compile Include="Task8.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Task1.cs" />
