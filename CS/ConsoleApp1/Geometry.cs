@@ -233,7 +233,7 @@ namespace ConsoleApp1
             Console.ForegroundColor = temp;
         }
     }
-    class GeometricalShapeCollection
+    class GeometricalShapeCollection: IEnumerable
     {
     List<GeometricalShape> geometricalShapes = new List<GeometricalShape>();
          void Draw()
@@ -283,6 +283,8 @@ namespace ConsoleApp1
                 return;
             }
             string[] colors = Enum.GetNames(typeof(ConsoleColor));
+            Console.SetCursorPosition(40, 1);
+            Console.WriteLine("Choose color:");
             c = PV111_CSharp.ConsoleMenu.SelectVertical(PV111_CSharp.HPosition.Center, PV111_CSharp.VPosition.Center, PV111_CSharp.HorizontalAlignment.Center, colors);
             Console.Clear();
             newShape.Color = (ConsoleColor)c;
@@ -328,6 +330,11 @@ namespace ConsoleApp1
                 }
             }
             
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return geometricalShapes.GetEnumerator();
         }
     }
 }
