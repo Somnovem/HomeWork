@@ -55,6 +55,10 @@ namespace ClassWork
         {
             return $"First Name: {FirstName}\nLastname: {LastName}\nBirtday: {Birthday.ToShortDateString()}\n{StudentCard}";
         }
+        public override int GetHashCode()
+        {
+            return $"{StudentCard.Series} #{StudentCard.Number}".GetHashCode();
+        }
     }
 
     class Group: IEnumerable
