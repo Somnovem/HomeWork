@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayStrings.cs" />
+    <Compile Include="Delegates.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="House.cs" />
     <Compile Include="Menu.cs" />

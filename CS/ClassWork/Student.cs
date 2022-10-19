@@ -30,9 +30,9 @@ namespace ClassWork
             return $"Number : {Number}\t Series : {Series}";
         }
     }
-    internal class Student: IComparable, ICloneable
+    internal class Student: IComparable<Student>, ICloneable
     {
-        public static IComparer ByBirthday { get {return new DateComparer(); } }
+        public static IComparer<Student> ByBirthday { get {return new DateComparer(); } }
         public static IComparer ByCard { get { return new StudentCardComparer(); } }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -46,9 +46,9 @@ namespace ClassWork
             return res;
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(Student obj)
         {
-            return LastName.CompareTo((obj as Student).LastName);
+            return LastName.CompareTo(obj.LastName);
         }
 
         public override string ToString()
@@ -107,9 +107,24 @@ namespace ClassWork
              }
         };
 
-        public IEnumerator GetEnumerator()
+        public IEnumerable<Student> Top3()
         {
-            return students.GetEnumerator();
+            for (int i = 0; i < students.Length; i++)
+            {
+                if (i ==3)
+                {
+                    yield break;
+                }
+                yield return students[i];
+            }
+        }
+
+        public IEnumerator<Student> GetEnumerator()
+        {
+            for (int i = 0; i < students.Length; i++)
+            {
+                yield return students[i];
+            }
         }
 
         public void Sort()
@@ -121,13 +136,17 @@ namespace ClassWork
         {
             Array.Sort(students,comparer);
         }
-    }
-    class DateComparer : IComparer
-    {
-        public int Compare(object x, object y)
+
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            if (x is Student && y is Student) return DateTime.Compare((x as Student).Birthday, (y as Student).Birthday);
-            throw new NotImplementedException();
+            return students.GetEnumerator();
+        }
+    }
+    class DateComparer : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return DateTime.Compare((x as Student).Birthday, (y as Student).Birthday);
         }
     }
 

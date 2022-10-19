@@ -10,11 +10,8 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            PriorityQueue<int,string> priorityQueue = new PriorityQueue<int,string>();
-            priorityQueue.Add(1, "Deez");
-            priorityQueue.Add(2, "NUTS");
-            Console.WriteLine(priorityQueue.ElementAt(1));
-            Console.WriteLine(priorityQueue.ElementAt(2));
+            Func<double, double, double, double> action = Delegates.TriangleArea;
+            Console.WriteLine(action(3, 4, 5));
         }
     }
 }
