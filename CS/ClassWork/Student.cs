@@ -46,10 +46,7 @@ namespace ClassWork
             return res;
         }
 
-        public int CompareTo(Student obj)
-        {
-            return LastName.CompareTo(obj.LastName);
-        }
+        public int CompareTo(Student obj) => LastName.CompareTo(obj.LastName);
 
         public override string ToString()
         {
@@ -59,7 +56,23 @@ namespace ClassWork
         {
             return $"{StudentCard.Series} #{StudentCard.Number}".GetHashCode();
         }
+
+        public void Exam(DateTime date)
+        {
+            Console.WriteLine($"{FirstName} {LastName} will be on Exam on {date.ToShortDateString()}");
+        }
+        public void Exam2(object sender, ExamEventArgs examEvent)
+        {
+            Console.WriteLine($"{FirstName} {LastName} will be on Exam on {examEvent.Date.ToShortDateString()}");
+        }
     }
+
+
+    class ExamEventArgs : EventArgs
+    {
+    public DateTime Date { get; set; }
+    }
+
 
     class Group: IEnumerable
     {
@@ -159,6 +172,47 @@ namespace ClassWork
                 return (x as Student).StudentCard.CompareTo((y as Student).StudentCard);
             }
             throw new NotImplementedException();
+        }
+    }
+    class Teacher
+    {
+        public EventHandler<ExamEventArgs> Exam2;
+
+        SortedList<string, Action<DateTime>> list = new SortedList<string, Action<DateTime>>();
+        public event Action<DateTime> Exam
+        {
+            add
+            {
+                Student temp = ((value.Target) as Student);
+                list.Add(temp.FirstName + " " + temp.LastName,value);
+            }
+            remove
+            {
+            Student temp = (value.Target) as Student;
+                string tempName = temp.LastName + " " + temp.FirstName;
+             if (list.ContainsKey(tempName))
+             {
+                    list.Remove(tempName);
+             }
+            }
+        }
+        public event Action<string> Exam3;
+        public void SetExam(DateTime date)
+        {
+            foreach (var item in list.Keys)
+            {
+                list[item].Invoke(date);
+            }
+            //Exam?.Invoke(date);
+        }
+        public void SetExam(string s)
+        {
+            Exam3?.Invoke(s);
+        }
+
+        public void SetExam2(ExamEventArgs examEvent)
+        {
+            Exam2?.Invoke(this, examEvent);
         }
     }
 }

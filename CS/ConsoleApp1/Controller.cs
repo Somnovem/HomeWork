@@ -10,8 +10,13 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            Func<double, double, double, double> action = Delegates.TriangleArea;
-            Console.WriteLine(action(3, 4, 5));
+            Action action = Delegates.CurrentTime;
+            action += Delegates.CurrentDayOfWeek;
+            action += Delegates.CurrentDate;
+            foreach (Action item in action.GetInvocationList())
+            {
+                item.Invoke();
+            }
         }
     }
 }

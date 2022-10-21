@@ -1,0 +1,16 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.deps.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.runtimeconfig.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.runtimeconfig.dev.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\bin\Debug\net5.0-windows\smth.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.AssemblyInfoInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.AssemblyInfo.cs
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\refint\smth.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\smth.genruntimeconfig.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\smth\obj\Debug\net5.0-windows\ref\smth.dll
