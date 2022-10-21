@@ -106,7 +106,7 @@ static class Globals
     static Globals()
     {
         lifeSpan.Interval = 120000;
-        actionTimer.Interval = 5000;
+        actionTimer.Interval = 15000;
         Globals.lifeSpan.Elapsed += (sender, e) => smth.TamagochiController.LifeSpan_Tick(sender, e, Globals.tamagochi.Die);
         Globals.actionTimer.Elapsed += (sender, e) => smth.TamagochiController.ElapsedAction(sender, e, Globals.ActionList, Globals.previousActions, Globals.tamagochi.Health);
         Globals.lifeSpan.Start();
@@ -140,18 +140,17 @@ namespace smth
         }
         static void Main(string[] args)
         {
-            ExtensionMethod.Tests();
-            //if (Globals.lifeSpan.Enabled)
-            //{
-            //    Console.OutputEncoding = System.Text.Encoding.Unicode;
-            //    Console.InputEncoding = System.Text.Encoding.Unicode;
-            //    Console.ForegroundColor = ConsoleColor.DarkGreen;
-            //    Console.BackgroundColor = ConsoleColor.Black;
-            //    Console.SetWindowSize(17, 8);
-            //    Console.Clear();
-            //    Globals.tamagochi.ShowState();
-            //}
-            //Console.ReadKey();
+            if (Globals.lifeSpan.Enabled)
+            {
+                Console.OutputEncoding = System.Text.Encoding.Unicode;
+                Console.InputEncoding = System.Text.Encoding.Unicode;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.SetWindowSize(17, 8);
+                Console.Clear();
+                Globals.tamagochi.ShowState();
+            }
+            Console.ReadKey();
         }
         static public void ElapsedAction(object sender, ElapsedEventArgs e, List<Action> actions, Stack<Action> previous, int Health)
         {
