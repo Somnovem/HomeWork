@@ -4,87 +4,90 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Linq;
+using System.IO;
+using System.Text;
+
 namespace ClassWork
 {
     internal class Program
     {
-        static T Max3<T>(T first, T second, T third) where T : IComparable
-        {
-            T firstBigger;
-            if (first.CompareTo(second) <= 0)
-            {
-                firstBigger = second;
-            }
-            else
-            {
-                firstBigger = first;
-            }
-            if (third.CompareTo(firstBigger) <= 0)
-            {
-                return firstBigger;
-            }
-            else
-            {
-                return third;
-            }
-        }
+        //static T Max3<T>(T first, T second, T third) where T : IComparable
+        //{
+        //    T firstBigger;
+        //    if (first.CompareTo(second) <= 0)
+        //    {
+        //        firstBigger = second;
+        //    }
+        //    else
+        //    {
+        //        firstBigger = first;
+        //    }
+        //    if (third.CompareTo(firstBigger) <= 0)
+        //    {
+        //        return firstBigger;
+        //    }
+        //    else
+        //    {
+        //        return third;
+        //    }
+        //}
 
-        static T Min<T>(T[] arr) where T : IComparable<T>
-        {
-            T min = arr[0];
-            foreach (T item in arr)
-            {
-                if (item.CompareTo(min) < 0)
-                {
-                    min = item;
-                }
-            }
-            return min;
-        }
+        //static T Min<T>(T[] arr) where T : IComparable<T>
+        //{
+        //    T min = arr[0];
+        //    foreach (T item in arr)
+        //    {
+        //        if (item.CompareTo(min) < 0)
+        //        {
+        //            min = item;
+        //        }
+        //    }
+        //    return min;
+        //}
 
-        static void AddMark(Hashtable hs, string Name, int grade)
-        {
-            foreach (var item in hs.Keys)
-            {
-                Student temp = item as Student;
-                if (temp.FirstName + temp.LastName == Name)
-                {
-                    (hs[item] as ArrayList).Add(grade);
-                }
-            }
-        }
+        //static void AddMark(Hashtable hs, string Name, int grade)
+        //{
+        //    foreach (var item in hs.Keys)
+        //    {
+        //        Student temp = item as Student;
+        //        if (temp.FirstName + temp.LastName == Name)
+        //        {
+        //            (hs[item] as ArrayList).Add(grade);
+        //        }
+        //    }
+        //}
 
-        static void PrintRaiting(Hashtable hs)
-        {
-            foreach (var item in hs.Keys)
-            {
-                Student temp1 = item as Student;
-                Console.Write(temp1.FirstName + " " + temp1.LastName + " --- ");
-                ArrayList grades = (hs[item] as ArrayList);
-                foreach (var temp2 in grades)
-                {
-                    Console.Write($"{temp2}, ");
-                }
-                Console.WriteLine();
-            }
-        }
+        //static void PrintRaiting(Hashtable hs)
+        //{
+        //    foreach (var item in hs.Keys)
+        //    {
+        //        Student temp1 = item as Student;
+        //        Console.Write(temp1.FirstName + " " + temp1.LastName + " --- ");
+        //        ArrayList grades = (hs[item] as ArrayList);
+        //        foreach (var temp2 in grades)
+        //        {
+        //            Console.Write($"{temp2}, ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
 
-        public delegate int Arithmetic(int t1, int t2);
-        public delegate bool Method<T>(T t1, T t2);
-        public delegate T GenericDelegate<T>(T t1, T t2);
+        //public delegate int Arithmetic(int t1, int t2);
+        //public delegate bool Method<T>(T t1, T t2);
+        //public delegate T GenericDelegate<T>(T t1, T t2);
 
-        static bool SeriesAC(Student st)
-        {
-            return st.StudentCard.Series == "AC";
-        }
-        static int StudentComparison(Student st1, Student st2)
-        {
-            return st1.Birthday.CompareTo(st2.Birthday);
-        }
-        static void Sort(int[] arr, Method<int> m)
-        {
+        //static bool SeriesAC(Student st)
+        //{
+        //    return st.StudentCard.Series == "AC";
+        //}
+        //static int StudentComparison(Student st1, Student st2)
+        //{
+        //    return st1.Birthday.CompareTo(st2.Birthday);
+        //}
+        //static void Sort(int[] arr, Method<int> m)
+        //{
 
-        }
+        //}
 
         //class Calc
         //{
@@ -95,7 +98,7 @@ namespace ClassWork
         //}
 
 
-        static void Programm(string[] args)
+        static void Main(string[] args)
         {
             Console.Title = "Console";
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -104,28 +107,88 @@ namespace ClassWork
             Console.WindowWidth = 120;
             Console.Clear();
 
-            int[] arr = { 125, 45, 23, 1, 56, 67, 54, 60 };
+            //using (FileStream fs = new FileStream("file.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.None))
+            //{
+            //    string str = Console.ReadLine();
+            //    byte[] bytes = Encoding.Default.GetBytes(str);
+            //    fs.Write(bytes, 0, bytes.Length);
 
-            var linq = from i in arr
-                       where i % 5 == 0
-                       orderby i descending
-                       select i;
+            //}
+
+            //using (FileStream fs = new FileStream("file.txt", FileMode.Open, FileAccess.Read, FileShare.Read))
+            //{
+            //    byte[] bytes = new byte[fs.Length];
+            //    fs.Read(bytes, 0, bytes.Length);
+            //    Console.WriteLine(Encoding.Default.GetString(bytes));
+            //}
 
 
-            var linq1 = from i in arr
-                       group i by i /10;
+            //using (FileStream fs = new FileStream("file1.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.None)) 
+            //{
+            //    using (StreamWriter sw= new StreamWriter(fs,Encoding.Default))
+            //    {
+            //        sw.WriteLine("I love Minecraft");
+            //    }
+            //}
 
 
-            foreach (var item in linq1)
+            //using (FileStream fs = new FileStream("file1.txt", FileMode.Open, FileAccess.Read, FileShare.None))
+            //{
+            //    using (StreamReader sw = new StreamReader(fs, Encoding.Default))
+            //    {
+            //        Console.Write(sw.ReadToEnd()); 
+            //    }
+            //}
+
+
+            //using (FileStream fs = new FileStream("file2.bin", FileMode.Create, FileAccess.Write, FileShare.None))
+            //{
+            //    using (BinaryWriter bw = new BinaryWriter(fs, Encoding.Default))
+            //    {
+            //        string str = "I love minecraft";
+            //        int i = 12345;
+            //        double d = 1.14151674;
+            //        char c = 'A';
+            //        bw.Write(str);
+            //        bw.Write(i);
+            //        bw.Write(d);
+            //        bw.Write(c);
+            //    }
+            //}
+
+            using (FileStream fs = new FileStream("file2.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                Console.Write(item.Key + ": ");
-                foreach (var item2 in item)
+                using (BinaryReader bw = new BinaryReader(fs, Encoding.Default))
                 {
-                    Console.Write(item2 + " ");
+                    Console.WriteLine(bw.ReadString());
+                    Console.WriteLine(bw.ReadInt32());
+                    Console.WriteLine(bw.ReadDouble());
+                    Console.WriteLine(bw.ReadChar());
                 }
-                Console.WriteLine();
             }
-            Console.WriteLine();
+
+
+            //int[] arr = { 125, 45, 23, 1, 56, 67, 54, 60 };
+
+            //var linq = from i in arr
+            //           where i % 5 == 0
+            //           orderby i descending
+            //           select i;
+
+
+            //var linq1 = from i in arr
+            //           group i by i /10;
+
+            //foreach (var item in linq1)
+            //{
+            //    Console.Write(item.Key + ": ");
+            //    foreach (var item2 in item)
+            //    {
+            //        Console.Write(item2 + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
 
 
 
@@ -242,6 +305,23 @@ namespace ClassWork
             //             }
 
             //        };
+
+            //List<GroupName> groups = new List<GroupName>
+            //{
+            //    new GroupName(){ ID = 1, Name = "PV111"},
+            //    new GroupName(){ ID = 2, Name = "PVU151"},
+            //    new GroupName(){ ID = 3, Name = "PVB119"},
+            //};
+
+            //var st_gr = from g in groups
+            //            join st in students on g.ID equals st.Group.ID
+            //            select new {LastName = st.LastName, FirstName = st.FirstName, GroupNames = g.Name};
+
+            //foreach (var item in st_gr)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine($"{item.LastName} {item.FirstName} {item.GroupNames}");
+            //}
             //Teacher teacher = new Teacher();
             //foreach (var item in students)
             //{
@@ -296,18 +376,18 @@ namespace ClassWork
         //    Console.ReadKey();
         //}
 
-        private static void Teacher_Exam3(string obj)
-        {
-            throw new NotImplementedException();
-        }
-        static void FullNameStudent(Student st)
-        {
-            Console.WriteLine($"{st.FirstName}  {st.LastName}");
-        }
-        static string FullNameStudentString(Student st)
-        {
-            return $"{st.FirstName}  {st.LastName}";
-        }
+        //private static void Teacher_Exam3(string obj)
+        //{
+        //    throw new NotImplementedException();
+        //}
+        //static void FullNameStudent(Student st)
+        //{
+        //    Console.WriteLine($"{st.FirstName}  {st.LastName}");
+        //}
+        //static string FullNameStudentString(Student st)
+        //{
+        //    return $"{st.FirstName}  {st.LastName}";
+        //}
 
     }
 

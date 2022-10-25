@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace ClassWork
 {
+    class GroupName
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+    }
     class StudentCard:IComparable,ICloneable
     {
         public int Number { get; set; }
@@ -65,6 +70,7 @@ namespace ClassWork
         {
             Console.WriteLine($"{FirstName} {LastName} will be on Exam on {examEvent.Date.ToShortDateString()}");
         }
+        public GroupName Group { get; set; }
     }
 
 
