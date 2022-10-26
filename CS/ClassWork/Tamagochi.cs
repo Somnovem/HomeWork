@@ -34,7 +34,7 @@ namespace ClassWork
             Console.WriteLine("                                   Y8b d88P                                  ");
             Console.WriteLine("                                    \"Y88P\"                                   ");
         }
-        static void Main(string[] args)
+        static void Programm(string[] args)
         {
             Tamagochi MyTamagochi = new Tamagochi();
             List<Action> ActionList = new List<Action> { MyTamagochi.Die, MyTamagochi.RequestFood, MyTamagochi.RequestSleep, MyTamagochi.RequestGoOut, MyTamagochi.RequestPlay };

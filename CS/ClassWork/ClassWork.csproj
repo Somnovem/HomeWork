@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes.cs" />
     <Compile Include="CreditCard.cs" />
     <Compile Include="Exception__.cs" />
     <Compile Include="Human.cs" />

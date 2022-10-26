@@ -138,9 +138,8 @@ namespace smth
                 Environment.Exit(0);
             }
         }
-        static void Main(string[] args)
+        static void Programm(string[] args)
         {
-<<<<<<< Updated upstream
             if (Globals.lifeSpan.Enabled)
             {
                 Console.OutputEncoding = System.Text.Encoding.Unicode;
@@ -152,7 +151,6 @@ namespace smth
                 Globals.tamagochi.ShowState();
             }
             Console.ReadKey();
-=======
             RandomNumberAnalyzer.Work();
             //ExtensionMethod.Tests();
             //if (Globals.lifeSpan.Enabled)
@@ -166,7 +164,6 @@ namespace smth
             //    Globals.tamagochi.ShowState();
             //}
             //Console.ReadKey();
->>>>>>> Stashed changes
         }
         static public void ElapsedAction(object sender, ElapsedEventArgs e, List<Action> actions, Stack<Action> previous, int Health)
         {

@@ -6,6 +6,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Windows.Forms.VisualStyles;
+using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace ClassWork
 {
@@ -98,6 +102,19 @@ namespace ClassWork
         //}
 
 
+
+        static bool isValidStudent(Student s)
+        {
+            foreach (var item in typeof(Student).GetCustomAttributes())
+            {
+                if (item is AgeValidationAttribute)
+                {
+                    return (DateTime.Now - s.Birthday).TotalDays/365.25 > (item as AgeValidationAttribute).Age;
+                }
+            }
+            return false;
+        }
+
         static void Main(string[] args)
         {
             Console.Title = "Console";
@@ -106,6 +123,90 @@ namespace ClassWork
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
+
+
+            //foreach (var item in typeof(Student).GetCustomAttributes())
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //foreach (var item in typeof(Student).GetMembers())
+            //{
+            //    foreach (var item2 in item.GetCustomAttributes())
+            //    {
+            //        Console.WriteLine(item.Name + " - " + item2);
+            //    }
+            //}
+
+
+
+
+
+
+
+            /*
+             .
+             \w
+             \W             
+             \s
+             \S
+             \d
+             \D
+             [a-z or A-Z]
+             [^a-z]
+             * - 0 or more
+             + - 1 or more
+             ? - 0 or 1
+             {n}
+             {n,m}
+             {n,}
+             ^
+             $
+            */
+            //string pattern = "^[A-Z][a-z]+(-[A-Z][a-z]+){0,2}$";
+            //string mobilePhonePatter = @"^\+38\(0(50|66)\)\s\d{3}-\d{2}-\d{2}$";
+            //string isDigit = "^-?\\d+$";
+
+            //Regex regex = new Regex(isDigit);
+            //while (true)
+            //{
+            //    Console.WriteLine(regex.IsMatch(Console.ReadLine()) ? "Correct" : "Incorrect"); ;
+            //}
+
+
+
+
+
+
+            //DirectoryInfo dir = new DirectoryInfo(".");
+            ////Console.WriteLine(dir.Attributes & FileAttributes.Compressed);
+            //dir.CreateSubdirectory("dir2");
+            //List<string> list = new List<string>();
+            //var d = dir.GetDirectories();
+            //foreach (var item in d)
+            //{
+            //    list.Add(item.Name);
+            //}
+
+            //PV111_CSharp.ConsoleMenu.SelectVertical(PV111_CSharp.HPosition.Center, PV111_CSharp.VPosition.Center, PV111_CSharp.HorizontalAlignment.Center, list.ToArray());
+            //Console.Clear();
+            //var f = dir.GetFiles();
+            //foreach (var item in f)
+            //{
+            //    list.Add(item.Name);
+            //}
+
+            //PV111_CSharp.ConsoleMenu.SelectVertical(PV111_CSharp.HPosition.Center, PV111_CSharp.VPosition.Center, PV111_CSharp.HorizontalAlignment.Center, list.ToArray());
+            //Console.Clear();
+            //Directory.GetLogicalDrives().ToList().ForEach(s => Console.WriteLine(s));
+            //Console.Clear();
+            //FileInfo f1 = new FileInfo("file.txt");
+            //using (StreamWriter sw = File.CreateText("text22.txt"))
+            //{
+            //    sw.WriteLine("LOKI IS AWAKE");    
+            //}
+
+
+
 
             //using (FileStream fs = new FileStream("file.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.None))
             //{
@@ -156,16 +257,16 @@ namespace ClassWork
             //    }
             //}
 
-            using (FileStream fs = new FileStream("file2.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
-            {
-                using (BinaryReader bw = new BinaryReader(fs, Encoding.Default))
-                {
-                    Console.WriteLine(bw.ReadString());
-                    Console.WriteLine(bw.ReadInt32());
-                    Console.WriteLine(bw.ReadDouble());
-                    Console.WriteLine(bw.ReadChar());
-                }
-            }
+            //using (FileStream fs = new FileStream("file2.bin", FileMode.Open, FileAccess.Read, FileShare.Read))
+            //{
+            //    using (BinaryReader bw = new BinaryReader(fs, Encoding.Default))
+            //    {
+            //        Console.WriteLine(bw.ReadString());
+            //        Console.WriteLine(bw.ReadInt32());
+            //        Console.WriteLine(bw.ReadDouble());
+            //        Console.WriteLine(bw.ReadChar());
+            //    }
+            //}
 
 
             //int[] arr = { 125, 45, 23, 1, 56, 67, 54, 60 };
@@ -251,60 +352,70 @@ namespace ClassWork
 
 
 
-            //List<Student> students = new List<Student>()
-            //{
-            //            new Student()
-            //            {
-            //                FirstName = "Olga",
-            //                LastName = "Petrova",
-            //                Birthday = new DateTime(2005,5,14),
-            //                StudentCard = new StudentCard()
-            //                {
-            //                    Series = "AC",Number =123456
-            //                }
-            //             },
-            //            new Student()
-            //            {
-            //                FirstName = "Natasha",
-            //                LastName = "Romanoff",
-            //                Birthday = new DateTime(2005,7,2),
-            //                StudentCard = new StudentCard()
-            //                {
-            //                    Series = "AB",Number =123466
-            //                }
-            //             },
-            //            new Student()
-            //            {
-            //                FirstName = "Petro",
-            //                LastName = "Oleksiiv",
-            //                Birthday = new DateTime(1995,4,25),
-            //                StudentCard = new StudentCard()
-            //                {
-            //                    Series = "AC",Number =123478
-            //                }
-            //             },
-            //            new Student()
-            //            {
-            //                FirstName = "Geralt",
-            //                LastName = "of Rivia",
-            //                Birthday = new DateTime(1999,6,16),
-            //                StudentCard = new StudentCard()
-            //                {
-            //                    Series = "AB",Number =123444
-            //                }
-            //             },
-            //            new Student()
-            //            {
-            //                FirstName = "Microft",
-            //                LastName = "Holmes",
-            //                Birthday = new DateTime(2002,6,16),
-            //                StudentCard = new StudentCard()
-            //                {
-            //                    Series = "AB",Number =123444
-            //                }
-            //             }
+            List<Student> students = new List<Student>()
+            {
+                        new Student()
+                        {
+                            FirstName = "Olga",
+                            LastName = "Petrova",
+                            Birthday = new DateTime(2005,5,14),
+                            StudentCard = new StudentCard()
+                            {
+                                Series = "AC",Number =123456
+                            }
+                         },
+                        new Student()
+                        {
+                            FirstName = "Natasha",
+                            LastName = "Romanoff",
+                            Birthday = new DateTime(2005,7,2),
+                            StudentCard = new StudentCard()
+                            {
+                                Series = "AB",Number =123466
+                            }
+                         },
+                        new Student()
+                        {
+                            FirstName = "Petro",
+                            LastName = "Oleksiiv",
+                            Birthday = new DateTime(1995,4,25),
+                            StudentCard = new StudentCard()
+                            {
+                                Series = "AC",Number =123478
+                            }
+                         },
+                        new Student()
+                        {
+                            FirstName = "Geralt",
+                            LastName = "of Rivia",
+                            Birthday = new DateTime(1999,6,16),
+                            StudentCard = new StudentCard()
+                            {
+                                Series = "AB",Number =123444
+                            }
+                         },
+                        new Student()
+                        {
+                            FirstName = "Microft",
+                            LastName = "Holmes",
+                            Birthday = new DateTime(2002,6,16),
+                            StudentCard = new StudentCard()
+                            {
+                                Series = "AB",Number =123444
+                            }
+                         }
 
-            //        };
+                    };
+
+
+            foreach (var item in students)
+            {
+                Console.WriteLine(isValidStudent(item));
+            }
+
+
+
+
 
             //List<GroupName> groups = new List<GroupName>
             //{

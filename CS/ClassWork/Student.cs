@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassWork
 {
+    [Programmer("Vasya","2022.10.26")]
     class GroupName
     {
         public int ID { get; set; }
@@ -35,6 +36,7 @@ namespace ClassWork
             return $"Number : {Number}\t Series : {Series}";
         }
     }
+    [AgeValidation(10),Programmer]
     internal class Student: IComparable<Student>, ICloneable
     {
         public static IComparer<Student> ByBirthday { get {return new DateComparer(); } }
