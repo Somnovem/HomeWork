@@ -28,7 +28,7 @@ namespace smth
         {
             return $"Name : {Name}\nFoundation : {Foundation.ToShortDateString()}\nSpeciality : {Speciality}\n{Director}Number of employees : {NumberOfEmployess}\nAdress : {Adress}\n-----------------------------------\n"; 
         }
-        static void Main()
+        static void Work()
         {
             List<Firm> firms = new List<Firm>();
             firms.Add(new Firm() {Name = "Microsoft",Foundation = new DateTime(1986,10,12),Speciality = "IT", Director = new Director() {Lastname = "White", Firstname = "Gordon"},NumberOfEmployess = 1200000, Adress = "USA,California,Silicon Valley"});

@@ -1,16 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml.Linq;
 namespace ClassWork
 {
-    internal class Point
+    public class Point : ISerializable
     {
         public int X { get; set; } = 0;
         public int Y { get; set; } = 0;
         public Point() { }
+
+        private void OnSerializing(StreamingContext context)
+        {
+            X = X + 200;
+            Y = Y + 200;
+        }
+
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context)
+        {
+            X-= 200;
+            Y-= 200;
+        }
+
+
         public Point(int x, int y)
         {
             X = x;
@@ -27,6 +45,20 @@ namespace ClassWork
         {
             return $"X = {X}\tY = {Y}";
         }
+
+        void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("Moon", X*10 -15);
+            info.AddValue("Sun", Y * 100 + 25);
+        }
+
+        Point(SerializationInfo info, StreamingContext context)
+        {
+        X = (info.GetInt32("Moon") + 15 )/ 10;
+        Y = (info.GetInt32("Sun") - 25)/ 10;
+        }
+
+
         public static Point operator -(Point p)
         {
         return new Point(-p.X, -p.Y);

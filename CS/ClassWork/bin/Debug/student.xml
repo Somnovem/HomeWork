@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>Petrova</LastName>
+  <FirstName>Olga</FirstName>
+  <BirthDay>2005-05-14T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AC</Series>
+    <Number>123456</Number>
+  </StudentCard>
+</Student><?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>Romanoff</LastName>
+  <FirstName>Natasha</FirstName>
+  <BirthDay>2005-07-02T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AB</Series>
+    <Number>123466</Number>
+  </StudentCard>
+</Student><?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>Oleksiiv</LastName>
+  <FirstName>Petro</FirstName>
+  <BirthDay>1995-04-25T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AC</Series>
+    <Number>123478</Number>
+  </StudentCard>
+</Student><?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>of Rivia</LastName>
+  <FirstName>Geralt</FirstName>
+  <BirthDay>1999-06-16T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AB</Series>
+    <Number>123444</Number>
+  </StudentCard>
+</Student><?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>Holmes</LastName>
+  <FirstName>Microft</FirstName>
+  <BirthDay>2002-06-16T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AB</Series>
+    <Number>123444</Number>
+  </StudentCard>
+</Student>

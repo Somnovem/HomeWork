@@ -30,7 +30,7 @@ namespace ClassWork
         {
             for (int i = 0; i < 1000; i++)
             {
-                Student student = new Student();
+                PV111_CSharp.Student student = new PV111_CSharp.Student();
             }
         }
     }

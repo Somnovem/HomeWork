@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GroupName>0</GroupName>
+  <LastName>Petrova</LastName>
+  <FirstName>Olga</FirstName>
+  <BirthDay>2005-05-14T00:00:00</BirthDay>
+  <StudentCard>
+    <Series>AC</Series>
+    <Number>123456</Number>
+  </StudentCard>
+</Student>

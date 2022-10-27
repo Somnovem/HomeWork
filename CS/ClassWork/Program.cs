@@ -10,6 +10,9 @@ using System.Windows.Forms.VisualStyles;
 using System.Net.Http.Headers;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using PV111_CSharp;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace ClassWork
 {
@@ -109,7 +112,7 @@ namespace ClassWork
             {
                 if (item is AgeValidationAttribute)
                 {
-                    return (DateTime.Now - s.Birthday).TotalDays/365.25 > (item as AgeValidationAttribute).Age;
+                    return (DateTime.Now - s.BirthDay).TotalDays/365.25 > (item as AgeValidationAttribute).Age;
                 }
             }
             return false;
@@ -123,6 +126,122 @@ namespace ClassWork
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
+
+
+
+            Student student = new Student()
+            {
+                FirstName = "Olga",
+                LastName = "Petrova",
+                BirthDay = new DateTime(2005, 5, 14),
+                StudentCard = new StudentCard()
+                {
+                    Series = "AC",
+                    Number = 123456
+                }
+            };
+
+            Point point = new Point() { X = 10, Y = 10 };
+            XmlSerializer xmlp = new XmlSerializer(typeof(Point));
+            using (Stream stream = File.Create("Point.xml"))
+            {
+                xmlp.Serialize(stream, point);
+            }
+
+
+
+
+            //Console.WriteLine(student);
+            //BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+            //List<Student> students = new List<Student>()
+            //{
+            //            new Student()
+            //            {
+            //                FirstName = "Olga",
+            //                LastName = "Petrova",
+            //                BirthDay = new DateTime(2005,5,14),
+            //                StudentCard = new StudentCard()
+            //                {
+            //                    Series = "AC",Number =123456
+            //                }
+            //             },
+            //            new Student()
+            //            {
+            //                FirstName = "Natasha",
+            //                LastName = "Romanoff",
+            //                BirthDay = new DateTime(2005,7,2),
+            //                StudentCard = new StudentCard()
+            //                {
+            //                    Series = "AB",Number =123466
+            //                }
+            //             },
+            //            new Student()
+            //            {
+            //                FirstName = "Petro",
+            //                LastName = "Oleksiiv",
+            //                BirthDay = new DateTime(1995,4,25),
+            //                StudentCard = new StudentCard()
+            //                {
+            //                    Series = "AC",Number =123478
+            //                }
+            //             },
+            //            new Student()
+            //            {
+            //                FirstName = "Geralt",
+            //                LastName = "of Rivia",
+            //                BirthDay = new DateTime(1999,6,16),
+            //                StudentCard = new StudentCard()
+            //                {
+            //                    Series = "AB",Number =123444
+            //                }
+            //             },
+            //            new Student()
+            //            {
+            //                FirstName = "Microft",
+            //                LastName = "Holmes",
+            //                BirthDay = new DateTime(2002,6,16),
+            //                StudentCard = new StudentCard()
+            //                {
+            //                    Series = "AB",Number =123444
+            //                }
+            //             }
+
+            //        };
+
+            //XmlSerializer xml = new XmlSerializer(typeof(Student));
+            //using (Stream stream = File.Create("student.xml"))
+            //{
+            //    xml.Serialize(stream, student);
+            //}
+            //student = null;
+            //using (Stream stream = File.OpenRead("student.xml"))
+            //{
+            //   student =  (Student)xml.Deserialize(stream);
+            //}
+            //using (Stream stream = File.Create("student.xml"))
+            //{
+            //    foreach (var item in students)
+            //    {
+            //        xml.Serialize(stream, item);
+            //    }
+               
+            //}
+            //using (Stream stream = File.OpenRead("student.xml"))
+            //{
+            //    students = (List<Student>)xml.Deserialize(stream);
+            //}
+            //foreach (var item in students)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //using (Stream stream  =File.Create("student.bin"))
+            //{
+            //    foreach (var item in students)
+            //    {
+            //        binaryFormatter.Serialize(stream, item);
+            //    }
+            //}
 
 
             //foreach (var item in typeof(Student).GetCustomAttributes())
@@ -352,66 +471,7 @@ namespace ClassWork
 
 
 
-            List<Student> students = new List<Student>()
-            {
-                        new Student()
-                        {
-                            FirstName = "Olga",
-                            LastName = "Petrova",
-                            Birthday = new DateTime(2005,5,14),
-                            StudentCard = new StudentCard()
-                            {
-                                Series = "AC",Number =123456
-                            }
-                         },
-                        new Student()
-                        {
-                            FirstName = "Natasha",
-                            LastName = "Romanoff",
-                            Birthday = new DateTime(2005,7,2),
-                            StudentCard = new StudentCard()
-                            {
-                                Series = "AB",Number =123466
-                            }
-                         },
-                        new Student()
-                        {
-                            FirstName = "Petro",
-                            LastName = "Oleksiiv",
-                            Birthday = new DateTime(1995,4,25),
-                            StudentCard = new StudentCard()
-                            {
-                                Series = "AC",Number =123478
-                            }
-                         },
-                        new Student()
-                        {
-                            FirstName = "Geralt",
-                            LastName = "of Rivia",
-                            Birthday = new DateTime(1999,6,16),
-                            StudentCard = new StudentCard()
-                            {
-                                Series = "AB",Number =123444
-                            }
-                         },
-                        new Student()
-                        {
-                            FirstName = "Microft",
-                            LastName = "Holmes",
-                            Birthday = new DateTime(2002,6,16),
-                            StudentCard = new StudentCard()
-                            {
-                                Series = "AB",Number =123444
-                            }
-                         }
 
-                    };
-
-
-            foreach (var item in students)
-            {
-                Console.WriteLine(isValidStudent(item));
-            }
 
 
 
