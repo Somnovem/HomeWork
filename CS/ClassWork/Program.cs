@@ -13,6 +13,8 @@ using System.Reflection;
 using PV111_CSharp;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
+using System.Xml;
+using System.Globalization;
 
 namespace ClassWork
 {
@@ -106,47 +108,142 @@ namespace ClassWork
 
 
 
-        static bool isValidStudent(Student s)
+        //static bool isValidStudent(Student s)
+        //{
+        //    foreach (var item in typeof(Student).GetCustomAttributes())
+        //    {
+        //        if (item is AgeValidationAttribute)
+        //        {
+        //            return (DateTime.Now - s.BirthDay).TotalDays/365.25 > (item as AgeValidationAttribute).Age;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+        static void printNode(XmlNode node)
         {
-            foreach (var item in typeof(Student).GetCustomAttributes())
+            Console.WriteLine($"Type = {node.NodeType},".PadRight(20)+ $"Name = {node.Name},".PadRight(20) +$"Value = {node.Value}");
+            if (node.Attributes != null)
             {
-                if (item is AgeValidationAttribute)
+                foreach (XmlNode item in node.Attributes)
                 {
-                    return (DateTime.Now - s.BirthDay).TotalDays/365.25 > (item as AgeValidationAttribute).Age;
+                    Console.WriteLine($"Type = {item.NodeType},".PadRight(20) + $"Name = {item.Name},".PadRight(20) + $"Value = {item.Value}");
                 }
             }
-            return false;
+            if (node.HasChildNodes)
+            {
+                foreach (XmlNode item in node.ChildNodes)
+                {
+                    printNode(item);
+                }
+            }
         }
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.InputEncoding = System.Text.Encoding.Unicode;
             Console.Title = "Console";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
+            XmlDocument xml = new XmlDocument();
+            xml.Load("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange");
+            printNode(xml);
 
 
 
-            Student student = new Student()
-            {
-                FirstName = "Olga",
-                LastName = "Petrova",
-                BirthDay = new DateTime(2005, 5, 14),
-                StudentCard = new StudentCard()
-                {
-                    Series = "AC",
-                    Number = 123456
-                }
-            };
 
-            Point point = new Point() { X = 10, Y = 10 };
-            XmlSerializer xmlp = new XmlSerializer(typeof(Point));
-            using (Stream stream = File.Create("Point.xml"))
-            {
-                xmlp.Serialize(stream, point);
-            }
+            //printNode(xml.DocumentElement);
+            //xml.AppendChild(xml.CreateXmlDeclaration("1.0", "utf-8", "yes"));
+            ////XmlNode root = xml.DocumentElement;
+            ////xml.InsertBefore(xmlDeclaration, root);
+            ////root.RemoveChild(root.LastChild);
+
+            //XmlNode root = xml.CreateElement("Computers");
+            //xml.AppendChild(root);
+            //XmlNode comp = xml.CreateElement("Computer");
+
+            //XmlAttribute attr = xml.CreateAttribute("Type");
+            //attr.Value = "Office";
+            //comp.Attributes.Append(attr);
+
+            //XmlNode comp1 = xml.CreateElement("Motherboard");
+            //XmlNode comp2 = xml.CreateElement("Processor");
+            //XmlNode comp3 = xml.CreateElement("RAM");
+            //XmlNode comp4 = xml.CreateElement("HDD");
+            //XmlNode comp5 = xml.CreateElement("GraphicsCard");
+
+            //XmlNode text1 = xml.CreateTextNode("Gigabyte");
+            //XmlNode text2 = xml.CreateTextNode("IntelCoreI11");
+            //XmlNode text3 = xml.CreateTextNode("256GB");
+            //XmlNode text4 = xml.CreateTextNode("500Gb");
+            //XmlNode text5 = xml.CreateTextNode("Radeon");
+
+            //comp1.AppendChild(text1);
+            //comp2.AppendChild(text2);
+            //comp3.AppendChild(text3);
+            //comp4.AppendChild(text4);
+            //comp5.AppendChild(text5);
+
+            //comp.AppendChild(comp1);
+            //comp.AppendChild(comp2);
+            //comp.AppendChild(comp3);
+            //comp.AppendChild(comp4);
+            //comp.AppendChild(comp5);
+
+            //root.AppendChild(comp);
+            //xml.Save("Computerssss.xml");
+
+            //XmlTextWriter xmlTextWriter = new XmlTextWriter("Computers.xml",Encoding.Unicode);
+            //xmlTextWriter.Formatting = Formatting.Indented;
+            //xmlTextWriter.WriteStartDocument();
+            //xmlTextWriter.WriteStartElement("Computers");
+
+            //xmlTextWriter.WriteStartElement("Computer");
+            //xmlTextWriter.WriteAttributeString("Type", "Home");
+            //xmlTextWriter.WriteElementString("Motherboard", "MSI");
+            //xmlTextWriter.WriteElementString("Processor", "Intel");
+            //xmlTextWriter.WriteElementString("RAM", "DDR4 16Gb");
+            //xmlTextWriter.WriteElementString("HDD", "4TB");
+            //xmlTextWriter.WriteElementString("Graphics card", "GEFORCE RTX 8900");
+            //xmlTextWriter.WriteEndElement();
+
+            //xmlTextWriter.WriteStartElement("Computer");
+            //xmlTextWriter.WriteAttributeString("Type", "Gaming");
+            //xmlTextWriter.WriteElementString("Motherboard", "ASUS");
+            //xmlTextWriter.WriteElementString("Processor", "AMD");
+            //xmlTextWriter.WriteElementString("RAM", "DDR3 8Gb");
+            //xmlTextWriter.WriteElementString("HDD", "8TB");
+            //xmlTextWriter.WriteElementString("Graphics card", "MSI");
+            //xmlTextWriter.WriteEndElement();
+
+            //xmlTextWriter.WriteEndElement();
+            //xmlTextWriter.WriteEndDocument();
+            //xmlTextWriter.Close();
+
+
+
+            //Student student = new Student()
+            //{
+            //    FirstName = "Olga",
+            //    LastName = "Petrova",
+            //    BirthDay = new DateTime(2005, 5, 14),
+            //    StudentCard = new StudentCard()
+            //    {
+            //        Series = "AC",
+            //        Number = 123456
+            //    }
+            //};
+
+            //Point point = new Point() { X = 10, Y = 10 };
+            //XmlSerializer xmlp = new XmlSerializer(typeof(Point));
+            //using (Stream stream = File.Create("Point.xml"))
+            //{
+            //    xmlp.Serialize(stream, point);
+            //}
 
 
 
@@ -225,7 +322,7 @@ namespace ClassWork
             //    {
             //        xml.Serialize(stream, item);
             //    }
-               
+
             //}
             //using (Stream stream = File.OpenRead("student.xml"))
             //{

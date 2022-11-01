@@ -57,9 +57,9 @@ namespace smth
             return $"Salary per day: {SalaryPerDay}\nDays worked: {DaysWorked}\nPenalty per day: {PenaltyPerDay}\nDays skipped: {DaysSkipped}\nTotal earned: {TotalEarned}\nTotal penalty: {TotalPenalty}\nTotal to pay: {TotalToPay}";
         }
     }
-    static class Controller
+    static class PayBillController
     {
-        static void Main()
+        static void Programm()
         {
             PayBill bill = new PayBill() { SalaryPerDay = 400, DaysWorked = 28, PenaltyPerDay = 100, DaysSkipped = 2 };
             PayBill.SerializeTotals = true;
