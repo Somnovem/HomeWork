@@ -14,8 +14,10 @@ namespace smth
 {
     class Currency
     {
-        public static List<Currency> GetListFromXml(XmlDocument root)
+        public static List<Currency> GetListFromXml()
         {
+            XmlDocument root = new XmlDocument();
+            root.Load("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange");
             Stack<string> list = new Stack<string>();
             foreach (XmlNode item in root.DocumentElement.ChildNodes)
             {

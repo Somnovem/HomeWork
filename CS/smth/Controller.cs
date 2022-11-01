@@ -22,9 +22,7 @@ namespace smth
             Console.WindowWidth = 120;
             Console.SetBufferSize(1000, 1000);
             Console.Clear();
-            XmlDocument xml = new XmlDocument();
-            xml.Load("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange");
-            List<Currency> list = Currency.GetListFromXml(xml);
+            List<Currency> list = Currency.GetListFromXml();
             Currency.ShowCurrenciesRatesAbove20(list);
         }
     }
