@@ -1,23 +1,40 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Windows.Forms.VisualStyles;
-using System.Net.Http.Headers;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using PV111_CSharp;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Serialization;
-using System.Xml;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
+using System.ComponentModel.Design.Serialization;
 using System.Globalization;
-
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.Arm;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 namespace ClassWork
 {
+    class Company
+    {
+        public int Code { get; set; }
+        public string Name { get; set; }
+    }
+    class Job 
+    {
+        public int Id { get; set; }
+        public string Vacancy { get; set; }
+        public decimal Salary { get; set; }
+        public override string ToString()
+        {
+            return $"Id : {Id}\nVacancy : {Vacancy}\nSalary : {Salary}"; 
+        }
+    }
+
     internal class Program
     {
         //static T Max3<T>(T first, T second, T third) where T : IComparable
@@ -138,7 +155,17 @@ namespace ClassWork
                 }
             }
         }
-
+        static string GetTagValue(XmlTextReader xml, string tag)
+        {
+            while (xml.Read())
+            {
+                if (xml.NodeType == XmlNodeType.Element && xml.Name == tag)
+                {
+                    return xml.Value;
+                }
+            }
+            return null;
+        }
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
@@ -149,12 +176,34 @@ namespace ClassWork
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
-            XmlDocument xml = new XmlDocument();
-            xml.Load("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange");
-            printNode(xml);
+            string input = Console.ReadLine();
+            XmlTextReader xml = new XmlTextReader("dczvac20221031112152551.xml");
+            xml.WhitespaceHandling = WhitespaceHandling.None;
+            List<Job> jobs = new List<Job>();
+            while (xml.Read())
+            {
+                if (xml.NodeType == XmlNodeType.Element && xml.Name == "job" && xml.HasAttributes)
+                {
+                    Job job = new Job();
+                    xml.MoveToAttribute(0);
+                    job.Id = Convert.ToInt32(xml.GetAttribute("id"));
+                    job.Vacancy = new String(GetTagValue(xml, "name").Skip(8).SkipLast(2).ToArray());
+                    string region = (new String(GetTagValue(xml, "region").Skip(8).SkipLast(2).toArray()).Split(',')[0]);
+                    job.Salary =Convert.ToDecimal(new String(GetTagValue(xml, "salary").Skip(8).SkipLast(2).toArray()).Split('₴')[0]);
+                    if (region == "Миколаївська область")
+                    {
+                        jobs.Add(job);
+                    }
+                }
+            }
 
-
-
+            var holder = from j in jobs
+                         where j.Salary >= 20000
+                         select j;
+            foreach (Job item in holder)
+            {
+                Console.WriteLine(item);
+            }
 
             //printNode(xml.DocumentElement);
             //xml.AppendChild(xml.CreateXmlDeclaration("1.0", "utf-8", "yes"));
