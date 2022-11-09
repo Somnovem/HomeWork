@@ -15,12 +15,8 @@ namespace WF_CW
         int x, y;
         Label label1;
         List<Label> labels = new List<Label>();
-        Label counter = new Label();
         public Paint()
         {
-            counter.Size = new Size(120, 80);
-            counter.Location = new Point(200, 80);
-            this.Controls.Add(counter);
             InitializeComponent();
 
         }
@@ -45,8 +41,6 @@ namespace WF_CW
                 label1.MouseDoubleClick += Label1_MouseDoubleClick;
                 this.Controls.Add(label1);
                 labels.Add(label1);
-                x = e.Location.X;
-                y = e.Location.Y;
             }
         }
         private List<Label> GetLabelsUnderCursorSortedByTabIndex()
