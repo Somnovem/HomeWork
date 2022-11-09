@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MenuLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:MenuLibrary.ExtensionMethod.Xn(System.String,System.Int32)">
+            <summary>
+            repeats string n tymes
+            </summary>
+            <param name="data">string</param>
+            <param name="n">times to repeat</param>
+            <returns>repeated string</returns>
+        </member>
+        <member name="T:MenuLibrary.HorizontalAlignment">
+            <summary>
+            Горизонтальне вирівнювання елементів в межах рядка
+            </summary>
+        </member>
+        <member name="T:MenuLibrary.HPosition">
+            <summary>
+            Горизонтальна позиція елементів в межах екрану
+            </summary>
+        </member>
+        <member name="T:MenuLibrary.VPosition">
+            <summary>
+            Вертикальна позиція елементів в межах екрану
+            </summary>
+        </member>
+    </members>
+</doc>

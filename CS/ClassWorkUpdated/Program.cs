@@ -1,23 +1,13 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.Design;
-using System.ComponentModel.Design.Serialization;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.Arm;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-
 namespace ClassWork
 {
     class Company
@@ -25,11 +15,31 @@ namespace ClassWork
         public int Code { get; set; }
         public string Name { get; set; }
     }
+
+
+    /// <summary>
+    /// Class Vacancies
+    /// </summary>
     class Job
     {
         public int Id { get; set; }
         public string Vacancy { get; set; }
         public decimal Salary { get; set; }
+
+        /// <summary>
+        /// summs 2 ints
+        /// </summary>
+        /// <param name="a">first to sum</param>
+        /// <param name="b">second to sum</param>
+        /// <returns>sum</returns>
+        public int Foo(int a, int b) 
+        {
+            return a + b;
+        }
+        /// <summary>
+        /// Overriiten method to properly represent the object
+        /// </summary>
+        /// <returns>Strinw equivalent</returns>
         public override string ToString()
         {
             return $"Id : {Id}\nVacancy : {Vacancy}\nSalary : {Salary}";
@@ -38,6 +48,11 @@ namespace ClassWork
 
     internal class Program
     {
+
+        static int div(int a, int b) 
+        {
+            return a / b;
+        }
         //static T Max3<T>(T first, T second, T third) where T : IComparable
         //{
         //    T firstBigger;
@@ -169,6 +184,7 @@ namespace ClassWork
         }
         static void Main(string[] args)
         {
+            var logger = LogManager.GetCurrentClassLogger();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             Console.InputEncoding = System.Text.Encoding.Unicode;
             Console.Title = "Console";
@@ -177,36 +193,45 @@ namespace ClassWork
             Console.WindowHeight = 35;
             Console.WindowWidth = 120;
             Console.Clear();
-
-
-            string input = Console.ReadLine();
-            XmlTextReader xml = new XmlTextReader("dczvac20221031112152551.xml");
-            xml.WhitespaceHandling = WhitespaceHandling.None;
-            List<Job> jobs = new List<Job>();
-            while (xml.Read())
+            try
             {
-                if (xml.NodeType == XmlNodeType.Element && xml.Name == "job" && xml.HasAttributes)
-                {
-                    Job job = new Job();
-                    xml.MoveToAttribute(0);
-                    job.Id = Convert.ToInt32(xml.GetAttribute("id"));
-                    job.Vacancy = new String(GetTagValue(xml, "name").Skip(8).SkipLast(2).ToArray());
-                    string region = (new String(GetTagValue(xml, "region").Skip(8).SkipLast(2).ToArray()).Split(',')[0]);
-                    job.Salary = Convert.ToDecimal(new String(GetTagValue(xml, "salary").Skip(8).SkipLast(2).ToArray()).Split('₴')[0]);
-                    if (region == input)
-                    {
-                        jobs.Add(job);
-                    }
-                }
+                div(1, 0);
             }
-
-            var holder = from j in jobs
-                         where j.Salary >= 20000
-                         select j;
-            foreach (Job item in holder)
+            catch (Exception e)
             {
-                Console.WriteLine(item);
+
+                logger.Error(e,"Exception message");
             }
+            
+
+            //string input = Console.ReadLine();
+            //XmlTextReader xml = new XmlTextReader("dczvac20221031112152551.xml");
+            //xml.WhitespaceHandling = WhitespaceHandling.None;
+            //List<Job> jobs = new List<Job>();
+            //while (xml.Read())
+            //{
+            //    if (xml.NodeType == XmlNodeType.Element && xml.Name == "job" && xml.HasAttributes)
+            //    {
+            //        Job job = new Job();
+            //        xml.MoveToAttribute(0);
+            //        job.Id = Convert.ToInt32(xml.GetAttribute("id"));
+            //        job.Vacancy = new String(GetTagValue(xml, "name").Skip(8).SkipLast(2).ToArray());
+            //        string region = (new String(GetTagValue(xml, "region").Skip(8).SkipLast(2).ToArray()).Split(',')[0]);
+            //        job.Salary = Convert.ToDecimal(new String(GetTagValue(xml, "salary").Skip(8).SkipLast(2).ToArray()).Split('₴')[0]);
+            //        if (region == input)
+            //        {
+            //            jobs.Add(job);
+            //        }
+            //    }
+            //}
+
+            //var holder = from j in jobs
+            //             where j.Salary >= 20000
+            //             select j;
+            //foreach (Job item in holder)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             //printNode(xml.DocumentElement);
             //xml.AppendChild(xml.CreateXmlDeclaration("1.0", "utf-8", "yes"));
@@ -455,7 +480,7 @@ namespace ClassWork
             //    list.Add(item.Name);
             //}
 
-            //PV111_CSharp.ConsoleMenu.SelectVertical(PV111_CSharp.HPosition.Center, PV111_CSharp.VPosition.Center, PV111_CSharp.HorizontalAlignment.Center, list.ToArray());
+            //ConsoleMenu.SelectVertical(HPosition.Center,VPosition.Center, HorizontalAlignment.Center, Directory.GetLogicalDrives().ToArray());
             //Console.Clear();
             //var f = dir.GetFiles();
             //foreach (var item in f)
