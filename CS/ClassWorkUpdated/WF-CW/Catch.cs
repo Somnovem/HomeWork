@@ -44,13 +44,5 @@ namespace WF_CW
             Random random = new Random();
             label.Location = new Point(random.Next(0, this.Width - 100), random.Next(0, this.Height - 80));
         }
-
-        private void Main_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                MessageBox.Show("Left");
-            }
-        }
     }
 }
