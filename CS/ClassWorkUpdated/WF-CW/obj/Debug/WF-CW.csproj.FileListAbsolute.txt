@@ -12,3 +12,10 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Paint.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.ClassWork.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.BestOil.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\EPPlus.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\EPPlus.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF-CW.csproj.CopyComplete

@@ -53,6 +53,7 @@
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.MenuList.SuspendLayout();
             this.SuspendLayout();
@@ -199,9 +200,9 @@
             this.toolStripProgressBar1,
             this.toolStripButton3,
             this.toolStripDropDownButton1});
-            this.MenuList.Location = new System.Drawing.Point(965, 0);
+            this.MenuList.Location = new System.Drawing.Point(967, 0);
             this.MenuList.Name = "MenuList";
-            this.MenuList.Size = new System.Drawing.Size(103, 450);
+            this.MenuList.Size = new System.Drawing.Size(101, 450);
             this.MenuList.TabIndex = 12;
             this.MenuList.Text = "toolStrip1";
             // 
@@ -211,7 +212,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(100, 20);
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 20);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripButton2
@@ -220,29 +221,29 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(100, 20);
+            this.toolStripButton2.Size = new System.Drawing.Size(98, 20);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(100, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(98, 6);
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(98, 23);
+            this.toolStripTextBox1.Size = new System.Drawing.Size(96, 23);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(100, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(98, 6);
             // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(98, 15);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(96, 15);
             // 
             // toolStripButton3
             // 
@@ -250,7 +251,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(100, 20);
+            this.toolStripButton3.Size = new System.Drawing.Size(98, 20);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripDropDownButton1
@@ -259,14 +260,25 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(100, 20);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(98, 20);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(234, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 69);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Form 2";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ClassWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.MenuList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.progressBar1);
@@ -316,5 +328,6 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.Button button1;
     }
 }

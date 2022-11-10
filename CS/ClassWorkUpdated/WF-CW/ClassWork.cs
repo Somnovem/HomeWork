@@ -67,5 +67,11 @@ namespace WF_CW
             months.Add(textBox1.Text);
             textBox1.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.ShowDialog();
+        }
     }
 }

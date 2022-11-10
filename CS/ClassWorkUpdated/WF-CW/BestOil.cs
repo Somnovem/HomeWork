@@ -1,80 +1,176 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WF_CW
 {
+
     public partial class BestOil : Form
     {
-        List<string> names = new List<string> { "A-76", "A-92" , "A-95" , "Дизель" , "Газ","A-44", "A-80" };
-        List<double> prices = new List<double> { 6.40, 7.80, 9.00, 5.00, 3.46, 5.65, 7.15 };
+        List<Oil> oils = new List<Oil>();
+        List<ProductStats> stats = new List<ProductStats>();
+        async private void Save<T>(string path, List<T> list)
+        {
+            var file = new FileInfo(path);
+            if (file.Exists)
+            {
+                File.Delete(path);
+            }
+            var package = new ExcelPackage(file);
+            var ws = package.Workbook.Worksheets.Add("Main");
+            var range = ws.Cells["A1"].LoadFromCollection(list, true);
+            range.AutoFitColumns();
+            await package.SaveAsync();
+        }
+
+        private void LoadOil()
+        {
+            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Oils.xlsx")))
+            {
+                var myWorksheet = xlPackage.Workbook.Worksheets.First();
+                var totalRows = myWorksheet.Dimension.End.Row;
+                var totalColumns = myWorksheet.Dimension.End.Column;
+                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
+                {
+                    Oil oil = new Oil();
+                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
+                    oil.Name = row[0];
+                    oil.Price = Convert.ToDouble(row[1]);
+                    oils.Add(oil);
+                }
+            }
+        }
+        private void LoadProducts()
+        {
+            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Stats.xlsx")))
+            {
+                var myWorksheet = xlPackage.Workbook.Worksheets.First();
+                var totalRows = myWorksheet.Dimension.End.Row;
+                var totalColumns = myWorksheet.Dimension.End.Column;
+                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
+                {
+                    ProductStats stat = new ProductStats();
+                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
+                    stat.Name = row[0];
+                    stat.price = Convert.ToDouble(row[1]);
+                    stats.Add(stat);
+                }
+            }
+        }
         double totalIncome = 0;
         Timer timer = new Timer();
+        List<Product> products = new List<Product> ();
         public BestOil()
         {
+            LoadOil();
+            LoadProducts();
             InitializeComponent();
             #region Oil and Prices
-            comboBox1.DataSource = names;
+            comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             comboBox1.SelectedIndex = 0;
-            textBox1.Text = prices[0].ToString();
+            textBox1.Text = (from oil in oils select oil.Price).ToList()[0].ToString();
             Price1.Text = "0,00";
             Btn_Calculate.Click += Btn_Calculate_Click;
-            #endregion
-
-            #region Food
-            txtbox1.Text = "4,00";
-            txtbox2.Text = "5,40";
-            txtbox3.Text = "7,20";
-            txtbox4.Text = "4,40";
-            txtbox5.Text = "0";
-            txtbox6.Text = "0";
-            txtbox7.Text = "0";
-            txtbox8.Text = "0";
-            txtbox5.Enabled = false;
-            txtbox6.Enabled = false;
-            txtbox7.Enabled = false;
-            txtbox8.Enabled = false;
             Price2.Text = "0,00";
+            #endregion
+            #region Food
+
+            for (int i = 0; i < stats.Count; i++)
+            {
+                CheckBox check = new CheckBox();
+                check.Location = new Point(6, 12 + i * 28);
+                check.Text = stats[i].Name;
+                check.CheckedChanged += Check_CheckedChanged;
+
+                TextBox textPrice = new TextBox();
+                textPrice.Text = stats[i].price.ToString();
+                textPrice.Location = new Point(109,12 + i * 28);
+                textPrice.Size = new Size(70, 22);
+                textPrice.ReadOnly = true;
+
+
+
+                NumericUpDown numeric = new NumericUpDown();
+                numeric.Location = new Point(188, 12 + i * 28);
+                numeric.Size = new Size(70, 22);
+                numeric.Minimum = 0;
+                numeric.Maximum = 1000;
+                numeric.Enabled = false;
+                numeric.ValueChanged += Numeric_ValueChanged;
+                products.Add(new Product
+                { 
+                  Stats = new ProductStats
+                  {
+                      Name = stats[i].Name,
+                      price = stats[i].price
+                  },
+                  CheckBox_Enable = check,
+                  TextBox_Price = textPrice,
+                  Amount = numeric
+                });
+                panel1.Controls.Add(check);
+                panel1.Controls.Add(textPrice);
+                panel1.Controls.Add(numeric);
+            }
+            timer.Tick += Timer_Tick;
+            timer.Interval = 10000;
             #endregion
 
             #region Payment for oil
             Quantity.CheckedChanged += Quantity_CheckedChanged;
+            Quantity.Checked = true;
             OilSum.CheckedChanged += OilSum_CheckedChanged;
-            QuantityText.Enabled = false;
-            SumText.Enabled = false;
             #endregion
-
-            #region Quantity of food
-            checkBox1.CheckedChanged += CheckBox1_CheckedChanged;
-            checkBox2.CheckedChanged += CheckBox2_CheckedChanged;
-            checkBox3.CheckedChanged += CheckBox3_CheckedChanged;
-            checkBox4.CheckedChanged += CheckBox4_CheckedChanged;
-            txtbox5.TextChanged += Txt_TextChanged;
-            txtbox6.TextChanged += Txt_TextChanged;
-            txtbox7.TextChanged += Txt_TextChanged;
-            txtbox8.TextChanged += Txt_TextChanged;
-            #endregion
-
             #region Style
             textBox1.KeyPress += (sender, e) => e.Handled = true;
-            txtbox1.KeyPress += (sender, e) => e.Handled = true;
-            txtbox2.KeyPress += (sender, e) => e.Handled = true;
-            txtbox3.KeyPress += (sender, e) => e.Handled = true;
-            txtbox4.KeyPress += (sender, e) => e.Handled = true;
             Picture.ImageLocation = "scrudge.jpg";
             this.FormClosing += BestOil_FormClosing;
             #endregion
         }
 
+        private void Numeric_ValueChanged(object sender, EventArgs e)
+        {
+            double res = 0;
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].CheckBox_Enable.Checked)
+                {
+                    res += (double)products[i].Amount.Value * products[i].Stats.price;
+                }
+                
+            }
+            Price2.Text = String.Format("{0:0.00}", res);
+        }
+
+        private void Check_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = sender as CheckBox;
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].CheckBox_Enable == check)
+                {
+                    products[i].Amount.Enabled = check.Enabled;
+                    Numeric_ValueChanged(sender, e);
+                    break;
+                }
+            }
+        }
+
         private void BestOil_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Save("Oils.xslx",oils);
+            Save("Stats.xslx", stats);
             MessageBox.Show($"Tolal income for the day: {totalIncome} грн", "BestOil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -93,8 +189,6 @@ namespace WF_CW
             label9.Text = String.Format("{0:0.00}",res);
             if (!timer.Enabled)
             {
-                timer.Interval = 10000;
-                timer.Tick += Timer_Tick;
                 timer.Start();
             }
 
@@ -105,29 +199,34 @@ namespace WF_CW
             DialogResult d = MessageBox.Show("Do you want to clear the form?", "BestOil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (d == DialogResult.Yes)
             {
-                timer.Stop();
+                timer = null;
                 comboBox1.SelectedIndex = 0;
                 Quantity.Checked = false;
                 OilSum.Checked = false;
                 QuantityText.Text = "";
                 SumText.Text = "";
                 Price1.Text = "0,00";
-                Price2.Text = "0,00";
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                txtbox5.Text = "0";
-                txtbox6.Text = "0";
-                txtbox7.Text = "0";
-                txtbox8.Text = "0";
+                foreach (var item in products)
+                {
+                    item.Amount.Value = 0;
+                    item.Amount.Enabled = false;
+                    item.CheckBox_Enable.Checked = false;
+                }
+                //checkBox1.Checked = false;
+                //checkBox2.Checked = false;
+                //checkBox3.Checked = false;
+                //checkBox4.Checked = false;
+                //txtbox5.Text = "0";
+                //txtbox6.Text = "0";
+                //txtbox7.Text = "0";
+                //txtbox8.Text = "0";
                 label9.Text = "";
             }
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = prices[comboBox1.SelectedIndex].ToString();
+            textBox1.Text = (from oil in oils select oil.Price).ToList()[comboBox1.SelectedIndex].ToString();
             if (Quantity.Checked)
             {
                 var temp = QuantityText.Text;
@@ -163,89 +262,6 @@ namespace WF_CW
                 SumText.Enabled = false;
             }
         }
-
-        private void Txt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32((sender as TextBox).Text) < 0)
-                {
-                    (sender as TextBox).Text = "0";
-                }
-            }
-            catch (Exception)
-            {
-                (sender as TextBox).Text = "";
-                return;
-            }
-            double res = 0;
-            if (checkBox1.Checked)
-            {
-                res += Convert.ToInt32(txtbox5.Text) * Convert.ToDouble(txtbox1.Text);
-            }
-            if (checkBox2.Checked)
-            {
-                res += Convert.ToInt32(txtbox6.Text) * Convert.ToDouble(txtbox2.Text);
-            }
-            if (checkBox3.Checked)
-            {
-                res += Convert.ToInt32(txtbox7.Text) * Convert.ToDouble(txtbox3.Text);
-            }
-            if (checkBox4.Checked)
-            {
-                res += Convert.ToInt32(txtbox8.Text) * Convert.ToDouble(txtbox4.Text);
-            }
-            Price2.Text = String.Format("{0:0.00}",res);
-        }
-
-        private void CheckBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox4.Checked)
-            {
-                txtbox8.Enabled = true;
-            }
-            else
-            {
-                txtbox8.Enabled = false;
-            }
-        }
-
-        private void CheckBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked)
-            {
-                txtbox7.Enabled = true;
-            }
-            else
-            {
-                txtbox7.Enabled = false;
-            }
-        }
-
-        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox2.Checked)
-            {
-                txtbox6.Enabled = true;
-            }
-            else
-            {
-                txtbox6.Enabled = false;
-            }
-        }
-
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                txtbox5.Enabled = true;
-            }
-            else
-            {
-                txtbox5.Enabled = false;
-            }
-        }
-
         private void SumText_TextChanged(object sender, EventArgs e)
         {
             if (SumText.Text == "")
@@ -288,5 +304,24 @@ namespace WF_CW
             }
             Price1.Text = String.Format("{0:0.00}", Convert.ToDouble(QuantityText.Text) * Convert.ToDouble(textBox1.Text));
         }
+    }
+
+    class ProductStats
+    {
+        public string Name { get; set; }
+        public double price { get; set; }
+
+    }
+    class Product
+    {
+        public ProductStats Stats { get; set; }
+        public CheckBox CheckBox_Enable { get; set; }
+        public TextBox TextBox_Price { get; set; }
+        public NumericUpDown Amount { get; set; }
+    }
+    class Oil
+    {
+        public string Name { get; set; }
+        public double Price { get; set; }
     }
 }
