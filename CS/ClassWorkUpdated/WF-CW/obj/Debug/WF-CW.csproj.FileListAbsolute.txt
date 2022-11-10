@@ -11,3 +11,4 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF-
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Main.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Paint.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.ClassWork.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.BestOil.resources
