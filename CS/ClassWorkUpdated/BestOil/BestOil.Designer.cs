@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.Cafe = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FoodPrice = new System.Windows.Forms.GroupBox();
@@ -36,6 +40,10 @@
             this.Price2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Station = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -56,8 +64,10 @@
             this.Btn_Calculate = new System.Windows.Forms.Button();
             this.Picture = new System.Windows.Forms.PictureBox();
             this.Cafe.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.FoodPrice.SuspendLayout();
             this.Station.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.PriceOptions.SuspendLayout();
             this.FoodPrice2.SuspendLayout();
             this.FinalPrice.SuspendLayout();
@@ -66,6 +76,7 @@
             // 
             // Cafe
             // 
+            this.Cafe.Controls.Add(this.panel2);
             this.Cafe.Controls.Add(this.label8);
             this.Cafe.Controls.Add(this.panel1);
             this.Cafe.Controls.Add(this.FoodPrice);
@@ -81,11 +92,58 @@
             this.Cafe.TabStop = false;
             this.Cafe.Text = "Міні-Кафе";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Location = new System.Drawing.Point(197, 237);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(129, 36);
+            this.panel2.TabIndex = 20;
+            this.panel2.Visible = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(10, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(34, 28);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "-";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.Location = new System.Drawing.Point(50, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(34, 28);
+            this.btnEdit.TabIndex = 18;
+            this.btnEdit.Text = "*";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Location = new System.Drawing.Point(90, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(34, 28);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "+";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(229, 55);
+            this.label8.Location = new System.Drawing.Point(229, 20);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 15);
@@ -95,7 +153,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(8, 76);
+            this.panel1.Location = new System.Drawing.Point(8, 41);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(374, 190);
@@ -140,7 +198,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(156, 55);
+            this.label7.Location = new System.Drawing.Point(156, 20);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 15);
@@ -149,6 +207,7 @@
             // 
             // Station
             // 
+            this.Station.Controls.Add(this.panel3);
             this.Station.Controls.Add(this.label4);
             this.Station.Controls.Add(this.label3);
             this.Station.Controls.Add(this.comboBox1);
@@ -170,6 +229,53 @@
             this.Station.TabStop = false;
             this.Station.Tag = "Кількість";
             this.Station.Text = "Автозаправка";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = new System.Drawing.Point(156, 237);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(129, 36);
+            this.panel3.TabIndex = 21;
+            this.panel3.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(10, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 28);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "-";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(50, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 28);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "*";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(90, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 28);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "+";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -400,15 +506,17 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximumSize = new System.Drawing.Size(814, 712);
-            this.MinimumSize = new System.Drawing.Size(814, 712);
+            this.MinimumSize = new System.Drawing.Size(814, 450);
             this.Name = "BestOil";
             this.Text = "BestOil";
             this.Cafe.ResumeLayout(false);
             this.Cafe.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.FoodPrice.ResumeLayout(false);
             this.FoodPrice.PerformLayout();
             this.Station.ResumeLayout(false);
             this.Station.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.PriceOptions.ResumeLayout(false);
             this.PriceOptions.PerformLayout();
             this.FoodPrice2.ResumeLayout(false);
@@ -449,5 +557,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
+        private Panel panel2;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Button btnAdd;
+        private Panel panel3;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }

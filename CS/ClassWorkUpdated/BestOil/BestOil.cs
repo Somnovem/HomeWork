@@ -1,4 +1,5 @@
 using OfficeOpenXml;
+using OfficeOpenXml.ConditionalFormatting;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -18,9 +19,9 @@ namespace BestOilProgram
 
     public partial class BestOil : Form
     {
-        List<Oil> oils = new List<Oil>();
-        List<ProductStats> stats = new List<ProductStats>();
-        async private void Save<T>(string path, List<T> list)
+        BindingList<Oil> oils = new BindingList<Oil>();
+        BindingList<ProductStats> stats = new BindingList<ProductStats>();
+        async private void Save<T>(string path, BindingList<T> list)
         {
             var file = new FileInfo(path);
             if (file.Exists)
@@ -33,61 +34,13 @@ namespace BestOilProgram
             range.AutoFitColumns();
             await package.SaveAsync();
         }
-
-        private void LoadOil()
+        private void ShowProducts()
         {
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Oils.xlsx")))
+            panel1.Controls.Clear();
+            foreach (var item in products) 
             {
-                var myWorksheet = xlPackage.Workbook.Worksheets.First();
-                var totalRows = myWorksheet.Dimension.End.Row;
-                var totalColumns = myWorksheet.Dimension.End.Column;
-                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
-                {
-                    Oil oil = new Oil();
-                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
-                    oil.Name = row[0];
-                    oil.Price = Convert.ToDouble(row[1]);
-                    oils.Add(oil);
-                }
+                item.CheckBox_Enable.Checked = false;
             }
-        }
-        private void LoadProducts()
-        {
-            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Stats.xlsx")))
-            {
-                var myWorksheet = xlPackage.Workbook.Worksheets.First();
-                var totalRows = myWorksheet.Dimension.End.Row;
-                var totalColumns = myWorksheet.Dimension.End.Column;
-                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
-                {
-                    ProductStats stat = new ProductStats();
-                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
-                    stat.Name = row[0];
-                    stat.price = Convert.ToDouble(row[1]);
-                    stats.Add(stat);
-                }
-            }
-        }
-        double totalIncome = 0;
-        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        List<Product> products = new List<Product>();
-        public BestOil()
-        {
-            LoadOil();
-            LoadProducts();
-            InitializeComponent();
-            #region Oil and Prices
-            comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
-            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
-            comboBox1.SelectedIndex = 0;
-            textBox1.Text = (from oil in oils select oil.Price).ToList()[0].ToString();
-            Price1.Text = "0,00";
-            Btn_Calculate.Click += Btn_Calculate_Click;
-            Price2.Text = "0,00";
-            #endregion
-            #region Food
-
             for (int i = 0; i < stats.Count; i++)
             {
                 CheckBox check = new CheckBox();
@@ -125,10 +78,66 @@ namespace BestOilProgram
                 panel1.Controls.Add(textPrice);
                 panel1.Controls.Add(numeric);
             }
+        }
+        private void LoadOil()
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Oils.xlsx")))
+            {
+                var myWorksheet = xlPackage.Workbook.Worksheets.First();
+                var totalRows = myWorksheet.Dimension.End.Row;
+                var totalColumns = myWorksheet.Dimension.End.Column;
+                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
+                {
+                    Oil oil = new Oil();
+                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
+                    oil.Name = row[0];
+                    oil.Price = Convert.ToDouble(row[1]);
+                    oils.Add(oil);
+                }
+            }
+        }
+        private void LoadProducts()
+        {
+            using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Stats.xlsx")))
+            {
+                var myWorksheet = xlPackage.Workbook.Worksheets.First();
+                var totalRows = myWorksheet.Dimension.End.Row;
+                var totalColumns = myWorksheet.Dimension.End.Column;
+                for (int rowNum = 2; rowNum <= totalRows; rowNum++) //select starting row here
+                {
+                    ProductStats stat = new ProductStats();
+                    var row = myWorksheet.Cells[rowNum, 1, rowNum, totalColumns].Select(c => c.Value == null ? string.Empty : c.Value.ToString()).ToList();
+                    stat.Name = row[0];
+                    stat.price = Convert.ToDouble(row[1]);
+                    stats.Add(stat);
+                }
+            }
+        }
+        double totalIncome = 0;
+        private  System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private  BindingList<Product> products = new BindingList<Product>();
+        private bool isAdmin;
+        public BestOil(bool admin)
+        {
+            LoadOil();
+            LoadProducts();
+            InitializeComponent();
+            isAdmin = admin;
+            #region Oil and Prices
+            comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            comboBox1.SelectedIndex = 0;
+            textBox1.Text = (from oil in oils select oil.Price).ToList()[0].ToString();
+            Price1.Text = "0,00";
+            Btn_Calculate.Click += Btn_Calculate_Click;
+            Price2.Text = "0,00";
+            #endregion
+            #region Food
+            ShowProducts();
             timer.Tick += Timer_Tick;
             timer.Interval = 10000;
             #endregion
-
             #region Payment for oil
             Quantity.CheckedChanged += Quantity_CheckedChanged;
             Quantity.Checked = true;
@@ -139,6 +148,22 @@ namespace BestOilProgram
             Picture.ImageLocation = "scrudge.jpg";
             this.FormClosing += BestOil_FormClosing;
             #endregion
+            if (admin)
+            {
+                PriceOptions.Visible = false;
+                FoodPrice.Visible = false;
+                FoodPrice2.Visible = false;
+                QuantityText.Visible = false;
+                SumText.Visible = false;
+                label1.Visible = false;
+                label2.Visible = false;
+                FinalPrice.Visible = false;
+                Station.Size = new Size(300, 279);
+                Cafe.Size = new Size(340, 279);
+                this.Size = new Size(814, 450);
+                panel2.Visible = true;
+                panel3.Visible = true;
+            }
         }
 
         private void Numeric_ValueChanged(object sender, EventArgs e)
@@ -162,7 +187,7 @@ namespace BestOilProgram
             {
                 if (products[i].CheckBox_Enable == check)
                 {
-                    products[i].Amount.Enabled = check.Enabled;
+                    products[i].Amount.Enabled = check.Checked;
                     Numeric_ValueChanged(sender, e);
                     break;
                 }
@@ -173,7 +198,7 @@ namespace BestOilProgram
         {
             Save("Oils.xlsx", oils);
             Save("Stats.xlsx", stats);
-            MessageBox.Show($"Загальна виручка за день: {totalIncome} грн", "BestOil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(!isAdmin) MessageBox.Show($"Загальна виручка за день: {totalIncome} грн", "BestOil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Btn_Calculate_Click(object sender, EventArgs e)
@@ -228,6 +253,7 @@ namespace BestOilProgram
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.DataSource == null) return;
             textBox1.Text = (from oil in oils select oil.Price).ToList()[comboBox1.SelectedIndex].ToString();
             if (Quantity.Checked)
             {
@@ -305,6 +331,101 @@ namespace BestOilProgram
                 return;
             }
             Price1.Text = String.Format("{0:0.00}", Convert.ToDouble(QuantityText.Text) * Convert.ToDouble(textBox1.Text));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm();
+            form.Text = "Додавання пального";
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                oils.Add(new Oil() { Name = form.ProductName, Price = form.Price });
+            }
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int ind = comboBox1.SelectedIndex;
+            if(MessageBox.Show($"Видалити {oils.ElementAt(ind).Name}?","Warning",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                oils.RemoveAt(ind);
+            }
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
+            comboBox1.SelectedIndex = 0;
+           
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm();
+            form.Text = "Додавання продукту";
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                stats.Add(new ProductStats() { Name = form.ProductName, price = form.Price });
+            }
+            ShowProducts();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            List<Product> checkedProducts = (from pr in products where pr.CheckBox_Enable.Checked select pr).ToList();
+            if (checkedProducts.Count == 0)
+            {
+                MessageBox.Show("Select some products first");
+                return;
+            }
+            if (MessageBox.Show("Do you want to delete the selected item(s)?","Caution",MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+            foreach (var item in checkedProducts)
+            {
+                stats.RemoveAt(products.IndexOf(item));
+                products.Remove(item);
+
+            }
+            ShowProducts();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddEditForm form = new AddEditForm();
+            form.ProductName = comboBox1.SelectedItem as string;
+            form.Price = double.Parse(textBox1.Text);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                oils[comboBox1.SelectedIndex].Name = form.ProductName;
+                oils[comboBox1.SelectedIndex].Price = form.Price;
+                comboBox1.DataSource = null;
+                comboBox1.DataSource = (from oil in oils select oil.Name).ToList();
+                comboBox1.SelectedIndex = 0;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            List<Product> checkedProducts = (from pr in products where pr.CheckBox_Enable.Checked select pr).ToList();
+            if (checkedProducts.Count != 1)
+            {
+                MessageBox.Show("Can only edit one product at a time");
+                return;
+            }
+            AddEditForm form = new AddEditForm();
+            form.ProductName = checkedProducts[0].Stats.Name;
+            form.Price = checkedProducts[0].Stats.price;
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                int ind = products.IndexOf(checkedProducts[0]);
+                products[ind].Stats.Name = form.ProductName;
+                products[ind].Stats.price = form.Price;
+                stats[ind].Name = form.ProductName;
+                stats[ind].price = form.Price;
+            }
+            ShowProducts();
         }
     }
 
