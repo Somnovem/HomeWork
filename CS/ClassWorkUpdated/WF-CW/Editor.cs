@@ -9,27 +9,85 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WF_CW.Editor;
 
 namespace WF_CW
 {
     public partial class Editor : Form
     {
+        Student[] students =
+{
+            new Student()
+            {
+                FirstName = "Olga",
+                LastName = "Petrova",
+                BirthDay = new DateTime(2000, 10, 15),
+                StudentCard = new StudentCard()
+                {
+                    Series = "AB",
+                    Number = 123456
+                }
+            },
+            new Student()
+            {
+                FirstName = "Valery",
+                LastName = "Matveev",
+                BirthDay = new DateTime(2001, 11, 5),
+                StudentCard = new StudentCard()
+                {
+                    Series = "AB",
+                    Number = 123400
+                }
+            },
+            new Student()
+            {
+                FirstName = "Petro",
+                LastName = "Alekseev",
+                BirthDay = new DateTime(2000, 10, 14),
+                StudentCard = new StudentCard()
+                {
+                    Series = "AC",
+                    Number = 123489
+                }
+            },
+            new Student()
+            {
+                FirstName = "Irina",
+                LastName = "Fadeeva",
+                BirthDay = new DateTime(1999, 2, 24),
+                StudentCard = new StudentCard()
+                {
+                    Series = "AC",
+                    Number = 123455
+                }
+            }
+        };
         public Editor()
         {
             InitializeComponent();
             openToolStripMenuItem.Text = Resources.Resource1.Open;
             saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
             newToolStripMenuItem1.Click += NewToolStripMenuItem_Click;
-            var dirs = Directory.GetDirectories("../");
-            listView1.Columns.Add("Name");
-            listView1.Columns.Add("Creation time");
-            listView1.Columns.Add("Accessability");
-            listView1.Columns.Add("Size");
-            foreach (var dir in dirs)
+            listView1.Columns.Add("FirstName");
+            listView1.Columns.Add("LastName");
+            listView1.Columns.Add("Date");
+            listView1.Columns[2].Width = 100;
+            listView1.Columns.Add("Series");
+            listView1.Columns.Add("Number");
+            listView1.SmallImageList = imageList1;
+            for (int i = 0; i < listView1.Columns.Count; i++)
             {
-                listView1.Items.Add(dir);
-
+                listView1.Columns[i].TextAlign = HorizontalAlignment.Center;
             }
+            for (int i = 0; i < students.Length; i++)
+            {
+                listView1.Items.Add(students[i].FirstName);
+                listView1.Items[i].SubItems.Add(students[i].LastName);
+                listView1.Items[i].SubItems.Add(students[i].BirthDay.ToShortDateString());
+                listView1.Items[i].SubItems.Add(students[i].StudentCard.Series);
+                listView1.Items[i].SubItems.Add(students[i].StudentCard.Number.ToString());
+            }
+            listView1.View = View.Details;
 
         }
 
@@ -136,5 +194,189 @@ namespace WF_CW
         {
             treeView1.Nodes.Remove(treeView1.SelectedNode);
         }
+
+        [Serializable]
+        public class StudentCard : IComparable, ICloneable
+        {
+
+            public string Series { get; set; }
+            public int Number { get; set; }
+
+            public object Clone()
+            {
+                return this.MemberwiseClone();
+            }
+
+            public int CompareTo(object obj)
+            {
+                StudentCard st1 = obj as StudentCard;
+                if (Series == st1.Series)
+                {
+                    return Number.CompareTo(st1.Number);
+                }
+                else
+                {
+                    return Series.CompareTo(st1.Series);
+                }
+                throw new NotImplementedException();
+            }
+
+            public override string ToString()
+            {
+                return $"{Series} #{Number}";
+            }
+        }
+
+        class GroupName
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+        }
+
+        public class Student : IComparable<Student>, ICloneable
+        {
+            int id = 100;
+            public int GroupName { get; set; }
+            public string LastName { get; set; }
+            public string FirstName { get; set; }
+            public DateTime BirthDay { get; set; }
+            public StudentCard StudentCard { get; set; }
+
+
+
+
+            public override int GetHashCode()
+            {
+                return $"{StudentCard.Series} #{StudentCard.Number}".GetHashCode();
+            }
+
+            public int CompareTo(Student obj) => LastName.CompareTo(obj.LastName);
+
+
+            public override string ToString()
+            {
+                return $"{FirstName.PadRight(10)} {LastName.PadRight(10)} {BirthDay.ToShortDateString()} {StudentCard}";
+            }
+
+            public object Clone()
+            {
+                Student student = (Student)this.MemberwiseClone();
+                student.StudentCard = (StudentCard)this.StudentCard.Clone();
+                return student;
+            }
+
+            public void Exam(DateTime date)
+            {
+                Console.WriteLine($"Екзамен для {FirstName} {LastName} назначений на {date.ToShortDateString()}");
+            }
+
+        }
+
+        class ExamEventArgs : EventArgs
+        {
+            public DateTime Date { get; set; }
+        }
+
+        private int lastIndex = -1;
+        private int lastColumn = -1;
+        private bool spamming = false;
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            int ind = e.Column;
+            if (ind == lastIndex && spamming)
+            {
+                spamming = false;
+                listView1.Columns[ind].ImageIndex = 1;
+                switch (ind)
+                {
+
+                    case 0:
+                        students = (from st in students
+                                    orderby st.FirstName descending
+                                    select st).ToArray();
+                        break;
+                    case 1:
+                        students = (from st in students
+                                    orderby st.LastName descending
+                                    select st).ToArray();
+                        break;
+                    case 2:
+                        students = (from st in students
+                                    orderby st.BirthDay descending
+                                    select st).ToArray();
+                        break;
+                    case 3:
+                        students = (from st in students
+                                    orderby st.StudentCard.Series descending
+                                    select st).ToArray();
+                        break;
+                    case 4:
+                        students = (from st in students
+                                    orderby st.StudentCard.Number descending
+                                    select st).ToArray();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                spamming = true;
+                listView1.Columns[ind].ImageIndex = 0;
+                switch (ind)
+                {
+
+                    case 0:
+                        students = (from st in students
+                                    orderby st.FirstName
+                                    select st).ToArray();
+                        break;
+                    case 1:
+                        students = (from st in students
+                                    orderby st.LastName
+                                    select st).ToArray();
+                        break;
+                    case 2:
+                        students = (from st in students
+                                    orderby st.BirthDay
+                                    select st).ToArray();
+                        break;
+                    case 3:
+                        students = (from st in students
+                                    orderby st.StudentCard.Series
+                                    select st).ToArray();
+                        break;
+                    case 4:
+                        students = (from st in students
+                                    orderby st.StudentCard.Number
+                                    select st).ToArray();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            lastIndex = ind;
+            if (lastColumn == -1)
+            {
+                lastColumn = ind;
+            }
+            else if (lastColumn != ind)
+            {
+                listView1.Columns[lastColumn].ImageIndex = -1;
+                listView1.Columns[lastColumn].TextAlign = HorizontalAlignment.Center;
+                lastColumn = ind;
+            }
+            listView1.Items.Clear();
+            for (int i = 0; i < students.Length; i++)
+            {
+                listView1.Items.Add(students[i].FirstName);
+                listView1.Items[i].SubItems.Add(students[i].LastName);
+                listView1.Items[i].SubItems.Add(students[i].BirthDay.ToShortDateString());
+                listView1.Items[i].SubItems.Add(students[i].StudentCard.Series);
+                listView1.Items[i].SubItems.Add(students[i].StudentCard.Number.ToString());
+            }
+            listView1.Columns[ind].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
     }
 }
+
