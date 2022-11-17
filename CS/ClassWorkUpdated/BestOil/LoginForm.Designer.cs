@@ -34,11 +34,10 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(66, 21);
+            this.txtLogin.Location = new System.Drawing.Point(59, 39);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(218, 23);
             this.txtLogin.TabIndex = 0;
-            this.txtLogin.Text = "admin";
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Btn_Login
@@ -47,7 +46,7 @@
             this.Btn_Login.Name = "Btn_Login";
             this.Btn_Login.Size = new System.Drawing.Size(126, 25);
             this.Btn_Login.TabIndex = 1;
-            this.Btn_Login.Text = "Вхід";
+            this.Btn_Login.Text = "Log In";
             this.Btn_Login.UseVisualStyleBackColor = true;
             this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 

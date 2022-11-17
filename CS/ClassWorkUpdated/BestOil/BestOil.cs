@@ -13,14 +13,19 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Resources;
+using BestOil.Properties;
 
 namespace BestOilProgram
 {
 
     public partial class BestOil : Form
     {
+
         BindingList<Oil> oils = new BindingList<Oil>();
         BindingList<ProductStats> stats = new BindingList<ProductStats>();
+        private static string Language  = Settings.Default.Language;
         async private void Save<T>(string path, BindingList<T> list)
         {
             var file = new FileInfo(path);
@@ -97,6 +102,7 @@ namespace BestOilProgram
                 }
             }
         }
+        private string receiptsPath;
         private void LoadProducts()
         {
             using (ExcelPackage xlPackage = new ExcelPackage(new FileInfo(@"Stats.xlsx")))
@@ -122,6 +128,8 @@ namespace BestOilProgram
         {
             LoadOil();
             LoadProducts();
+            receiptsPath = "Receipts\\";
+            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(Language);
             InitializeComponent();
             isAdmin = admin;
             #region Oil and Prices
@@ -151,7 +159,7 @@ namespace BestOilProgram
             if (admin)
             {
                 PriceOptions.Visible = false;
-                FoodPrice.Visible = false;
+                FoodPrice1.Visible = false;
                 FoodPrice2.Visible = false;
                 QuantityText.Visible = false;
                 SumText.Visible = false;
@@ -163,6 +171,7 @@ namespace BestOilProgram
                 this.Size = new Size(814, 450);
                 panel2.Visible = true;
                 panel3.Visible = true;
+                chooseReceiptsLocationToolStripMenuItem.Visible = false;
             }
         }
 
@@ -198,7 +207,8 @@ namespace BestOilProgram
         {
             Save("Oils.xlsx", oils);
             Save("Stats.xlsx", stats);
-            if(!isAdmin) MessageBox.Show($"Загальна виручка за день: {totalIncome} грн", "BestOil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            timer.Stop();
+            if(!isAdmin && label9.Text != "0.00") MessageBox.Show($"Загальна виручка за день: {totalIncome} грн", "BestOil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Btn_Calculate_Click(object sender, EventArgs e)
@@ -218,6 +228,25 @@ namespace BestOilProgram
             {
                 timer.Start();
             }
+            Directory.CreateDirectory(receiptsPath);
+            using (FileStream stream =new FileStream(receiptsPath + DateTime.Now.ToString().Replace(':','.') +".txt",FileMode.Create,FileAccess.Write,FileShare.None))
+            {
+                using (StreamWriter sw = new StreamWriter(stream, Encoding.Default))
+                {
+                    if (QuantityText.Text != "") sw.WriteLine($"Taken {comboBox1.SelectedText} {QuantityText.Text} litres for {double.Parse(textBox1.Text) * double.Parse(QuantityText.Text)} hryvnyas");
+                    else sw.WriteLine($"Taken {comboBox1.SelectedText} {double.Parse(SumText.Text) / double.Parse(textBox1.Text)} litres for {SumText.Text} hryvnyas");
+                    List<Product> takenProductsList = (from pr in products where pr.CheckBox_Enable.Checked select pr).ToList();
+                    if (takenProductsList.Count != 0)
+                    {
+                        foreach (Product product in takenProductsList)
+                        {
+                            sw.WriteLine($"Taken {product.Amount.Value} {product.Stats.Name} for {(double)product.Amount.Value * double.Parse(product.TextBox_Price.Text)} hryvnyas");
+                        }
+                    }
+                    sw.WriteLine($"Total income: {label9.Text} hryvnyas");
+                    sw.Close();
+                }
+            }
 
         }
 
@@ -226,7 +255,7 @@ namespace BestOilProgram
             DialogResult d = MessageBox.Show("Хочете очистити форму?", "BestOil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (d == DialogResult.Yes)
             {
-                timer = null;
+                timer.Stop();
                 comboBox1.SelectedIndex = 0;
                 Quantity.Checked = false;
                 OilSum.Checked = false;
@@ -247,7 +276,7 @@ namespace BestOilProgram
                 //txtbox6.Text = "0";
                 //txtbox7.Text = "0";
                 //txtbox8.Text = "0";
-                label9.Text = "";
+                label9.Text = "0.00";
             }
         }
 
@@ -335,8 +364,7 @@ namespace BestOilProgram
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AddEditForm form = new AddEditForm();
-            form.Text = "Додавання пального";
+            AddEditForm form = new AddEditForm(Language);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 oils.Add(new Oil() { Name = form.ProductName, Price = form.Price });
@@ -361,8 +389,7 @@ namespace BestOilProgram
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddEditForm form = new AddEditForm();
-            form.Text = "Додавання продукту";
+            AddEditForm form = new AddEditForm(Language);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 stats.Add(new ProductStats() { Name = form.ProductName, price = form.Price });
@@ -393,7 +420,7 @@ namespace BestOilProgram
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddEditForm form = new AddEditForm();
+            AddEditForm form = new AddEditForm(Language);
             form.ProductName = comboBox1.SelectedItem as string;
             form.Price = double.Parse(textBox1.Text);
             if (form.ShowDialog() == DialogResult.OK)
@@ -414,7 +441,7 @@ namespace BestOilProgram
                 MessageBox.Show("Can only edit one product at a time");
                 return;
             }
-            AddEditForm form = new AddEditForm();
+            AddEditForm form = new AddEditForm(Language);
             form.ProductName = checkedProducts[0].Stats.Name;
             form.Price = checkedProducts[0].Stats.price;
             if (form.ShowDialog() == DialogResult.OK)
@@ -426,6 +453,61 @@ namespace BestOilProgram
                 stats[ind].price = form.Price;
             }
             ShowProducts();
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+        }
+
+        private void customToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void ukrainianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Language == "uk-UK")
+            {
+                return;
+            }
+            Language = "uk-UK";
+            Settings.Default.Language = Language;
+            Settings.Default.Save();
+                BestOil form = new BestOil(isAdmin);
+                form.Show();
+                this.Close();
+
+        }
+
+        private void englsihToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Language == "en-EN")
+            {
+                return;
+            }
+            Language = "en-EN";
+            Settings.Default.Language = Language;
+            Settings.Default.Save();
+            BestOil form = new BestOil(isAdmin);
+            form.Show();
+            this.Close();
+        }
+
+        private void chooseReceiptsLocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                receiptsPath = folderBrowserDialog1.SelectedPath + "\\";
+            }
         }
     }
 

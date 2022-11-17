@@ -12,6 +12,14 @@
         },
         "runtime": {
           "BestOil.dll": {}
+        },
+        "resources": {
+          "en/BestOil.resources.dll": {
+            "locale": "en"
+          },
+          "uk/BestOil.resources.dll": {
+            "locale": "uk"
+          }
         }
       },
       "EPPlus/6.1.0": {

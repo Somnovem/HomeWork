@@ -22,8 +22,10 @@ namespace BestOilProgram
             get {return double.Parse(textBox2.Text); }
             set { textBox2.Text = Convert.ToString(value); } 
         }
-        public AddEditForm()
+        public AddEditForm(string lang)
         {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(lang);
             InitializeComponent();
         }
 

@@ -21,3 +21,8 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\Mic
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF-CW.csproj.CopyComplete
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Form2.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Form3.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Editor.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Resources.Resource1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\en\WF-CW.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Editor.en.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\en\WF-CW.resources.dll

@@ -33,3 +33,12 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\n
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\ref\BestOil.dll
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.LoginForm.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.AddEditForm.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\bin\Debug\net6.0-windows\uk\BestOil.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.AddEditForm.uk.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\uk\BestOil.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\bin\Debug\net6.0-windows\en\BestOil.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.BestOil.en.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.BestOil.uk.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\en\BestOil.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\obj\Debug\net6.0-windows\BestOilProgram.AddEditForm.en.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\BestOil\bin\Debug\net6.0-windows\BestOil.dll.config
