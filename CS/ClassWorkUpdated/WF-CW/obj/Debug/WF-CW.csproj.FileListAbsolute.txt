@@ -26,3 +26,6 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\bin\Debug\en\WF-CW.resources.dll
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Editor.en.resources
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\en\WF-CW.resources.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.DragNDrop.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.Currency.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WF-CW\obj\Debug\WF_CW.GDL.resources

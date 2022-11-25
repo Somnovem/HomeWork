@@ -30,21 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Kaprian");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Gomon");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Zhmura");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("PV111", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Groups", new System.Windows.Forms.TreeNode[] {
-            treeNode12});
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Gololobov");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Teachers", new System.Windows.Forms.TreeNode[] {
-            treeNode14});
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Academy", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode15});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Kaprian");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Gomon");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Zhmura");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("PV111", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Groups", new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Gololobov");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Teachers", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Academy", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode7});
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Binary", 2);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Veth", 3);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Crest", 4);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("MN", 5);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -80,6 +84,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView2 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -315,24 +320,24 @@
             this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
             this.treeView1.Location = new System.Drawing.Point(405, 52);
             this.treeView1.Name = "treeView1";
-            treeNode9.Name = "Node3";
-            treeNode9.Text = "Kaprian";
-            treeNode10.Name = "Node4";
-            treeNode10.Text = "Gomon";
-            treeNode11.Name = "Node5";
-            treeNode11.Text = "Zhmura";
-            treeNode12.Name = "Node2";
-            treeNode12.Text = "PV111";
-            treeNode13.Name = "Node1";
-            treeNode13.Text = "Groups";
-            treeNode14.Name = "Node7";
-            treeNode14.Text = "Gololobov";
-            treeNode15.Name = "Node6";
-            treeNode15.Text = "Teachers";
-            treeNode16.Name = "Node0";
-            treeNode16.Text = "Academy";
+            treeNode1.Name = "Node3";
+            treeNode1.Text = "Kaprian";
+            treeNode2.Name = "Node4";
+            treeNode2.Text = "Gomon";
+            treeNode3.Name = "Node5";
+            treeNode3.Text = "Zhmura";
+            treeNode4.Name = "Node2";
+            treeNode4.Text = "PV111";
+            treeNode5.Name = "Node1";
+            treeNode5.Text = "Groups";
+            treeNode6.Name = "Node7";
+            treeNode6.Text = "Gololobov";
+            treeNode7.Name = "Node6";
+            treeNode7.Text = "Teachers";
+            treeNode8.Name = "Node0";
+            treeNode8.Text = "Academy";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode16});
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(256, 320);
             this.treeView1.TabIndex = 11;
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -362,12 +367,33 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "down.png");
             this.imageList1.Images.SetKeyName(1, "up.png");
+            this.imageList1.Images.SetKeyName(2, "int.jpg");
+            this.imageList1.Images.SetKeyName(3, "photo_2021-12-03_18-10-35.jpg");
+            this.imageList1.Images.SetKeyName(4, "photo_2022-06-08_19-33-17.jpg");
+            this.imageList1.Images.SetKeyName(5, "photo_2022-06-08_19-33-19.jpg");
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
+            this.listView2.LargeImageList = this.imageList1;
+            this.listView2.Location = new System.Drawing.Point(669, 389);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(425, 254);
+            this.listView2.TabIndex = 14;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Tile;
             // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 450);
+            this.ClientSize = new System.Drawing.Size(1107, 653);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.treeView1);
@@ -427,5 +453,6 @@
         private System.Windows.Forms.ToolStripMenuItem delToolStripMenuItem;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listView2;
     }
 }
