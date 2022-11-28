@@ -1,0 +1,17 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\bin\Debug\net6.0-windows\MVPTest.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\bin\Debug\net6.0-windows\MVPTest.deps.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\bin\Debug\net6.0-windows\MVPTest.runtimeconfig.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\bin\Debug\net6.0-windows\MVPTest.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\bin\Debug\net6.0-windows\MVPTest.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.Form1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.AssemblyInfoInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.AssemblyInfo.cs
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\refint\MVPTest.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\MVPTest.genruntimeconfig.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MVPTest\obj\Debug\net6.0-windows\ref\MVPTest.dll

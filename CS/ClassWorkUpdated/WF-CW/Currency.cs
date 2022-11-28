@@ -26,10 +26,10 @@ namespace WF_CW
                 names.Add(images[i].Substring(images[i].LastIndexOf("\\") + 1));
                 names[i] = names[i].Substring(0, names[i].LastIndexOf('.'));
             }
-            listView1.View = View.Tile;
+            listView1.View = View.LargeIcon;
             imageList1.ImageSize = new Size(32, 32);
             listView1.LargeImageList = imageList1;
-            listView2.View = View.Tile;
+            listView2.View = View.LargeIcon;
             listView2.LargeImageList = imageList1;
             int count = 0;
             for (int i = 0; i < names.Count; i++)
