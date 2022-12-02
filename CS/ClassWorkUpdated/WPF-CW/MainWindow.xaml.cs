@@ -25,5 +25,19 @@ namespace WPF_CW
         {
             InitializeComponent();
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            TextResult.FontSize = 0.04 * (int)(this.Width + this.Height);
+        }
+
+        private void Button_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ((Button)sender).FontSize = 0.015 * (int)(this.Width + this.Height);
+        }
+        private void ExtraButton_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            ((Button)sender).FontSize = 0.011 * (int)(this.Width + this.Height);
+        }
     }
 }
