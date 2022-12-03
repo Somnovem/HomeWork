@@ -33,5 +33,22 @@ namespace KeyboardTrainer
             DifficultyCounter.Text = newValue < 10 ? $"0{newValue}" : $"{newValue}";
             DifficultySlider.Value = newValue;
         }
+
+        private void ButtonStart_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonStart.IsEnabled = false;
+            ButtonStop.IsEnabled = true;
+        }
+
+        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonStart.IsEnabled = true;
+            ButtonStop.IsEnabled = false;
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show(e.Key.ToString());
+        }
     }
 }

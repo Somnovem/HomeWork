@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_CW"
         mc:Ignorable="d"
-        Title="Calculator" Width ="337" Height="509" MinWidth ="337" MinHeight ="509" SizeChanged="Window_SizeChanged">
+        Title="Calculator" Width ="337" Height="509" MinWidth ="337" MinHeight ="509" WindowStartupLocation="CenterScreen">
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -13,43 +16,56 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="32*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Name ="SidePanel" Grid.Column="1" Visibility="Collapsed" Grid.RowSpan="4">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Button Content="History" BorderThickness="0" Background="White" x:Name="buttonStats" Click="buttonStats_Click" Margin="0,0,20,0" FontStyle="Italic"/>
+                <Button Content="Memory" BorderThickness="0" Background="White" x:Name="buttonHistory" Click="buttonHistory_Click"/>
+            </StackPanel>
+            <StackPanel x:Name="itemList">
+                
+            </StackPanel>
+        </StackPanel>
         <UniformGrid Grid.Row="3" Columns="4">
-            <Button Margin="2" Content="%" SizeChanged="Button_SizeChanged" />
-            <Button Margin="2" Content="CE" SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="C"  SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="&lt;x|"  SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="⅟x"  SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="x²"   SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="√x"   SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="/"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="7"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="8"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="9"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="X"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="4"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="5"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="6"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="-"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="1"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="2"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="3"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="+"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="+/-"  SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="0"    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content=","    SizeChanged="Button_SizeChanged"/>
-            <Button Margin="2" Content="=" Background="LightBlue"  SizeChanged="Button_SizeChanged"/>
+            <Button Margin="2" Content="%" SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="CE" SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="C"  SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="&lt;x|"  SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="⅟x"  SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="x²"   SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="√x"   SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="/"    SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="7"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="8"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="9"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="X"    SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="4"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="5"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="6"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="-"    SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="1"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="2"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="3"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="+"    SizeChanged="Button_SizeChanged" BorderThickness="0" Style="{DynamicResource ButtonDimmer}"/>
+            <Button Margin="2" Content="+/-"  SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="0"    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content=","    SizeChanged="Button_SizeChanged" Style="{DynamicResource ButtonBrighter}" BorderThickness="0"/>
+            <Button Margin="2" Content="=" Background="DeepSkyBlue"  SizeChanged="Button_SizeChanged" BorderThickness="0"/>
         </UniformGrid>
         <UniformGrid Grid.Row="2" Rows="1">
-            <Button Content="MC"  Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
-            <Button Content="MR"  Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
-            <Button Content="M+"  Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
-            <Button Content="M-"  Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
-            <Button Content="MS"  Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
-            <Button Content="M^-" Margin="2" SizeChanged="ExtraButton_SizeChanged"/>
+            <Button Content="MC"  Margin="2" SizeChanged="ExtraButton_SizeChanged" IsEnabled="False" Style="{DynamicResource ExtraButton}"/>
+            <Button Content="MR"  Margin="2" SizeChanged="ExtraButton_SizeChanged" IsEnabled="False" Style="{DynamicResource ExtraButton}"/>
+            <Button Content="M+"  Margin="2" SizeChanged="ExtraButton_SizeChanged" Style="{DynamicResource ExtraButton}"/>
+            <Button Content="M-"  Margin="2" SizeChanged="ExtraButton_SizeChanged" Style="{DynamicResource ExtraButton}"/>
+            <Button Content="MS"  Margin="2" SizeChanged="ExtraButton_SizeChanged" Style="{DynamicResource ExtraButton}"/>
+            <Button Content="M^-" Margin="2" SizeChanged="ExtraButton_SizeChanged" IsEnabled="False" Style="{DynamicResource ExtraButton}"/>
         </UniformGrid>
         <TextBox Text="0" HorizontalAlignment="Right" Grid.Row="1" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="0" Name="TextResult"/>
         <Button Content="  Menu  " Grid.Row="0" HorizontalAlignment="Left" Background="White" BorderThickness="0"/>
-        <Label Content="Standart" HorizontalAlignment="Left" Grid.Row="0" FontSize ="15" Margin="51,0,0,1"/>
+        <Label Content="Standart" HorizontalAlignment="Left" Grid.Row="0" FontSize ="15" Margin="51,0,0,1" FontFamily="Bold"/>
         <Button Content="H" Grid.Row="0" HorizontalAlignment="Right" Width="30" Background="White" BorderThickness="0"/>
     </Grid>
 </Window>

@@ -19,3 +19,4 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WPF-CW\obj\Debug\ne
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WPF-CW\obj\Debug\net6.0-windows\WPF-CW.pdb
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WPF-CW\obj\Debug\net6.0-windows\WPF-CW.genruntimeconfig.cache
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WPF-CW\obj\Debug\net6.0-windows\ref\WPF-CW.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\WPF-CW\obj\Debug\net6.0-windows\App.baml

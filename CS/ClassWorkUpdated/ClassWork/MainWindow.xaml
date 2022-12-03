@@ -1,0 +1,26 @@
+﻿<Window x:Class="ClassWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" KeyDown="Window_KeyDown">
+    <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" MouseDown="StackPanel_MouseDown">
+            <Button Width="150" Height="80" MouseDown="StackPanel_MouseDown">
+                <Rectangle Width="100" Height="60" Fill="Red" MouseDown="StackPanel_MouseDown"/>
+            </Button>
+        </StackPanel>
+        <TextBlock Grid.Column="1" x:Name="txt1"/>
+        <RepeatButton Content="Repeater" FontSize="40" Click="RepeatButton_Click" Delay="1000" Interval="200"/>-->
+        <StackPanel Orientation="Vertical" MouseDown="StackPanel_MouseDown" Background="LawnGreen">
+            <TextBox Height="200" KeyDown="TextBox_KeyDown"/>
+            <TextBlock x:Name="txtBlock" Height="200"/>
+        </StackPanel>
+    </Grid>
+</Window>

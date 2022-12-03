@@ -28,16 +28,32 @@ namespace WPF_CW
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            TextResult.FontSize = 0.04 * (int)(this.Width + this.Height);
+            int newSize = (int)(this.Width + this.Height);
+            TextResult.FontSize = 0.04 * newSize;
+            SidePanel.Width = 0.2 * newSize;
+            SidePanel.Visibility = (Width > 600) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void Button_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             ((Button)sender).FontSize = 0.015 * (int)(this.Width + this.Height);
+            Window_SizeChanged(null, null);
         }
         private void ExtraButton_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             ((Button)sender).FontSize = 0.011 * (int)(this.Width + this.Height);
+        }
+
+        private void buttonStats_Click(object sender, RoutedEventArgs e)
+        {
+            buttonStats.FontStyle = FontStyles.Italic;
+            buttonHistory.FontStyle = FontStyles.Normal;
+        }
+
+        private void buttonHistory_Click(object sender, RoutedEventArgs e)
+        {
+            buttonStats.FontStyle = FontStyles.Normal;
+            buttonHistory.FontStyle = FontStyles.Italic;
         }
     }
 }
