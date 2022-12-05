@@ -19,4 +19,3 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\KeyboardTrainer\obj
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\KeyboardTrainer\obj\Debug\net6.0-windows\KeyboardTrainer.pdb
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\KeyboardTrainer\obj\Debug\net6.0-windows\KeyboardTrainer.genruntimeconfig.cache
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\KeyboardTrainer\obj\Debug\net6.0-windows\ref\KeyboardTrainer.dll
-C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\KeyboardTrainer\obj\Debug\net6.0-windows\App.baml
