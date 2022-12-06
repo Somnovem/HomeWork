@@ -33,6 +33,7 @@ namespace KeyboardTrainer
         char[] numbersUnderShift = ")!@#$%^&*(".ToCharArray();
         char[] sideSymbolsUnderShift = ":?~{|}\"_+".ToCharArray();
         char[] sideSymbolsWithoutShift = ";/`[\\]'-=".ToCharArray();
+        DateTime timeStart = new DateTime();
         public MainWindow()
         {
             InitializeComponent();
@@ -45,12 +46,11 @@ namespace KeyboardTrainer
             string res = "";
             Random rand = new Random();
             int allowedSymbols = (int)difficultySlider.Value;
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 58; i++)
             {
                 res += symbols[rand.Next(0, allowedSymbols)];
             }
-            int numberOfSpaces = res.Length / 7;
-            for (int i = 0; i < numberOfSpaces; i++)
+            for (int i = 0; i < 8; i++)
             {
                 res = res.Insert(rand.Next(0, res.Length), " ");
             }
@@ -503,6 +503,7 @@ namespace KeyboardTrainer
             textAnswerWrong.Text = "";
             isCaseSensative.IsEnabled = false;
             difficultySlider.IsEnabled = false;
+            timeStart = DateTime.Now;
             timer.Start();
         }
 
@@ -512,6 +513,8 @@ namespace KeyboardTrainer
             stopButton.IsEnabled = false;
             isCaseSensative.IsEnabled = true;
             difficultySlider.IsEnabled = true;
+            DateTime timeStop = DateTime.Now;
+            MessageBox.Show($"You finished in: {timeStop.Subtract(timeStart).ToString().Substring(0,8)}", "Congratulations", MessageBoxButton.OK, MessageBoxImage.Information);
             timer.Stop();
         }
     }
