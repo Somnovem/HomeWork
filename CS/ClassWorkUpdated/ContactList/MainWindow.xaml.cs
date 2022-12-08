@@ -24,8 +24,6 @@ namespace ContactList
     public partial class MainWindow : Window
     {
         BindingList<Contact> contacts = new BindingList<Contact>();
-        string numberPattern = "^[\\+][0-9]{9}$";
-
         private void RefreshList()
         {
             contactList.ItemsSource = null;
@@ -56,7 +54,7 @@ namespace ContactList
                 }
             }
         }
-        private void SaveContacs()
+        private void SaveContacts()
         {
             using (Stream stream = new FileStream("contacts.txt",FileMode.Create))
             {
@@ -113,7 +111,7 @@ namespace ContactList
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            SaveContacs();
+            SaveContacts();
         }
 
         private void textPhone_LostFocus(object sender, RoutedEventArgs e)
