@@ -23,21 +23,21 @@ namespace ContactList
     /// </summary>
     public partial class MainWindow : Window
     {
-        BindingList<Contact> contacts = new BindingList<Contact>();
-        private void RefreshList()
-        {
-            contactList.ItemsSource = null;
-            contactList.ItemsSource = contacts;
-        }
+        private ContactRepository contactRepository;
         public MainWindow()
         {
+            contactRepository = new ContactRepository();
             InitializeComponent();
-            LoadContacts();
-            contactList.ItemsSource = contacts;
             contactList.Background = null;
+            ObjectDataProvider provider = new ObjectDataProvider();
+            provider.ObjectInstance = contactRepository;
+            provider.MethodName = "GetContacts";
+            Binding binding = new Binding() { Source = provider };
+            contactList.SetBinding(ListBox.ItemsSourceProperty, binding);
         }
-        private void LoadContacts()
+        static public BindingList<Contact> LoadContacts()
         {
+            BindingList<Contact> res = new BindingList<Contact>();
             using (Stream stream = new FileStream("contacts.txt",FileMode.OpenOrCreate))
             {
                 using (StreamReader sr = new StreamReader(stream))
@@ -49,10 +49,11 @@ namespace ContactList
                         temp.Lastname = sr.ReadLine();
                         temp.Phone = sr.ReadLine();
                         temp.Tag = sr.ReadLine();
-                        contacts.Add(temp);
+                        res.Add(temp);
                     }
                 }
             }
+            return res;
         }
         private void SaveContacts()
         {
@@ -60,7 +61,7 @@ namespace ContactList
             {
                 using (StreamWriter sw = new StreamWriter(stream))
                 {
-                    foreach (Contact contact in contacts)
+                    foreach (Contact contact in contactRepository.GetContacts())
                     {
                         sw.WriteLine(contact.Firstname);
                         sw.WriteLine(contact.Lastname);
@@ -70,42 +71,21 @@ namespace ContactList
                 }
             }
         }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            contacts[contactList.SelectedIndex].Firstname = textFirstname.Text;
-            contacts[contactList.SelectedIndex].Lastname = textLastname.Text;
-            contacts[contactList.SelectedIndex].Phone = textPhone.Text;
-            contacts[contactList.SelectedIndex].Tag = textTag.Text;
-            RefreshList();
-        }
-
-        private void contactList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (contactList.ItemsSource != null && contactList.SelectedIndex > -1)
-            {
-                contactInfo.DataContext = contacts[contactList.SelectedIndex];
-                if (!btnSave.IsEnabled) btnSave.IsEnabled = true;
-                if (!btnDelete.IsEnabled) btnDelete.IsEnabled = true;
-            }
-        }
-
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            contacts.Add(new Contact() {Firstname = "No info",Lastname = "No info", Phone = "No info" ,Tag = "No info" });
-            RefreshList();
-            contactList.SelectedIndex = contacts.Count - 1;
+            var rep = contactRepository.GetContacts();
+            rep.Add(new Contact() {Firstname = "No info",Lastname = "No info", Phone = "No info" ,Tag = "No info" });
+            contactList.SelectedIndex = rep.Count - 1;
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
-            contacts.RemoveAt(contactList.SelectedIndex);
-            if (contactList.SelectedIndex > -1)
+            if (contactList.SelectedIndex == -1) return;
+            int id = contactList.SelectedIndex;
+            contactRepository.GetContacts().RemoveAt(id);
+            if (id > 0)
             {
-                contactList.Items.RemoveAt(contactList.SelectedIndex);
-                contactList.SelectedIndex = 0;
-                RefreshList();
+                contactList.SelectedIndex = id - 1;
             }
         }
 

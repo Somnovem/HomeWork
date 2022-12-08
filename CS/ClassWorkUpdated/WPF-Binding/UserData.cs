@@ -13,8 +13,9 @@ namespace WPF_Binding
         {
             UserId = ids;
             Name = $"user {ids}";
-            Login = $"login {ids++}";
+            Login = $"login {ids}";
             Birth = DateTime.Now;
+            ids++;
         }
         public int UserId { get; set; }
         public string Name { get; set; }

@@ -25,13 +25,13 @@ namespace WPF_Binding
         List<UserData> users = new List<UserData>();
         public MainWindow()
         {
-            user = new UserData();
             InitializeComponent();
             userGrid.DataContext = user;
-            users.Add(user);
-            users.Add(user);
-            users.Add(user);
+            users.Add(new UserData());
+            users.Add(new UserData());
+            users.Add(new UserData());
             listUserData.ItemsSource = users;
+            userGrid.DataContext = users[0];
             //Binding b = new Binding("Value");
             //Binding b1 = new Binding();
             //b.ElementName = "slider";
