@@ -5,7 +5,13 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-Binding", "WPF-Binding.csproj", "{1206045C-6219-4B93-9991-DE835189B49D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-Binding2", "..\WPF-Binding2\WPF-Binding2.csproj", "{2637548E-1284-437C-B32B-3566F2DCFA5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-Binding2", "..\WPF-Binding2\WPF-Binding2.csproj", "{2637548E-1284-437C-B32B-3566F2DCFA5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfStyles", "..\WpfStyles\WpfStyles.csproj", "{8B88ECAD-0F2F-4C67-A14C-C8AF93DDEF2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFStylesDynamic", "..\WPFStylesDynamic\WPFStylesDynamic.csproj", "{25C8901C-CC56-4DAC-AF70-73F5825CA118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppTriggers", "..\WpfAppTriggers\WpfAppTriggers.csproj", "{38B09E99-BEE5-4DEF-8CB8-23E539DFC2EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{2637548E-1284-437C-B32B-3566F2DCFA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2637548E-1284-437C-B32B-3566F2DCFA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2637548E-1284-437C-B32B-3566F2DCFA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B88ECAD-0F2F-4C67-A14C-C8AF93DDEF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B88ECAD-0F2F-4C67-A14C-C8AF93DDEF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B88ECAD-0F2F-4C67-A14C-C8AF93DDEF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B88ECAD-0F2F-4C67-A14C-C8AF93DDEF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25C8901C-CC56-4DAC-AF70-73F5825CA118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C8901C-CC56-4DAC-AF70-73F5825CA118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C8901C-CC56-4DAC-AF70-73F5825CA118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C8901C-CC56-4DAC-AF70-73F5825CA118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B09E99-BEE5-4DEF-8CB8-23E539DFC2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B09E99-BEE5-4DEF-8CB8-23E539DFC2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B09E99-BEE5-4DEF-8CB8-23E539DFC2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B09E99-BEE5-4DEF-8CB8-23E539DFC2EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

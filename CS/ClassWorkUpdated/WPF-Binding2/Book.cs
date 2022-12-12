@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
+using System.Windows.Media;
 
 namespace WPF_Binding2
 {
@@ -34,10 +37,12 @@ namespace WPF_Binding2
         private short yearofissue;
         private string author;
         private DateTime dateOf;
+        private double rank;
         public int BookId
         {
             get => bookId;
-            set { SetProperty(ref bookId, value, nameof(bookId)); }
+            set { if (value < 0) { throw new ArgumentException("Negative value"); }
+                SetProperty(ref bookId, value, nameof(BookId)); }
         }
         public string Name
         {
@@ -59,7 +64,15 @@ namespace WPF_Binding2
             get => dateOf;
             set { SetProperty(ref dateOf, value, nameof(DateOf)); }
         }
-
+        
+        public double Rank
+        {
+            get => rank;
+            set
+            {
+                SetProperty(ref rank, value, nameof(Rank));
+            }
+        }
         public event PropertyChangedEventHandler? PropertyChanged;
         private void SetProperty<T>(ref T field, T value, string name)
         {
@@ -73,6 +86,33 @@ namespace WPF_Binding2
         public override string ToString()
         {
             return $"{Name} by {Author}  ({YearOfIssue})  [{BookId}]";
+        }
+    }
+
+    [ValueConversion(typeof(double),typeof(Brush))]
+    public class DoubleToColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                return ((double)value < 5) ? Brushes.Red : Brushes.Green;
+            }
+            catch (Exception)
+            {
+                return Brushes.Gray;
+            }
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            //one-sided converter
+            //return null;
+
+            //two-sided converter
+            if (value == null) return null;
+            return (Brushes.Red == value) ? 0 : 10;
         }
     }
 }
