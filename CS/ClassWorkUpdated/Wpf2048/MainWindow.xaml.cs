@@ -31,6 +31,9 @@ namespace Wpf2048
             ((TextBox)border.Child).Text = "2";
             txtCurrentScore.Text = "2";
         }
+        // private int GetFreeTile() return tag of tile that is empty or 0 if there is none
+        //animations of moving,appearing and merging
+        //funcs for every move(left,right,up,down)
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (sender == null)
