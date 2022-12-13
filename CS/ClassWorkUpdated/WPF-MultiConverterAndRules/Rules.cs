@@ -9,38 +9,15 @@ using System.Windows.Controls;
 
 namespace WPF_MultiConverterAndRules
 {
-    internal class DigitsOnly : ValidationRule
+    public class DigitsOnly : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            try
+            if (int.TryParse(value.ToString(),out int number))
             {
-                int.Parse(value.ToString());
-                return new ValidationResult(true, null);
+                return ValidationResult.ValidResult;
             }
-            catch (Exception)
-            {
-                return new ValidationResult(false, "Not a number");
-            }
-        }
-    }
-    internal class DayInMonth : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            int day;
-            if (!int.TryParse(value.ToString(), out day))
-            {
-                return new ValidationResult(false, "Cannot parse value");
-            }
-            return new ValidationResult(true, null);
-        }
-    }
-    internal class DayInYear : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            throw new NotImplementedException();
+            return new ValidationResult(false, "Not a number");
         }
     }
 }

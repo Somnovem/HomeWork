@@ -14,31 +14,33 @@
             <Setter Property="Margin" Value="160,0,0,0"/>
         </Style>
         <local:DateConverter x:Key="dc"/>
-        <local:DayInMonth x:Key="dim"/>
-        <local:DayInYear x:Key="diy"/>
-        <local:DigitsOnly x:Key="dgo"/>
+        <Style TargetType="TextBox" x:Key="dateDefault">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="0" Width="180" Height="100" Margin="10"
+        <TextBox Grid.Column="0"  Height="100" Margin="10"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
-                    FontSize="17" x:Name="txtDate">
+                    FontSize="22" x:Name="txtDate" BorderThickness="0" VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center">
             <TextBox.Text>
                 <MultiBinding Converter="{StaticResource dc}">
-                    <Binding ElementName="txtDay" Path="Text" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
-                    <Binding ElementName="txtMonth" Path="Text" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
-                    <Binding ElementName="txtYear" Path="Text" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                    <Binding Path="Day" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                    <Binding Path="Month" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                    <Binding Path="Year" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
                 </MultiBinding>
             </TextBox.Text>
         </TextBox>
-        <UniformGrid Columns="2" Grid.Column="1" Margin="10">
+        <UniformGrid Columns="2" Grid.Column="1" Margin="10" x:Name="dateChanger">
             <TextBlock Text="Day:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
-            <TextBox x:Name="txtDay" VerticalAlignment="Center" FontSize="17">
+            <TextBox x:Name="txtDay" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Text" >
+                    <Binding Path="Day" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>
@@ -46,9 +48,9 @@
                 </TextBox.Text>
             </TextBox>
             <TextBlock Text="Month:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
-            <TextBox x:Name="txtMonth" VerticalAlignment="Center"  FontSize="17">
+            <TextBox x:Name="txtMonth" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Text" >
+                    <Binding Path="Month" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>
@@ -56,9 +58,9 @@
                 </TextBox.Text>
             </TextBox>
             <TextBlock Text="Year:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
-            <TextBox x:Name="txtYear" VerticalAlignment="Center"  FontSize="17">
+            <TextBox x:Name="txtYear" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding RelativeSource="{RelativeSource Self}" Path="Text" >
+                    <Binding Path="Year" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>

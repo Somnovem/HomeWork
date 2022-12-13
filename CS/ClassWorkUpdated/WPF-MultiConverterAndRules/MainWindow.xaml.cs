@@ -21,9 +21,13 @@ namespace WPF_MultiConverterAndRules
     /// </summary>
     public partial class MainWindow : Window
     {
+        DateHolder dateHolder;
         public MainWindow()
         {
+            dateHolder = new DateHolder();
             InitializeComponent();
+            dateChanger.DataContext = dateHolder;
+            txtDate.DataContext = dateHolder;
         }
     }
 
