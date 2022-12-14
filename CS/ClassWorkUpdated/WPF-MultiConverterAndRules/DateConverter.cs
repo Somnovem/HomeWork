@@ -17,7 +17,7 @@ namespace WPF_MultiConverterAndRules
         {
             try
             {
-                return DateTime.Parse($"{values[0]}.{values[1]}.{values[2]}").ToShortDateString();
+                return DateTime.Parse($"{values[0]} {values[1]} {values[2]}").ToString("dd/MM/yyyy");
             }
             catch (Exception)
             {
