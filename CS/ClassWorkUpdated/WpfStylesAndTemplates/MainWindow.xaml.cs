@@ -23,6 +23,7 @@ namespace WpfStylesAndTemplates
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

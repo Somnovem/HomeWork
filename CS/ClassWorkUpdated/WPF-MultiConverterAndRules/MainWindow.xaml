@@ -12,22 +12,35 @@
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="Foreground" Value="Teal"/>
             <Setter Property="Margin" Value="160,0,0,0"/>
+            
         </Style>
         <local:DateConverter x:Key="dc"/>
         <Style TargetType="TextBox" x:Key="dateDefault">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="17"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="Foreground" Value="Coral"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
+            <Setter Property="Margin" Value="10,0"/>
         </Style>
     </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF00EC7A"/>
+            <GradientStop Color="#FFC3FFD5" Offset="0.997"/>
+            <GradientStop Color="#FF02FF4B" Offset="0.744"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="0"  Height="100" Margin="10"
+        <TextBox Grid.Column="0"  Height="Auto" Margin="10"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
-                    FontSize="22" x:Name="txtDate" BorderThickness="0" VerticalContentAlignment="Center"
-                    HorizontalContentAlignment="Center" IsReadOnly="True">
+                    FontSize="26" x:Name="txtDate"  VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center" IsReadOnly="True" BorderBrush="DarkBlue" Foreground="DeepPink" Background="LightGoldenrodYellow">
             <TextBox.Text>
                 <MultiBinding Converter="{StaticResource dc}">
                     <Binding Path="Day" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
@@ -36,7 +49,7 @@
                 </MultiBinding>
             </TextBox.Text>
         </TextBox>
-        <UniformGrid Columns="2" Grid.Column="1" Margin="10" x:Name="dateChanger">
+        <UniformGrid Columns="2" Grid.Column="1" Margin="10" x:Name="dateChanger" HorizontalAlignment="Center">
             <TextBlock Text="Day:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
             <TextBox x:Name="txtDay" Style="{StaticResource dateDefault}">
                 <TextBox.Text>

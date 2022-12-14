@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf2048"
         mc:Ignorable="d"
-        Title="2048" Height="500" Width="450" Background="BlanchedAlmond" KeyDown="Window_KeyDown">
+        Title="2048" Height="500" Width="450" Background="BlanchedAlmond" KeyDown="Window_KeyDown" MinHeight="400" MinWidth="350">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="textDefault">
             <Setter Property="HorizontalAlignment" Value="Center"/>

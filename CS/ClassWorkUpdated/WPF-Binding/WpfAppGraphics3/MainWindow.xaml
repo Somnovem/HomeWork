@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfAppGraphics3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppGraphics3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--<Rectangle Width="100" Height="60" Stroke="Blue" Fill="LightBlue">
+            <Rectangle.RenderTransform>
+                <RotateTransform Angle="45" CenterX="50" CenterY="30"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Width="100" Height="60" Stroke="Green" Fill="LightGreen">
+            <Rectangle.RenderTransform>
+                --><!--<TranslateTransform X="20" Y="-30"/>-->
+                <!--<ScaleTransform ScaleX="1.5" ScaleY="1.5"/>--><!--
+                <SkewTransform AngleX="35" AngleY="15"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Width="100" Height="30" Stroke="Coral" Fill="Firebrick" HorizontalAlignment="Left">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="45" CenterX="50" CenterY="30"/>
+                    <TranslateTransform X="30" Y="-40"/>
+                </TransformGroup>
+
+            </Rectangle.RenderTransform>
+        </Rectangle>-->
+
+        <StackPanel Orientation="Horizontal" Margin="50">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="Height" Value="150"/>
+                    <Setter Property="Background" Value="DarkViolet"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="Button.RenderTransform">
+                        <Setter.Value>
+                            <TransformGroup>
+                                <RotateTransform Angle="15"/>
+                                <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                            </TransformGroup>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Button.RenderTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="0"/>
+                                        <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Button Content="1"/>
+            <Button Content="2"/>
+            <Button Content="3"/>
+        </StackPanel>
+    </Grid>
+</Window>

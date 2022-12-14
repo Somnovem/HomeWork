@@ -49,7 +49,7 @@ namespace Wpf2048
             if (textHolder.Text == "2048")
             {
                 this.KeyDown -= Window_KeyDown;
-                MessageBox.Show("Congratulations!You won!", "2048", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Congratulations! You won!", "2048", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
         }

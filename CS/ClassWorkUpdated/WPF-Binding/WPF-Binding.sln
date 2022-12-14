@@ -5,6 +5,12 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfTemplates", "..\WpfTemplates\WpfTemplates.csproj", "{D9C412D9-C7ED-4EDF-9DD7-0FE59A3DB19B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppGraphics", "WpfAppGraphics\WpfAppGraphics.csproj", "{6D92BBCA-72FC-4881-A964-EAFE3E3AD3D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppGraphics2", "WpfAppGraphics2\WpfAppGraphics2.csproj", "{96D02A31-0F64-47E0-BAB6-C33B9281B94C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppGraphics3", "WpfAppGraphics3\WpfAppGraphics3.csproj", "{9343B33F-3CDC-4C13-B12A-4C3C1C57F72A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{D9C412D9-C7ED-4EDF-9DD7-0FE59A3DB19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C412D9-C7ED-4EDF-9DD7-0FE59A3DB19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C412D9-C7ED-4EDF-9DD7-0FE59A3DB19B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D92BBCA-72FC-4881-A964-EAFE3E3AD3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D92BBCA-72FC-4881-A964-EAFE3E3AD3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D92BBCA-72FC-4881-A964-EAFE3E3AD3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D92BBCA-72FC-4881-A964-EAFE3E3AD3D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D02A31-0F64-47E0-BAB6-C33B9281B94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D02A31-0F64-47E0-BAB6-C33B9281B94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D02A31-0F64-47E0-BAB6-C33B9281B94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D02A31-0F64-47E0-BAB6-C33B9281B94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9343B33F-3CDC-4C13-B12A-4C3C1C57F72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9343B33F-3CDC-4C13-B12A-4C3C1C57F72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9343B33F-3CDC-4C13-B12A-4C3C1C57F72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9343B33F-3CDC-4C13-B12A-4C3C1C57F72A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
