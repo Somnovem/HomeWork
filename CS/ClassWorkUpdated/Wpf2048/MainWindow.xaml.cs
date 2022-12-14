@@ -36,12 +36,34 @@ namespace Wpf2048
         //funcs for every move(left,right,up,down)
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (sender == null)
+            if (sender == null || staticStyles == null)
             {
                 return;
             }
             TextBox textHolder = (TextBox)sender;
-            ((Border)textHolder.Parent).Style = staticStyles[(int)Math.Log2(Convert.ToInt32(textHolder.Text)) + 4];
+            if (textHolder.Text == " ")
+            {
+                ((Border)textHolder.Parent).Style = (Style)FindResource("borderNumberDefault");
+            }
+            ((Border)textHolder.Parent).Style = (Style)FindResource($"borderNumber{textHolder.Text}");
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                Border border = new Border();
+                Border leftBorder = new Border();
+
+                foreach (Border item in gridNumbers.Children)
+                {
+                    if (((TextBox)item.Child).Text != " ")
+                    {
+                        border = item;
+                    }
+                }
+                ((TextBox)border.Child).Text = "4";
+            }
         }
     }
 }
