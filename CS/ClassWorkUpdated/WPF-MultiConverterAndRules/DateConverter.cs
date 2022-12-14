@@ -28,8 +28,7 @@ namespace WPF_MultiConverterAndRules
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
-            string[] splitValues = ((string)value).Split('.');
-            return splitValues;
+            return ((string)value).Split('.');
         }
     }
 }

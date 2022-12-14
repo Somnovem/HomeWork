@@ -46,6 +46,12 @@ namespace Wpf2048
                 ((Border)textHolder.Parent).Style = (Style)FindResource("borderNumberDefault");
             }
             ((Border)textHolder.Parent).Style = (Style)FindResource($"borderNumber{textHolder.Text}");
+            if (textHolder.Text == "2048")
+            {
+                this.KeyDown -= Window_KeyDown;
+                MessageBox.Show("Congratulations!You won!", "2048", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -62,7 +68,7 @@ namespace Wpf2048
                         border = item;
                     }
                 }
-                ((TextBox)border.Child).Text = "4";
+                ((TextBox)border.Child).Text = $"{Convert.ToInt32(((TextBox)border.Child).Text)*2}";
             }
         }
     }

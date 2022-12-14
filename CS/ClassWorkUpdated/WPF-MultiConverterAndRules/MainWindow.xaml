@@ -27,7 +27,7 @@
         <TextBox Grid.Column="0"  Height="100" Margin="10"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     FontSize="22" x:Name="txtDate" BorderThickness="0" VerticalContentAlignment="Center"
-                    HorizontalContentAlignment="Center">
+                    HorizontalContentAlignment="Center" IsReadOnly="True">
             <TextBox.Text>
                 <MultiBinding Converter="{StaticResource dc}">
                     <Binding Path="Day" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
@@ -40,7 +40,7 @@
             <TextBlock Text="Day:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
             <TextBox x:Name="txtDay" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding Path="Day" UpdateSourceTrigger="PropertyChanged">
+                    <Binding Path="Day" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>
@@ -50,7 +50,7 @@
             <TextBlock Text="Month:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
             <TextBox x:Name="txtMonth" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding Path="Month" UpdateSourceTrigger="PropertyChanged">
+                    <Binding Path="Month" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>
@@ -60,7 +60,7 @@
             <TextBlock Text="Year:" VerticalAlignment="Center" Style="{StaticResource txtDefault}"/>
             <TextBox x:Name="txtYear" Style="{StaticResource dateDefault}">
                 <TextBox.Text>
-                    <Binding Path="Year" UpdateSourceTrigger="PropertyChanged">
+                    <Binding Path="Year" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                         <Binding.ValidationRules>
                             <local:DigitsOnly/>
                         </Binding.ValidationRules>
