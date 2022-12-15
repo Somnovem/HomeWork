@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfAppEffects.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppEffects"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Blur Test" Margin="15" x:Name="btnBlurred">
+            <Button.Effect>
+                <BlurEffect Radius="3" RenderingBias="Performance"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Shadow Effect" Margin="15" Grid.Column="1" Opacity="0.9">
+            <Button.Effect>
+                <DropShadowEffect Color="Red" ShadowDepth="0" Direction="315" BlurRadius="12" Opacity="0.8"/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="text" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" FontSize="20" FontWeight="Bold" VerticalAlignment="Top">
+            
+        </TextBox>
+        <Rectangle RenderTransformOrigin="1,0.5" Height="40" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="5">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{Binding ElementName=text}"/>
+            </Rectangle.Fill>
+            <Rectangle.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.3" Color="Transparent"/>
+                    <GradientStop Offset="1" Color="#44000000"/>
+                </LinearGradientBrush>
+            </Rectangle.OpacityMask>
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="Anim Test" Margin="15" x:Name="btnAnimmed" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Width="80" Height="30" HorizontalAlignment="Left">
+        </Button>
+    </Grid>-->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Button.Click">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard Timeline.DesiredFrameRate="80">
+                        <DoubleAnimation Storyboard.TargetName="ball" Storyboard.TargetProperty="(Canvas.Bottom)" From="0" To="160" AutoReverse="True" Duration="0:0:2.5" RepeatBehavior="Forever" DecelerationRatio="1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0">
+            <Ellipse Width="35" Height="35" Fill="Red" x:Name="ball" Stroke="Black" Canvas.Bottom="0" Canvas.Left="80"/>
+        </Canvas>
+        <Button Grid.Row="1" Margin="60,5" Content="Кнопка"/>
+    </Grid>
+</Window>
