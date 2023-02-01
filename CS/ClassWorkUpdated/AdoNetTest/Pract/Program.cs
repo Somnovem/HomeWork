@@ -136,7 +136,7 @@ namespace Pract
         static void ShowStudentsWithGradesHigher(SqlConnection conn,int grade)
         {
             Console.Clear();
-            string sql = "select Lastname + ' ' + Firstname + ' ' + Fathersname as 'Fullname'  from Grades where AvgGrade > @grade";
+            string sql = "select *  from Grades where AvgGrade > @grade";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Add(new SqlParameter("@grade", grade));
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -192,9 +192,105 @@ namespace Pract
         }
         static void NumOfStudentsMinMath(SqlConnection conn) {
             Console.Clear();
-            int res = 0;
-            string sql = "select count(Lastname) from Grades";
+            int min = 0;
+            string sql = "select min(AvgGrade) from Grades";
             SqlCommand cmd = new SqlCommand(sql, conn);
+            object result = cmd.ExecuteScalar();
+            if (!int.TryParse(result.ToString(), out min)) {
+                Console.WriteLine("Cannot exec query");
+                return;
+            }
+            int res = 0;
+            string sql2 = "select count(*) from Grades where AvgFrade = @min";
+            cmd.CommandText = sql2;
+            cmd.Parameters.Add(new SqlParameter("@min", min));
+            result = cmd.ExecuteScalar();
+            if (int.TryParse(result.ToString(), out res))
+            {
+                Console.WriteLine($"Number of students = {res}");
+            }
+            else
+            {
+                Console.WriteLine("Cannor exec query!");
+            }
+        }
+        static void NumOfStudentsMaxMath(SqlConnection conn)
+        {
+            Console.Clear();
+            int max = 0;
+            string sql = "select max(AvgGrade) from Grades";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            object result = cmd.ExecuteScalar();
+            if (!int.TryParse(result.ToString(), out max))
+            {
+                Console.WriteLine("Cannot exec query");
+                return;
+            }
+            int res = 0;
+            string sql2 = "select count(*) from Grades where AvgFrade = @max";
+            cmd.CommandText = sql2;
+            cmd.Parameters.Add(new SqlParameter("@max", max));
+            result = cmd.ExecuteScalar();
+            if (int.TryParse(result.ToString(), out res))
+            {
+                Console.WriteLine($"Number of students = {res}");
+            }
+            else
+            {
+                Console.WriteLine("Cannor exec query!");
+            }
+        }
+        static void StudentsPerGroup(SqlConnection conn) {
+            Console.Clear();
+            string sql = "select Group,count(Lastname) as 'Num of students' from Grades group by Group";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                bool first = true;
+                while (reader.Read())
+                {
+                    if (first)
+                    {
+                        first = false;
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            Console.Write(reader.GetName(i) + "\t");
+                        }
+                        Console.WriteLine();
+                    }
+                    for (int i = 0; i < reader.FieldCount; ++i)
+                    {
+                        Console.Write(reader[i] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+        static void AvgGradePerGroup(SqlConnection conn) {
+            Console.Clear();
+            string sql = "select Group,avg(AvgGrade) as 'Average grade' from Grades group by Group";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                bool first = true;
+                while (reader.Read())
+                {
+                    if (first)
+                    {
+                        first = false;
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            Console.Write(reader.GetName(i) + "\t");
+                        }
+                        Console.WriteLine();
+                    }
+                    for (int i = 0; i < reader.FieldCount; ++i)
+                    {
+                        Console.Write(reader[i] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }

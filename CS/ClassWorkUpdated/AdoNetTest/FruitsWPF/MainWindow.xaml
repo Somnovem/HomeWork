@@ -1,0 +1,99 @@
+﻿<Window x:Class="FruitsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FruitsWPF"
+        mc:Ignorable="d"
+        Title="Fruits and vegetables" Height="450" Width="600" Closing="Window_Closing">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF2C6896" Offset="0.003"/>
+            <GradientStop Color="#FF08C573" Offset="1"/>
+            <GradientStop Color="#FF214894" Offset="0.187"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="BorderBrush" Value="LightCoral"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="65*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Margin="5">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="200" UriSource="/images/tomato.png"/>
+                </Image.Source>
+            </Image>
+            <Button Content="Connect" x:Name="btnConnect" VerticalAlignment="Center" Click="btnConnect_Click" Foreground="Green" Grid.Column="1"/>
+        </Grid>
+        
+        <DataGrid x:Name="dg" Margin="10,30,10,30" IsReadOnly="True" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+            <DataGrid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+        
+        <UniformGrid Columns="2" Margin="3" Grid.Column="0" Grid.Row="1">
+            <Button Content="Show All" x:Name="btnAll" Click="btnAll_Click"/>
+            <Button Content="Show all names" x:Name="btnNames" Click="btnNames_Click"/>
+            <Button Content="Show all colors" x:Name="btnColors" Click="btnColors_Click"/>
+            <Button x:Name="btnMaxCalories" Click="btnMaxCalories_Click">
+                <TextBlock TextWrapping="Wrap" Text="Show max calories"/>
+            </Button>
+            <Button x:Name="btnMinCalories" Click="btnMinCalories_Click">
+                <TextBlock TextWrapping="Wrap" Text="Show min calories"/>
+            </Button>
+            <Button x:Name="btnAvgCalories" Click="btnAvgCalories_Click">
+                <TextBlock TextWrapping="Wrap" Text="Show avg calories"/>
+            </Button>
+            <Button Content="Num of vegies" x:Name="btnNumVegies" Click="btnNumVegies_Click"/>
+            <Button Content="Num of fruits" x:Name="btnNumFruits" Click="btnNumFruits_Click"/>
+            <Button x:Name="btnProdsInColor" Click="btnProdsInColor_Click">
+                <TextBlock TextWrapping="Wrap" Text="Num of prods in color"/>
+            </Button>
+            <Button x:Name="btnProdsPerColor" Click="btnProdsPerColor_Click">
+                <TextBlock TextWrapping="Wrap" Text="Num of prods per color"/>
+            </Button>
+            <Button x:Name="btnLessCalories" Click="btnLessCalories_Click">
+                <TextBlock TextWrapping="Wrap" Text="Prods with less calories"/>
+            </Button>
+            <Button x:Name="btnMoreCalories" Click="btnMoreCalories_Click">
+                <TextBlock TextWrapping="Wrap" Text="Prods with more calories"/>
+            </Button>
+            <Button x:Name="btnCaloriesBetween" Click="btnCaloriesBetween_Click">
+                <TextBlock TextWrapping="Wrap" Text="Prods with calories between"/>
+            </Button>
+            <Button x:Name="btnYelOrRed" Click="btnYelOrRed_Click">
+                <TextBlock TextWrapping="Wrap" Text="Yellow or Red prods"/>
+            </Button>
+        </UniformGrid>
+        
+        <Button Grid.Column="1" Grid.Row="0" Content="Clear" VerticalAlignment="Top" 
+                HorizontalAlignment="Center" x:Name="btnClear" Click="btnClear_Click" Margin="3" Width="60"/>
+    </Grid>
+</Window>
