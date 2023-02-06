@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\bin\Debug\AdoNet3_!.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\bin\Debug\AdoNet3_!.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\bin\Debug\AdoNet3_!.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\obj\Debug\AdoNet3_1.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\obj\Debug\AdoNet3_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\obj\Debug\AdoNet3_1.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\obj\Debug\AdoNet3_!.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\AdoNet3_!\obj\Debug\AdoNet3_!.pdb

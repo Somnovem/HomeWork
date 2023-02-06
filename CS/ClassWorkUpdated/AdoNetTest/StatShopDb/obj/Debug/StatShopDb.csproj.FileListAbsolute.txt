@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\bin\Debug\StatShopDb.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\bin\Debug\StatShopDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\bin\Debug\StatShopDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.Form1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\StatShopDb\obj\Debug\StatShopDb.pdb

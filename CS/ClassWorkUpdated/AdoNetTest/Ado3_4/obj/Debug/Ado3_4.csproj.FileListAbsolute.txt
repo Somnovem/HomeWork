@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\bin\Debug\Ado3_4.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\bin\Debug\Ado3_4.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\bin\Debug\Ado3_4.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.Form1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado3_4\obj\Debug\Ado3_4.pdb
