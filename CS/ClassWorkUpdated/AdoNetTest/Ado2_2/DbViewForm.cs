@@ -16,6 +16,7 @@ namespace Ado2_2
         private SqlConnection sqlConnection;
         private const string sqlTeachersSelect = "select * from Teachers";
         private const string sqlGroupsSelect = "select * from Groups";
+
         public DbViewForm(SqlConnection connection)
         {
             this.sqlConnection = connection;
@@ -44,7 +45,7 @@ namespace Ado2_2
         {
             btnAdd.Enabled = false;
             string sql = "insert into [Teachers]([Firstname],[Lastname],[Birthdate],[DepartmentId]) values(@firstname,@lastname,@birth,@dep)";
-            SqlCommand command = new SqlCommand(sql,sqlConnection);
+            SqlCommand command = new SqlCommand(sql, sqlConnection);
             try
             {
                 command.Parameters.Add(new SqlParameter("@firstname", edFirstname.Text));
@@ -55,7 +56,7 @@ namespace Ado2_2
                 date.Value = edBirthDate.Value;
                 command.Parameters.Add(dep);
                 command.Parameters.Add(date);
-                await command.ExecuteNonQueryAsync();
+                command.BeginExecuteNonQuery(ExecuteQueryCallback, command);
             }
             catch(Exception ex)
             {
@@ -65,6 +66,27 @@ namespace Ado2_2
             {
                 btnAdd.Enabled = true;
                 UpdateTeachersView();
+            }
+        }
+
+        private void ExecuteQueryCallback(IAsyncResult result)
+        {
+            SqlCommand cmd = result.AsyncState as SqlCommand;
+            if (cmd == null)
+                return;
+            int rowCount = cmd.EndExecuteNonQuery(result);
+            Action a = () =>
+            {
+                btnAdd.Enabled = true;
+                UpdateTeachersView();
+            };
+            if (InvokeRequired)
+            {
+                Invoke(a);
+            }
+            else
+            {
+                a();
             }
         }
 

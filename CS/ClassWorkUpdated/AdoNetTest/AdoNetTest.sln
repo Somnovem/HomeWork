@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado3_4", "Ado3_4\Ado3_4.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatShopDb", "StatShopDb\StatShopDb.csproj", "{6F014C0F-63A4-4EF2-892C-27EADF9E4779}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado4-1", "Ado4-1\Ado4-1.csproj", "{9DD3C45F-0FC6-4F77-B86B-DA33E6E303A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{6F014C0F-63A4-4EF2-892C-27EADF9E4779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F014C0F-63A4-4EF2-892C-27EADF9E4779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F014C0F-63A4-4EF2-892C-27EADF9E4779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD3C45F-0FC6-4F77-B86B-DA33E6E303A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD3C45F-0FC6-4F77-B86B-DA33E6E303A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD3C45F-0FC6-4F77-B86B-DA33E6E303A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD3C45F-0FC6-4F77-B86B-DA33E6E303A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

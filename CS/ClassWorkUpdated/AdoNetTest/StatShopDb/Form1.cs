@@ -56,13 +56,16 @@ namespace StatShopDb
             btnSalesUpdate_Click(null, null);
         }
 
-
+        private void PerformUpdate(DataGridView dgv, DataTable table, SqlDataAdapter adapt)
+        {
+            dgv.DataSource = null;
+            table.Clear();
+            adapt.Fill(table);
+            dgv.DataSource = table;
+        }
         private void btnProdUpdate_Click(object sender, EventArgs e)
         {
-            dgvProd.DataSource = null;
-            products.Clear();
-            adapterProd.Fill(products);
-            dgvProd.DataSource = products;
+            PerformUpdate(dgvProd, products, adapterProd);
         }
 
         private void btnProdSave_Click(object sender, EventArgs e)
@@ -73,18 +76,12 @@ namespace StatShopDb
 
         private void btnFirmsUpdate_Click(object sender, EventArgs e)
         {
-            dgvFirms.DataSource = null;
-            firms.Clear();
-            adapterFirms.Fill(firms);
-            dgvFirms.DataSource = firms;
+            PerformUpdate(dgvFirms, firms, adapterFirms);
         }
 
         private void btnSalesUpdate_Click(object sender, EventArgs e)
         {
-            dgvSales.DataSource = null;
-            sales.Clear();
-            adapterSales.Fill(sales);
-            dgvSales.DataSource = sales;
+            PerformUpdate(dgvSales, sales, adapterSales);
         }
 
         private void btnSalesSave_Click(object sender, EventArgs e)
@@ -107,17 +104,11 @@ namespace StatShopDb
 
         private void btnSellersUpdate_Click(object sender, EventArgs e)
         {
-            dgvSellers.DataSource = null;
-            sellers.Clear();
-            adapterSellers.Fill(sellers);
-            dgvSellers.DataSource = sellers;
+            PerformUpdate(dgvSellers, sellers, adapterSellers);
         }
         private void btnTypesUpdate_Click(object sender, EventArgs e)
         {
-            dgvTypes.DataSource = null;
-            types.Clear();
-            adapterTypes.Fill(types);
-            dgvTypes.DataSource = types;
+            PerformUpdate(dgvTypes, types, adapterTypes);
         }
 
         private void btnTypesSave_Click(object sender, EventArgs e)
