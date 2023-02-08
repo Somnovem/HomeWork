@@ -1,0 +1,13 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\bin\Debug\FruitsWinForms.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\bin\Debug\FruitsWinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\bin\Debug\FruitsWinForms.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.ConnectForm.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.MainForm.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWinForms\obj\Debug\FruitsWinForms.Request.resources

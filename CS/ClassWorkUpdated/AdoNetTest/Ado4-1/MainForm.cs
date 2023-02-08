@@ -104,6 +104,8 @@ namespace Ado4_1
         {
             btnExec.Enabled = false;
             btnAsyncExecute.Enabled = false;
+            conn.ConnectionString = connStr;
+            conn.Open();
             DbCommand cmd = conn.CreateCommand();
             cmd.CommandText = edSqlQuery.Text;
             try

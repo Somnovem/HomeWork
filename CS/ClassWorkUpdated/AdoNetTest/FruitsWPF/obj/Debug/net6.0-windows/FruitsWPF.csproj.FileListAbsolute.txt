@@ -28,3 +28,4 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWP
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWPF\obj\Debug\net6.0-windows\ref\FruitsWPF.dll
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWPF\obj\Debug\net6.0-windows\Request.g.cs
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWPF\obj\Debug\net6.0-windows\Request.baml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\FruitsWPF\bin\Debug\net6.0-windows\FruitsWPF.dll.config

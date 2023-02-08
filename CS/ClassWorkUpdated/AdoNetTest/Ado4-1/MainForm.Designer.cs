@@ -137,7 +137,6 @@
             // 
             // btnAsyncExecute
             // 
-            this.btnAsyncExecute.Enabled = false;
             this.btnAsyncExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAsyncExecute.Location = new System.Drawing.Point(637, 144);
             this.btnAsyncExecute.Name = "btnAsyncExecute";

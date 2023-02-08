@@ -4,7 +4,8 @@ using System.Data;
 using System.Windows.Media;
 using System;
 using System.Collections.Generic;
-
+using System.Data.Common;
+using System.Configuration;
 namespace FruitsWPF
 {
     /// <summary>
@@ -12,8 +13,9 @@ namespace FruitsWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        static string connectionStr = "Data Source = DESKTOP-6FEP48M\\SQLEXPRESS;Initial Catalog = FruitsVegetables;Integrated Security=true";
-        SqlConnection conn = new SqlConnection(connectionStr);
+        string connectionStr = "";
+        DbConnection conn;
+        DbProviderFactory factory;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,22 +40,46 @@ namespace FruitsWPF
             {
                 try
                 {
+                    factory = DbProviderFactories.GetFactory("System.Data.SqlClient");
+                    conn = factory.CreateConnection();
+                    connectionStr = GetConnectionString("System.Data.SqlClient");
+                    conn.ConnectionString = connectionStr;
                     conn.Open();
                     btnConnect.Content = "Disconnect";
                     btnConnect.Foreground = Brushes.Red;
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Couldn't connect to db", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Couldn't connect to db.{ex.Message}", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
             }
         }
-        private bool IsServOpen() => conn.State == ConnectionState.Open;
-        private void ExecCmdToGrid(SqlCommand cmd)
+        private string GetConnectionString(string provider)
+        {
+            string result = null;
+            ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
+            if (settings != null)
+            {
+                foreach (ConnectionStringSettings css in settings)
+                {
+                    if (css.ProviderName.Equals(provider))
+                    {
+                        result = css.ConnectionString;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+        private bool IsServOpen() => conn != null && conn.State == ConnectionState.Open ;
+        private void ExecCmdToGrid(DbCommand cmd)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter a = new SqlDataAdapter(cmd);
+            DbDataAdapter a = factory.CreateDataAdapter();
+            a.SelectCommand = cmd;
+            a.SelectCommand.Connection = conn;
             a.Fill(dt);
             dg.ItemsSource = dt.DefaultView;
         }
@@ -64,7 +90,8 @@ namespace FruitsWPF
                 MessageBox.Show("Connection to db wasn't established", "Attention", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 return;
             }
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            DbCommand cmd = conn.CreateCommand();
+            cmd.CommandText = sql;
             ExecCmdToGrid(cmd);
         }
 
@@ -123,7 +150,8 @@ namespace FruitsWPF
             if (!res.Key)return;
             string color = res.Value;
             string sql = "select count(*) as 'Number of products in this color' from Stats where Color = @color";
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            DbCommand cmd = conn.CreateCommand();
+            cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("@color", color));
             ExecCmdToGrid(cmd);
         }
@@ -149,7 +177,8 @@ namespace FruitsWPF
                 return;
             }
             string sql = "select * from Stats where Calories < @calor";
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            DbCommand cmd = conn.CreateCommand();
+            cmd.CommandText= sql;
             cmd.Parameters.Add(new SqlParameter("@calor", calories));
             ExecCmdToGrid(cmd);
         }
@@ -170,7 +199,8 @@ namespace FruitsWPF
                 return;
             }
             string sql = "select *  from Stats where Calories > @calor";
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            DbCommand cmd = conn.CreateCommand();
+            cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("@calor", calories));
             ExecCmdToGrid(cmd);
         }
@@ -203,7 +233,8 @@ namespace FruitsWPF
                 return;
             }
             string sql = "select *  from Stats where Calories between @calStart and @calEnd";
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            DbCommand cmd = conn.CreateCommand();
+            cmd.CommandText = sql;
             cmd.Parameters.Add(new SqlParameter("@calStart", calStart));
             cmd.Parameters.Add(new SqlParameter("@calEnd", calEnd));
             ExecCmdToGrid(cmd);
