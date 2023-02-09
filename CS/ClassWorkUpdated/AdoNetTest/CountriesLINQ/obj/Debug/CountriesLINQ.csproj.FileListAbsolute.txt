@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\bin\Debug\CountriesLINQ.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\bin\Debug\CountriesLINQ.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\bin\Debug\CountriesLINQ.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.Form1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\CountriesLINQ\obj\Debug\CountriesLINQ.pdb
