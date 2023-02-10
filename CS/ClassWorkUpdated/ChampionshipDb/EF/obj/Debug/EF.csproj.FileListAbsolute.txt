@@ -1,0 +1,15 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EF.dll.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.Migrations.Initial.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Debug\EF.Migrations.AddingGoals.resources
