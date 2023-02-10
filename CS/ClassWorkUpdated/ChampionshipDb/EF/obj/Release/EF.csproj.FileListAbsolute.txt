@@ -1,0 +1,15 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EF.dll.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.Migrations.Initial.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.Migrations.AddingGoals.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\EF\obj\Release\EF.pdb

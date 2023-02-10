@@ -1,0 +1,16 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\TestDb.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\TestDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\TestDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EF.dll.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\TestDb\obj\Release\TestDb.pdb
