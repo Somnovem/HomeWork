@@ -1,0 +1,16 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\WinForm_1EF.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\WinForm_1EF.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\WinForm_1EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.MainForm.resources

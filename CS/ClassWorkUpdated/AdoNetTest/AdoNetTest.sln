@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountriesLINQ", "CountriesL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado6_1EF", "Ado6_1EF\Ado6_1EF.csproj", "{95BF92CB-4EF0-46B7-9494-54E3BB8DADC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado7_1EF", "Ado7_1EF\Ado7_1EF.csproj", "{75192773-82ED-4251-8914-FD9FADC61816}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{95BF92CB-4EF0-46B7-9494-54E3BB8DADC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95BF92CB-4EF0-46B7-9494-54E3BB8DADC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95BF92CB-4EF0-46B7-9494-54E3BB8DADC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75192773-82ED-4251-8914-FD9FADC61816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75192773-82ED-4251-8914-FD9FADC61816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75192773-82ED-4251-8914-FD9FADC61816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75192773-82ED-4251-8914-FD9FADC61816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
