@@ -23,10 +23,10 @@ namespace Ado6_1EF
             //PrintAllAuthors(db);
 
 
-            PrintAllAuthorsAllArticles(db);
+            PrintAllAuthorsAllArticlesExplicit2(db);
 
-            Console.WriteLine("\npress any key...");
-            Console.ReadKey();
+            Console.WriteLine("\npress Enter key...");
+            Console.ReadLine();
         }
         private static void AddArticle(NewsDb db,Author a)
         {
@@ -124,6 +124,36 @@ namespace Ado6_1EF
                 {
                     Console.WriteLine($"{article.Title} - {article.DatePublished.ToShortDateString()}");
                 }
+            }
+        }
+        private static void PrintAllAuthorsAllArticlesExplicit(NewsDb db)
+        {
+            Console.WriteLine("All publications(explicit): ");
+            var authors = db.Authors.ToList();
+            foreach (Author author in authors)
+            {
+                Console.WriteLine(author);
+                Console.WriteLine("Publications:");
+
+                //явно загружает связанные данные к коллекции данных если автозагрузка не вариант
+                db.Entry(author).Collection("Articles").Load();
+
+                foreach (Article article in author.Articles.ToList())
+                {
+                    Console.WriteLine($"{article.Title} - {article.DatePublished.ToShortDateString()}");
+                }
+            }
+        }
+        private static void PrintAllAuthorsAllArticlesExplicit2(NewsDb db)
+        {
+            Console.WriteLine("All publications(explicit): ");
+            var articles = db.Articles.ToList();
+            foreach (Article article in articles)
+            {
+                //сначала загрузить, а уже потом обращаться
+                db.Entry(article).Reference("Author").Load();
+
+                Console.WriteLine($"{article.Title} ({article.Author.Firstname}  {article.Author.Lastname}) - {article.DatePublished.ToShortDateString()}");
             }
         }
     }

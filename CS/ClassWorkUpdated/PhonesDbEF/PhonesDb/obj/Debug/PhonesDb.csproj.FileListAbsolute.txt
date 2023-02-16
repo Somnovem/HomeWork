@@ -1,0 +1,17 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\PhonesDb.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\PhonesDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\PhonesDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.Migrations.Initial.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\PhonesDbEF\PhonesDb\obj\Debug\PhonesDb.MainForm.resources

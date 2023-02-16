@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContactsDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ContactsDbModelStoreContainer">
+    <EntitySet Name="Persons" EntityType="ContactsDbModel.Store.Persons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacts" EntityType="ContactsDbModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersonContact" Association="ContactsDbModel.Store.PersonContact">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Persons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Lastname" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Birth" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeInfo" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Person_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PersonContact">
+    <End Role="Person" Type="ContactsDbModel.Store.Persons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="ContactsDbModel.Store.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="Person_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

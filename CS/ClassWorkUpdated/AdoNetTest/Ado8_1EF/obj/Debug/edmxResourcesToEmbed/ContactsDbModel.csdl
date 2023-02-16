@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ContactsDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ContactsDbModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Persons" EntityType="ContactsDbModel.Person" />
+    <EntitySet Name="Contacts" EntityType="ContactsDbModel.Contact" />
+    <AssociationSet Name="PersonContact" Association="ContactsDbModel.PersonContact">
+      <End Role="Person" EntitySet="Persons" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="100" Unicode="true" />
+    <Property Name="Lastname" Type="String" Nullable="false" MaxLength="100" Unicode="true" />
+    <Property Name="Birth" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Contacts" Relationship="ContactsDbModel.PersonContact" FromRole="Person" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeInfo" Type="String" Nullable="false" MaxLength="20" Unicode="true" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="200" Unicode="true" />
+    <NavigationProperty Name="Person" Relationship="ContactsDbModel.PersonContact" FromRole="Contact" ToRole="Person" />
+  </EntityType>
+  <Association Name="PersonContact">
+    <End Type="ContactsDbModel.Person" Role="Person" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="ContactsDbModel.Contact" Role="Contact" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,17 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\Ado9_2EF.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\Ado9_2EF.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\Ado9_2EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.MainFormPhones.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado9_2EF\obj\Debug\Ado9_2EF.Migrations.Init.resources

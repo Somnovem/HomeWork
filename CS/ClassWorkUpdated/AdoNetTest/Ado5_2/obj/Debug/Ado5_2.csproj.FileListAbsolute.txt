@@ -1,0 +1,6 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.Form1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\AdoNetTest\Ado5_2\obj\Debug\Ado5_2.csproj.CoreCompileInputs.cache

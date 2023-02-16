@@ -1,0 +1,14 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EFCodeFirstGamesDb.dll.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EFCodeFirstGamesDb.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EFCodeFirstGamesDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EntityFramework.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EntityFramework.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.Migrations.Init30.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\GamesDbCodeFirst\EFCodeFirstGamesDb\obj\Debug\EFCodeFirstGamesDb.csproj.GenerateResource.cache
