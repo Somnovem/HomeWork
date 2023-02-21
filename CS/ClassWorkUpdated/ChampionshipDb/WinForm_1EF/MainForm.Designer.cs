@@ -39,6 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.edQueryDate = new System.Windows.Forms.DateTimePicker();
+            this.edQueryName = new System.Windows.Forms.TextBox();
+            this.btnShowDiffScoredMissed = new System.Windows.Forms.Button();
+            this.btnShowPlayersScoredOnDate = new System.Windows.Forms.Button();
+            this.btnShowMatchesOfTeam = new System.Windows.Forms.Button();
+            this.btnShowMatchOnDate = new System.Windows.Forms.Button();
+            this.btnShowMatch = new System.Windows.Forms.Button();
             this.btnShowMaxGoalsMissed = new System.Windows.Forms.Button();
             this.btnShowMaxGoalsScored = new System.Windows.Forms.Button();
             this.btnShowMaxTies = new System.Windows.Forms.Button();
@@ -65,6 +74,35 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvControls = new System.Windows.Forms.DataGridView();
+            this.colTeamsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsWins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsLosses = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsGoalsScored = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTeamsGoalsMissed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.edMatchDate = new System.Windows.Forms.DateTimePicker();
+            this.edMatchGoals2 = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.edMatchGoals1 = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.edMatchTeam2 = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.edMatchTeam1 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnMatchesSave = new System.Windows.Forms.Button();
+            this.btnMatchesUpdate = new System.Windows.Forms.Button();
+            this.btnMatchesDelete = new System.Windows.Forms.Button();
+            this.btnMatchesAdd = new System.Windows.Forms.Button();
+            this.dgvControlMatches = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatchTeam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatchTeam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatchGoalsScoredTeam1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatchGoalsScoredTeam2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatchesDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
@@ -77,6 +115,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.edNumLosses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edNumWins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControls)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchGoals2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchGoals1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchTeam2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchTeam1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvControlMatches)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -84,6 +128,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -206,6 +251,15 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Bisque;
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.edQueryDate);
+            this.tabPage2.Controls.Add(this.edQueryName);
+            this.tabPage2.Controls.Add(this.btnShowDiffScoredMissed);
+            this.tabPage2.Controls.Add(this.btnShowPlayersScoredOnDate);
+            this.tabPage2.Controls.Add(this.btnShowMatchesOfTeam);
+            this.tabPage2.Controls.Add(this.btnShowMatchOnDate);
+            this.tabPage2.Controls.Add(this.btnShowMatch);
             this.tabPage2.Controls.Add(this.btnShowMaxGoalsMissed);
             this.tabPage2.Controls.Add(this.btnShowMaxGoalsScored);
             this.tabPage2.Controls.Add(this.btnShowMaxTies);
@@ -219,9 +273,91 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Queries";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(196, 366);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Date for query";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(30, 366);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Name of the team";
+            // 
+            // edQueryDate
+            // 
+            this.edQueryDate.Location = new System.Drawing.Point(171, 382);
+            this.edQueryDate.Name = "edQueryDate";
+            this.edQueryDate.Size = new System.Drawing.Size(140, 20);
+            this.edQueryDate.TabIndex = 12;
+            // 
+            // edQueryName
+            // 
+            this.edQueryName.Location = new System.Drawing.Point(8, 382);
+            this.edQueryName.Name = "edQueryName";
+            this.edQueryName.Size = new System.Drawing.Size(140, 20);
+            this.edQueryName.TabIndex = 11;
+            // 
+            // btnShowDiffScoredMissed
+            // 
+            this.btnShowDiffScoredMissed.Location = new System.Drawing.Point(154, 146);
+            this.btnShowDiffScoredMissed.Name = "btnShowDiffScoredMissed";
+            this.btnShowDiffScoredMissed.Size = new System.Drawing.Size(130, 64);
+            this.btnShowDiffScoredMissed.TabIndex = 10;
+            this.btnShowDiffScoredMissed.Text = "Show diff between Scored and Missed per team";
+            this.btnShowDiffScoredMissed.UseVisualStyleBackColor = true;
+            this.btnShowDiffScoredMissed.Click += new System.EventHandler(this.btnShowDiffScoredMissed_Click);
+            // 
+            // btnShowPlayersScoredOnDate
+            // 
+            this.btnShowPlayersScoredOnDate.Location = new System.Drawing.Point(154, 286);
+            this.btnShowPlayersScoredOnDate.Name = "btnShowPlayersScoredOnDate";
+            this.btnShowPlayersScoredOnDate.Size = new System.Drawing.Size(130, 64);
+            this.btnShowPlayersScoredOnDate.TabIndex = 9;
+            this.btnShowPlayersScoredOnDate.Text = "Show all players who scored on date";
+            this.btnShowPlayersScoredOnDate.UseVisualStyleBackColor = true;
+            this.btnShowPlayersScoredOnDate.Click += new System.EventHandler(this.btnShowPlayersScoredOnDate_Click);
+            // 
+            // btnShowMatchesOfTeam
+            // 
+            this.btnShowMatchesOfTeam.Location = new System.Drawing.Point(18, 286);
+            this.btnShowMatchesOfTeam.Name = "btnShowMatchesOfTeam";
+            this.btnShowMatchesOfTeam.Size = new System.Drawing.Size(130, 64);
+            this.btnShowMatchesOfTeam.TabIndex = 8;
+            this.btnShowMatchesOfTeam.Text = "Show matches of INPUT team";
+            this.btnShowMatchesOfTeam.UseVisualStyleBackColor = true;
+            this.btnShowMatchesOfTeam.Click += new System.EventHandler(this.btnShowMatchesOfTeam_Click);
+            // 
+            // btnShowMatchOnDate
+            // 
+            this.btnShowMatchOnDate.Location = new System.Drawing.Point(154, 216);
+            this.btnShowMatchOnDate.Name = "btnShowMatchOnDate";
+            this.btnShowMatchOnDate.Size = new System.Drawing.Size(130, 64);
+            this.btnShowMatchOnDate.TabIndex = 7;
+            this.btnShowMatchOnDate.Text = "Show matches on DATE";
+            this.btnShowMatchOnDate.UseVisualStyleBackColor = true;
+            this.btnShowMatchOnDate.Click += new System.EventHandler(this.btnShowMatchOnDate_Click);
+            // 
+            // btnShowMatch
+            // 
+            this.btnShowMatch.Location = new System.Drawing.Point(18, 216);
+            this.btnShowMatch.Name = "btnShowMatch";
+            this.btnShowMatch.Size = new System.Drawing.Size(130, 64);
+            this.btnShowMatch.TabIndex = 6;
+            this.btnShowMatch.Text = "Show matches";
+            this.btnShowMatch.UseVisualStyleBackColor = true;
+            this.btnShowMatch.Click += new System.EventHandler(this.btnShowMatch_Click);
+            // 
             // btnShowMaxGoalsMissed
             // 
-            this.btnShowMaxGoalsMissed.Location = new System.Drawing.Point(85, 219);
+            this.btnShowMaxGoalsMissed.Location = new System.Drawing.Point(18, 146);
             this.btnShowMaxGoalsMissed.Name = "btnShowMaxGoalsMissed";
             this.btnShowMaxGoalsMissed.Size = new System.Drawing.Size(130, 64);
             this.btnShowMaxGoalsMissed.TabIndex = 5;
@@ -231,7 +367,7 @@
             // 
             // btnShowMaxGoalsScored
             // 
-            this.btnShowMaxGoalsScored.Location = new System.Drawing.Point(155, 149);
+            this.btnShowMaxGoalsScored.Location = new System.Drawing.Point(154, 76);
             this.btnShowMaxGoalsScored.Name = "btnShowMaxGoalsScored";
             this.btnShowMaxGoalsScored.Size = new System.Drawing.Size(130, 64);
             this.btnShowMaxGoalsScored.TabIndex = 4;
@@ -241,7 +377,7 @@
             // 
             // btnShowMaxTies
             // 
-            this.btnShowMaxTies.Location = new System.Drawing.Point(19, 149);
+            this.btnShowMaxTies.Location = new System.Drawing.Point(18, 76);
             this.btnShowMaxTies.Name = "btnShowMaxTies";
             this.btnShowMaxTies.Size = new System.Drawing.Size(130, 64);
             this.btnShowMaxTies.TabIndex = 3;
@@ -251,7 +387,7 @@
             // 
             // btnShowMaxLosses
             // 
-            this.btnShowMaxLosses.Location = new System.Drawing.Point(155, 79);
+            this.btnShowMaxLosses.Location = new System.Drawing.Point(154, 6);
             this.btnShowMaxLosses.Name = "btnShowMaxLosses";
             this.btnShowMaxLosses.Size = new System.Drawing.Size(130, 64);
             this.btnShowMaxLosses.TabIndex = 2;
@@ -261,7 +397,7 @@
             // 
             // btnShowMaxWins
             // 
-            this.btnShowMaxWins.Location = new System.Drawing.Point(19, 79);
+            this.btnShowMaxWins.Location = new System.Drawing.Point(18, 6);
             this.btnShowMaxWins.Name = "btnShowMaxWins";
             this.btnShowMaxWins.Size = new System.Drawing.Size(130, 64);
             this.btnShowMaxWins.TabIndex = 1;
@@ -304,7 +440,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(792, 424);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Controls";
+            this.tabPage3.Text = "ControlsTeams";
             // 
             // btnTeamSave
             // 
@@ -486,11 +622,283 @@
             // dgvControls
             // 
             this.dgvControls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvControls.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTeamsId,
+            this.colTeamsName,
+            this.colTeamsCity,
+            this.colTeamsWins,
+            this.colTeamsLosses,
+            this.colTeamsGoalsScored,
+            this.colTeamsGoalsMissed});
             this.dgvControls.Location = new System.Drawing.Point(4, 7);
             this.dgvControls.Name = "dgvControls";
             this.dgvControls.Size = new System.Drawing.Size(780, 264);
             this.dgvControls.TabIndex = 0;
             this.dgvControls.SelectionChanged += new System.EventHandler(this.dgvControls_SelectionChanged);
+            // 
+            // colTeamsId
+            // 
+            this.colTeamsId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsId.DataPropertyName = "Id";
+            this.colTeamsId.FillWeight = 20F;
+            this.colTeamsId.HeaderText = "Id";
+            this.colTeamsId.Name = "colTeamsId";
+            // 
+            // colTeamsName
+            // 
+            this.colTeamsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsName.DataPropertyName = "Name";
+            this.colTeamsName.HeaderText = "Name";
+            this.colTeamsName.Name = "colTeamsName";
+            // 
+            // colTeamsCity
+            // 
+            this.colTeamsCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsCity.DataPropertyName = "City";
+            this.colTeamsCity.FillWeight = 60F;
+            this.colTeamsCity.HeaderText = "City";
+            this.colTeamsCity.Name = "colTeamsCity";
+            // 
+            // colTeamsWins
+            // 
+            this.colTeamsWins.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsWins.DataPropertyName = "Wins";
+            this.colTeamsWins.FillWeight = 30F;
+            this.colTeamsWins.HeaderText = "Wins";
+            this.colTeamsWins.Name = "colTeamsWins";
+            // 
+            // colTeamsLosses
+            // 
+            this.colTeamsLosses.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsLosses.DataPropertyName = "Losses";
+            this.colTeamsLosses.FillWeight = 30F;
+            this.colTeamsLosses.HeaderText = "Losses";
+            this.colTeamsLosses.Name = "colTeamsLosses";
+            // 
+            // colTeamsGoalsScored
+            // 
+            this.colTeamsGoalsScored.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsGoalsScored.DataPropertyName = "GoalsScored";
+            this.colTeamsGoalsScored.FillWeight = 30F;
+            this.colTeamsGoalsScored.HeaderText = "GoalsScored";
+            this.colTeamsGoalsScored.Name = "colTeamsGoalsScored";
+            // 
+            // colTeamsGoalsMissed
+            // 
+            this.colTeamsGoalsMissed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTeamsGoalsMissed.DataPropertyName = "GoalsMissed";
+            this.colTeamsGoalsMissed.FillWeight = 30F;
+            this.colTeamsGoalsMissed.HeaderText = "GoalsMissed";
+            this.colTeamsGoalsMissed.Name = "colTeamsGoalsMissed";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.edMatchDate);
+            this.tabPage4.Controls.Add(this.edMatchGoals2);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.edMatchGoals1);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.edMatchTeam2);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.edMatchTeam1);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.btnMatchesSave);
+            this.tabPage4.Controls.Add(this.btnMatchesUpdate);
+            this.tabPage4.Controls.Add(this.btnMatchesDelete);
+            this.tabPage4.Controls.Add(this.btnMatchesAdd);
+            this.tabPage4.Controls.Add(this.dgvControlMatches);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(792, 424);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "ControlMatches";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(177, 389);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 13);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Date of match";
+            // 
+            // edMatchDate
+            // 
+            this.edMatchDate.Location = new System.Drawing.Point(131, 366);
+            this.edMatchDate.Name = "edMatchDate";
+            this.edMatchDate.Size = new System.Drawing.Size(200, 20);
+            this.edMatchDate.TabIndex = 32;
+            // 
+            // edMatchGoals2
+            // 
+            this.edMatchGoals2.Location = new System.Drawing.Point(252, 330);
+            this.edMatchGoals2.Name = "edMatchGoals2";
+            this.edMatchGoals2.Size = new System.Drawing.Size(120, 20);
+            this.edMatchGoals2.TabIndex = 31;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(263, 318);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "GoalsScoredTeam2";
+            // 
+            // edMatchGoals1
+            // 
+            this.edMatchGoals1.Location = new System.Drawing.Point(252, 295);
+            this.edMatchGoals1.Name = "edMatchGoals1";
+            this.edMatchGoals1.Size = new System.Drawing.Size(120, 20);
+            this.edMatchGoals1.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(263, 279);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(101, 13);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "GoalsScoredTeam1";
+            // 
+            // edMatchTeam2
+            // 
+            this.edMatchTeam2.Location = new System.Drawing.Point(67, 327);
+            this.edMatchTeam2.Name = "edMatchTeam2";
+            this.edMatchTeam2.Size = new System.Drawing.Size(120, 20);
+            this.edMatchTeam2.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(20, 329);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Team2Id";
+            // 
+            // edMatchTeam1
+            // 
+            this.edMatchTeam1.Location = new System.Drawing.Point(67, 295);
+            this.edMatchTeam1.Name = "edMatchTeam1";
+            this.edMatchTeam1.Size = new System.Drawing.Size(120, 20);
+            this.edMatchTeam1.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 297);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Team1Id";
+            // 
+            // btnMatchesSave
+            // 
+            this.btnMatchesSave.Location = new System.Drawing.Point(663, 358);
+            this.btnMatchesSave.Name = "btnMatchesSave";
+            this.btnMatchesSave.Size = new System.Drawing.Size(120, 41);
+            this.btnMatchesSave.TabIndex = 23;
+            this.btnMatchesSave.Text = "Save changes";
+            this.btnMatchesSave.UseVisualStyleBackColor = true;
+            this.btnMatchesSave.Click += new System.EventHandler(this.btnMatchesSave_Click);
+            // 
+            // btnMatchesUpdate
+            // 
+            this.btnMatchesUpdate.Location = new System.Drawing.Point(537, 358);
+            this.btnMatchesUpdate.Name = "btnMatchesUpdate";
+            this.btnMatchesUpdate.Size = new System.Drawing.Size(120, 41);
+            this.btnMatchesUpdate.TabIndex = 22;
+            this.btnMatchesUpdate.Text = "Update";
+            this.btnMatchesUpdate.UseVisualStyleBackColor = true;
+            this.btnMatchesUpdate.Click += new System.EventHandler(this.btnMatchesUpdate_Click);
+            // 
+            // btnMatchesDelete
+            // 
+            this.btnMatchesDelete.Location = new System.Drawing.Point(663, 306);
+            this.btnMatchesDelete.Name = "btnMatchesDelete";
+            this.btnMatchesDelete.Size = new System.Drawing.Size(120, 41);
+            this.btnMatchesDelete.TabIndex = 21;
+            this.btnMatchesDelete.Text = "Delete";
+            this.btnMatchesDelete.UseVisualStyleBackColor = true;
+            this.btnMatchesDelete.Click += new System.EventHandler(this.btnMatchesDelete_Click);
+            // 
+            // btnMatchesAdd
+            // 
+            this.btnMatchesAdd.Location = new System.Drawing.Point(537, 306);
+            this.btnMatchesAdd.Name = "btnMatchesAdd";
+            this.btnMatchesAdd.Size = new System.Drawing.Size(120, 41);
+            this.btnMatchesAdd.TabIndex = 20;
+            this.btnMatchesAdd.Text = "Add";
+            this.btnMatchesAdd.UseVisualStyleBackColor = true;
+            this.btnMatchesAdd.Click += new System.EventHandler(this.btnMatchesAdd_Click);
+            // 
+            // dgvControlMatches
+            // 
+            this.dgvControlMatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvControlMatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.colMatchTeam1,
+            this.colMatchTeam2,
+            this.colMatchGoalsScoredTeam1,
+            this.colMatchGoalsScoredTeam2,
+            this.colMatchesDate});
+            this.dgvControlMatches.Location = new System.Drawing.Point(6, 8);
+            this.dgvControlMatches.Name = "dgvControlMatches";
+            this.dgvControlMatches.Size = new System.Drawing.Size(780, 264);
+            this.dgvControlMatches.TabIndex = 19;
+            this.dgvControlMatches.SelectionChanged += new System.EventHandler(this.dgvControlMatches_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.FillWeight = 20F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // colMatchTeam1
+            // 
+            this.colMatchTeam1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMatchTeam1.DataPropertyName = "Team1Id";
+            this.colMatchTeam1.FillWeight = 70F;
+            this.colMatchTeam1.HeaderText = "Team1Id";
+            this.colMatchTeam1.Name = "colMatchTeam1";
+            // 
+            // colMatchTeam2
+            // 
+            this.colMatchTeam2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMatchTeam2.DataPropertyName = "Team2Id";
+            this.colMatchTeam2.FillWeight = 70F;
+            this.colMatchTeam2.HeaderText = "Team2Id";
+            this.colMatchTeam2.Name = "colMatchTeam2";
+            // 
+            // colMatchGoalsScoredTeam1
+            // 
+            this.colMatchGoalsScoredTeam1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMatchGoalsScoredTeam1.DataPropertyName = "GoalsScoredTeam1";
+            this.colMatchGoalsScoredTeam1.FillWeight = 40F;
+            this.colMatchGoalsScoredTeam1.HeaderText = "GoalsScoredTeam1";
+            this.colMatchGoalsScoredTeam1.Name = "colMatchGoalsScoredTeam1";
+            // 
+            // colMatchGoalsScoredTeam2
+            // 
+            this.colMatchGoalsScoredTeam2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMatchGoalsScoredTeam2.DataPropertyName = "GoalsScoredTeam2";
+            this.colMatchGoalsScoredTeam2.FillWeight = 40F;
+            this.colMatchGoalsScoredTeam2.HeaderText = "GoalsScoredTeam2";
+            this.colMatchGoalsScoredTeam2.Name = "colMatchGoalsScoredTeam2";
+            // 
+            // colMatchesDate
+            // 
+            this.colMatchesDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colMatchesDate.DataPropertyName = "DateOfMatch";
+            this.colMatchesDate.FillWeight = 30F;
+            this.colMatchesDate.HeaderText = "DateOfMatch";
+            this.colMatchesDate.Name = "colMatchesDate";
+            this.colMatchesDate.Width = 96;
             // 
             // MainForm
             // 
@@ -507,6 +915,7 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueries)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -516,6 +925,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.edNumLosses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edNumWins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControls)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchGoals2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchGoals1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchTeam2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edMatchTeam1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvControlMatches)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,6 +975,44 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown edNumLosses;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsWins;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsLosses;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsGoalsScored;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTeamsGoalsMissed;
+        private System.Windows.Forms.Button btnShowDiffScoredMissed;
+        private System.Windows.Forms.Button btnShowPlayersScoredOnDate;
+        private System.Windows.Forms.Button btnShowMatchesOfTeam;
+        private System.Windows.Forms.Button btnShowMatchOnDate;
+        private System.Windows.Forms.Button btnShowMatch;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker edQueryDate;
+        private System.Windows.Forms.TextBox edQueryName;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnMatchesSave;
+        private System.Windows.Forms.Button btnMatchesUpdate;
+        private System.Windows.Forms.Button btnMatchesDelete;
+        private System.Windows.Forms.Button btnMatchesAdd;
+        private System.Windows.Forms.DataGridView dgvControlMatches;
+        private System.Windows.Forms.NumericUpDown edMatchGoals2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown edMatchGoals1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown edMatchTeam2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown edMatchTeam1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker edMatchDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatchTeam1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatchTeam2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatchGoalsScoredTeam1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatchGoalsScoredTeam2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatchesDate;
     }
 }
 

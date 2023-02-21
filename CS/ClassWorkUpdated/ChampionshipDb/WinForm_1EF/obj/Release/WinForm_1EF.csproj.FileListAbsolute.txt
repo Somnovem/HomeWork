@@ -14,3 +14,6 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinF
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.exe
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.pdb
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\obj\Release\WinForm_1EF.MainForm.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EF.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EF.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\ChampionshipDb\WinForm_1EF\bin\Release\EF.dll.config
