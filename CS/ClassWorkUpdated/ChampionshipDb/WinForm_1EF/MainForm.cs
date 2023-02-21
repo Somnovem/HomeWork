@@ -302,7 +302,7 @@ namespace WinForm_1EF
         }
         private void btnMatchesAdd_Click(object sender, EventArgs e)
         {
-            if (dbEntities.Matches.Where(u => u.Team1Id == edMatchTeam1.Value || u.Team2Id == edMatchTeam2.Value || u.DateOfMatch == edMatchDate.Value).Count() != 0)
+            if (dbEntities.Matches.Where(u => u.Team1Id == edMatchTeam1.Value && u.Team2Id == edMatchTeam2.Value && u.DateOfMatch == edMatchDate.Value).Count() != 0)
             {
                 MessageBox.Show("Such match already exists");
                 return;
@@ -334,7 +334,7 @@ namespace WinForm_1EF
 
         private void btnMatchesDelete_Click(object sender, EventArgs e)
         {
-            Match match = dbEntities.Matches.Where(u => u.Team1Id == edMatchTeam1.Value || u.Team2Id == edMatchTeam2.Value || u.DateOfMatch == edMatchDate.Value).ToArray()[0];
+            Match match = dbEntities.Matches.Where(u => u.Team1Id == edMatchTeam1.Value && u.Team2Id == edMatchTeam2.Value && u.DateOfMatch == edMatchDate.Value).ToArray()[0];
             if (match == null)
             {
                 MessageBox.Show("No such match found!");
