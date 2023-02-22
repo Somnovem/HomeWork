@@ -147,6 +147,11 @@ namespace MessagerDb
                 MessageBox.Show("Some important values were left empty", "Error");
                 return;
             }
+            if (db.Contacts.Where(c => c.Id == (int)edMessagesContactId.Value).Count() == 0)
+            {
+                MessageBox.Show("No such contact found", "Error");
+                return;
+            }
             MessageHistory message = new MessageHistory() 
             {
             ContactId = (int)edMessagesContactId.Value,
