@@ -59,6 +59,13 @@ namespace SysApps1
         public static extern bool SetWindowText(IntPtr hwnd, String lpString);
         #endregion
 
+        #region funcs from Delphi
+        [DllImport("Project1.dll")]
+        public static extern double Circle(double r);
+        [DllImport("Project1.dll")]
+        public static extern double Square(double r);
+        #endregion
+
         #endregion
     }
 }

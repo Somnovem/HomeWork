@@ -56,7 +56,7 @@ namespace Main
             btn.Enabled = false;
             try
             {
-                db.Execute(sql,  param );
+                db.ExecuteAsync(sql,  param );
                 MessageBox.Show(msg);
                 return true;
             }
@@ -75,7 +75,7 @@ namespace Main
         {
             dgv.DataSource = null;
             dgv.Columns.Clear();
-            var result = db.Query(sql, param).ToList();
+            var result =db.QueryAsync(sql, param).Result.ToList();
             for (int i = 0; i < columns.Count; i++)
             {
                 dgv.Columns.Add($"colQueries1{columns[i]}", columns[i]);

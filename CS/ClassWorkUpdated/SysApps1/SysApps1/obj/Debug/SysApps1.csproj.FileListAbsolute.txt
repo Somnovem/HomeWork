@@ -6,3 +6,4 @@ C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps1\o
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps1\obj\Debug\SysApps1.csproj.CoreCompileInputs.cache
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps1\obj\Debug\SysApps1.exe
 C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps1\obj\Debug\SysApps1.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps1\bin\Debug\Project1.dll

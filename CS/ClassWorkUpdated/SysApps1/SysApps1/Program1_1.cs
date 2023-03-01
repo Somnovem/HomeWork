@@ -12,7 +12,8 @@ namespace SysApps1
         static void Main(string[] args)
         {
             Console.Title = "System Applications - 1";
-            Practice1_1.UpdateNotepad();
+            TestDllImportDelphi();
+
             Console.WriteLine("Press Enter...");
             Console.ReadKey();
         }
@@ -24,6 +25,17 @@ namespace SysApps1
             Console.WriteLine(result);
             result = FunctionsExt.MessageBoxUnicode(IntPtr.Zero, "Hello world!", "Test", FunctionsExt.MB_OK | FunctionsExt.MB_ICONINFORMATION);
             Console.WriteLine(result);
+        }
+        private static void TestDllImportDelphi() 
+        {
+            Console.Write("Radius = ");
+            double r = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Area of circle: {FunctionsExt.Circle(r)}");
+
+            Console.Write("Side of square = ");
+            double s = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Area of square: {FunctionsExt.Square(s)}");
+
         }
 
         static void TestShowWindow() 
