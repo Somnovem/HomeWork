@@ -44,6 +44,8 @@ namespace SysApps1
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool EnableWindow(IntPtr hWnd, bool bEnable);
 
+        #region Practice1_1
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
 
@@ -53,8 +55,10 @@ namespace SysApps1
         [DllImport("user32.dll")]
         public  static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern string SendMessage(IntPtr hWnd, int msg, string wParam, IntPtr lParam);
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern bool SetWindowText(IntPtr hwnd, String lpString);
+        #endregion
+
         #endregion
     }
 }

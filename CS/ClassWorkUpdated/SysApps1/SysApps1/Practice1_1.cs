@@ -48,10 +48,10 @@ namespace SysApps1
         }
         public static void UpdateNotepad() 
         {
-            IntPtr handle = FunctionsExt.FindWindow("Notepad", "test.txt – Блокнот");
+            IntPtr handle = FunctionsExt.FindWindow("Notepad", null);
             while (true)
             {
-                FunctionsExt.SendMessage(handle, FunctionsExt.WM_SETTEXT, DateTime.Now.ToShortTimeString(), IntPtr.Zero);
+                FunctionsExt.SetWindowText(handle, DateTime.Now.ToString("HH:mm:ss"));
                 System.Threading.Thread.Sleep(1000);
             }
         }
