@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.MainFormChild.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\bin\Debug\HW2_1Child.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\bin\Debug\HW2_1Child.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\bin\Debug\HW2_1Child.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\HW2_1Child\obj\Debug\HW2_1Child.pdb
