@@ -38,9 +38,6 @@
             this.btnSetTimer = new System.Windows.Forms.Button();
             this.edTimer = new System.Windows.Forms.NumericUpDown();
             this.btnChime = new System.Windows.Forms.Button();
-            this.edColor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.edTitle = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.edTimer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,47 +148,11 @@
             this.btnChime.UseVisualStyleBackColor = true;
             this.btnChime.Click += new System.EventHandler(this.btnChime_Click);
             // 
-            // edColor
-            // 
-            this.edColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.edColor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.edColor.Location = new System.Drawing.Point(620, 29);
-            this.edColor.Name = "edColor";
-            this.edColor.Size = new System.Drawing.Size(168, 13);
-            this.edColor.TabIndex = 11;
-            this.edColor.Text = "White";
-            this.edColor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.edColor.TextChanged += new System.EventHandler(this.edColor_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(649, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Color(changed in settings)";
-            // 
-            // edTitle
-            // 
-            this.edTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.edTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.edTitle.Location = new System.Drawing.Point(315, 27);
-            this.edTitle.Name = "edTitle";
-            this.edTitle.Size = new System.Drawing.Size(188, 19);
-            this.edTitle.TabIndex = 13;
-            this.edTitle.Text = "Greetings!";
-            this.edTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // MainForm1_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.edTitle);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.edColor);
             this.Controls.Add(this.btnChime);
             this.Controls.Add(this.edTimer);
             this.Controls.Add(this.btnSetTimer);
@@ -222,9 +183,6 @@
         private System.Windows.Forms.Button btnSetTimer;
         private System.Windows.Forms.NumericUpDown edTimer;
         private System.Windows.Forms.Button btnChime;
-        private System.Windows.Forms.TextBox edColor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox edTitle;
     }
 }
 

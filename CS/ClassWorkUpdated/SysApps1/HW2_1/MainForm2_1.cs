@@ -50,29 +50,8 @@ namespace HW2_1
         {
             decimal num1 = edMathFirst.Value;
             decimal num2 = edMathSecond.Value;
-            decimal res = 0.0m;
             char sign = ((string)cbMathSign.SelectedItem)[0];
-            switch (sign)
-            {
-                case '+':
-                    res = num1 + num2;
-                    break;
-                case '-':
-                    res = num1 - num2;
-                    break;
-                case '*':
-                    res = num1 * num2;
-                    break;
-                case '/':
-                    res = num1 / num2;
-                    break;
-                case '^':
-                    res = (decimal)Math.Pow((double)num1, (double)num2);
-                    break;
-                default:
-                    break;
-            }
-            StartChildWithParams($"{num1}{sign}{num2}={res} {0}");
+            StartChildWithParams($"{num1} {sign} {num2} 0 0");
         }
 
         private void btnStartFile_Click(object sender, EventArgs e)
@@ -80,21 +59,7 @@ namespace HW2_1
             if (string.IsNullOrEmpty(edFileName.Text)) return;
             string path = edPath.Text;
             string fileName = edFileName.Text;
-            int count = Directory.EnumerateFiles(path).Where(p => p.Contains(fileName)).Count();
-            var subdirectories = Directory.EnumerateDirectories(path);
-            foreach (var directory in subdirectories)
-            {
-                try
-                {
-                    count += Directory.EnumerateFiles(directory).Where(p => p.Contains(fileName)).Count();
-                }
-                catch 
-                {
-                    // do nothing(error - access denied )
-                }
-
-            }
-            StartChildWithParams($"0+0=0 {count}");
+            StartChildWithParams($"0 + 0 {path} {fileName}");
         }
 
         private void btnKillChild_Click(object sender, EventArgs e)

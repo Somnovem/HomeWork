@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChildForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildForm.Designer.cs">
-      <DependentUpon>ChildForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm2_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChildForm.resx">
-      <DependentUpon>ChildForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm2_1.resx">
       <DependentUpon>MainForm2_1.cs</DependentUpon>
     </EmbeddedResource>
