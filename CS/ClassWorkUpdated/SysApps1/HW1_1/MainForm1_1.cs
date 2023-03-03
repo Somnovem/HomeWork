@@ -17,25 +17,19 @@ namespace HW1_1
         public MainForm1_1()
         {
             InitializeComponent();
-            MainFormSettings wnd = new MainFormSettings();
-            wnd.Show();
+            //MainFormSettings wnd = new MainFormSettings();
+            //wnd.Show();
             caption = this.Text;
         }
 
         private void btnPersonalInMessageBoxes_Click(object sender, EventArgs e)
         {
-            //FunctionsExt.MessageBox(IntPtr.Zero, "Name: Zhmura Artem", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);
-            //DateTime birth = new DateTime();
-            //birth = birth.AddYears(2005);
-            //birth = birth.AddMonths(7);
-            //birth = birth.AddDays(2);
-            //FunctionsExt.MessageBox(IntPtr.Zero, $"Birth: {birth.ToShortDateString()}", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);
-            //FunctionsExt.MessageBox(IntPtr.Zero, "Nationality: Ukrainian", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);
             IntPtr handle = FunctionsExt.FindWindow(null, "SP-Homework1_1");
             var style = FunctionsExt.GetWindowLongPtr(handle, (int)FunctionsExt.WindowLongFlags.GWL_STYLE);
-            
+            uint old = (uint)style;
+            uint newStyle = (uint)FunctionsExt.WS.WS_DISABLED ^ old; //битовое исключающее или
+            IntPtr newResult = FunctionsExt.SetWindowLongPtr(handle, (int)FunctionsExt.WindowLongFlags.GWL_STYLE, (IntPtr)newStyle);
         }
-
         private void btnChangeCaption_Click(object sender, EventArgs e)
         {
             if (captionLocked) return;
@@ -93,3 +87,17 @@ namespace HW1_1
         }
     }
 }
+
+
+
+
+
+
+
+//FunctionsExt.MessageBox(IntPtr.Zero, "Name: Zhmura Artem", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);
+//DateTime birth = new DateTime();
+//birth = birth.AddYears(2005);
+//birth = birth.AddMonths(7);
+//birth = birth.AddDays(2);
+//FunctionsExt.MessageBox(IntPtr.Zero, $"Birth: {birth.ToShortDateString()}", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);
+//FunctionsExt.MessageBox(IntPtr.Zero, "Nationality: Ukrainian", "Info", FunctionsExt.MB_OK | FunctionsExt.MB_ICONQUESTION);

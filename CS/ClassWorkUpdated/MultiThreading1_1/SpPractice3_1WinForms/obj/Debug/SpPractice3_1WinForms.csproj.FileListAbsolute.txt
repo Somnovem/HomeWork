@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\bin\Debug\SpPractice3_1WinForms.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\bin\Debug\SpPractice3_1WinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\bin\Debug\SpPractice3_1WinForms.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.MainFormPractice3_1.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultiThreading1_1\SpPractice3_1WinForms\obj\Debug\SpPractice3_1WinForms.pdb
