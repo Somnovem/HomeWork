@@ -16,8 +16,12 @@ namespace SpHomeWork3_1
         {
             InitializeComponent();
         }
+
         Thread threadPrimes;
         Thread threadFibon;
+
+        bool threadPrimesSuspended = false;
+        bool threadFibonSuspended = false;
 
 #region Prime numbers
         private void btnPrimesStart_Click(object sender, EventArgs e)
@@ -27,6 +31,7 @@ namespace SpHomeWork3_1
                 MessageBox.Show("Can`t leave both limits unused");
                 return;
             }
+            lbPrimes.Items.Clear();
             btnPrimesStart.Enabled = false;
             int start = cbRangeStart.Checked ? (int)edRangeStart.Value : -1;
             int end = cbRangeEnd.Checked ? (int)edRangeEnd.Value : -1;
@@ -58,39 +63,44 @@ namespace SpHomeWork3_1
 
         private void btnPrimesReset_Click(object sender, EventArgs e)
         {
+            if (threadPrimes == null) return;
+            if (threadPrimes.IsAlive) btnPrimesStop_Click(null, null);
             btnPrimesStart.Enabled = true;
-            lbPrimes.Items.Clear();
             cbRangeStart.Checked = true;
             cbRangeEnd.Checked = false;
             edRangeStart.Value = 0;
             edRangeEnd.Value = 0;
             btnPrimesStop.BackColor = Color.White;
+            threadPrimesSuspended = false;
+            threadPrimes = null;
+            lbPrimes.Items.Clear();
         }
 
         private void btnPrimesFreeze_Click(object sender, EventArgs e)
         {
-            if (!btnPrimesStart.Enabled && threadPrimes.IsAlive)
+            if (threadPrimes != null && threadPrimes.IsAlive && !threadPrimesSuspended)
             {
                 threadPrimes.Suspend();
+                threadPrimesSuspended = true;
             }
 
         }
 
         private void btnPrimesUnfreeze_Click(object sender, EventArgs e)
         {
-            if (!btnPrimesStart.Enabled && threadPrimes.IsAlive)
+            if (threadPrimes != null && threadPrimes.IsAlive && threadPrimesSuspended)
             {
                 threadPrimes.Resume();
+                threadPrimesSuspended = false;
             }
 
         }
 
         private void btnPrimesStop_Click(object sender, EventArgs e)
         {
-            if (!btnPrimesStart.Enabled && threadPrimes.IsAlive)
+            if (threadPrimes != null && threadPrimes.IsAlive)
             {
-                threadPrimes.Suspend();
-                threadPrimes.Resume();
+                if(threadPrimesSuspended)threadPrimes.Resume();
                 threadPrimes.Abort();
                 btnPrimesStop.BackColor = Color.Coral;
             }
@@ -129,18 +139,18 @@ namespace SpHomeWork3_1
 
         private void btnFibonacciFreeze_Click(object sender, EventArgs e)
         {
-            if (!btnFibonacciStart.Enabled && threadFibon.IsAlive)
+            if (threadFibon != null && threadFibon.IsAlive && !threadFibonSuspended)
             {
                 threadFibon.Suspend();
+                threadFibonSuspended = true;
             }
         }
 
         private void btnFibonacciStop_Click(object sender, EventArgs e)
         {
-            if (!btnFibonacciStart.Enabled && threadFibon.IsAlive)
+            if (threadFibon != null && threadFibon.IsAlive)
             {
-                threadFibon.Suspend();
-                threadFibon.Resume();
+                if(threadFibonSuspended)threadFibon.Resume();
                 threadFibon.Abort();
                 btnFibonacciStop.BackColor = Color.Coral;
             }
@@ -148,19 +158,24 @@ namespace SpHomeWork3_1
 
         private void btnFibonacciUnfreeze_Click(object sender, EventArgs e)
         {
-            if (!btnFibonacciStart.Enabled && threadFibon.IsAlive)
+            if (threadFibon != null && threadFibon.IsAlive && threadFibonSuspended)
             {
                 threadFibon.Resume();
+                threadFibonSuspended = false;
             }
         }
 
         private void btnFibonacciReset_Click(object sender, EventArgs e)
         {
+            if (threadFibon == null) return;
+            if (threadFibon.IsAlive) btnFibonacciStop_Click(null, null);
             btnFibonacciStart.Enabled = true;
             lbFibonacci.Items.Clear();
             btnFibonacciStop.BackColor = Color.White;
+            threadFibonSuspended = false;
+            threadFibon = null;
         }
-        #endregion
+#endregion
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
