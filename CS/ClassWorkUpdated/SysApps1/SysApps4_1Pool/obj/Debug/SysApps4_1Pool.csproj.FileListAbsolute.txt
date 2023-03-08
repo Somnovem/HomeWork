@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\bin\Debug\SysApps4_1Pool.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\bin\Debug\SysApps4_1Pool.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\bin\Debug\SysApps4_1Pool.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\obj\Debug\SysApps4_1Pool.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\obj\Debug\SysApps4_1Pool.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\obj\Debug\SysApps4_1Pool.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\obj\Debug\SysApps4_1Pool.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps4_1Pool\obj\Debug\SysApps4_1Pool.pdb

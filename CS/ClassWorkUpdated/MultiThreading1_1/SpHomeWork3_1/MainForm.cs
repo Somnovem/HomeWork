@@ -20,9 +20,6 @@ namespace SpHomeWork3_1
         Thread threadPrimes;
         Thread threadFibon;
 
-        bool threadPrimesSuspended = false;
-        bool threadFibonSuspended = false;
-
 #region Prime numbers
         private void btnPrimesStart_Click(object sender, EventArgs e)
         {
@@ -53,7 +50,8 @@ namespace SpHomeWork3_1
         {
             Action a = () =>
             {
-                lbPrimes.Items.Add(obj);
+                if (threadPrimes != null)
+                    lbPrimes.Items.Add(obj);
             };
             if (InvokeRequired)
                 Invoke(a);
@@ -71,27 +69,24 @@ namespace SpHomeWork3_1
             edRangeStart.Value = 0;
             edRangeEnd.Value = 0;
             btnPrimesStop.BackColor = Color.White;
-            threadPrimesSuspended = false;
             threadPrimes = null;
             lbPrimes.Items.Clear();
         }
 
         private void btnPrimesFreeze_Click(object sender, EventArgs e)
         {
-            if (threadPrimes != null && threadPrimes.IsAlive && !threadPrimesSuspended)
+            if (threadPrimes != null && threadPrimes.IsAlive && threadPrimes.ThreadState != ThreadState.SuspendRequested && threadPrimes.ThreadState != ThreadState.Suspended)
             {
                 threadPrimes.Suspend();
-                threadPrimesSuspended = true;
             }
 
         }
 
         private void btnPrimesUnfreeze_Click(object sender, EventArgs e)
         {
-            if (threadPrimes != null && threadPrimes.IsAlive && threadPrimesSuspended)
+            if (threadPrimes != null && threadPrimes.IsAlive && threadPrimes.ThreadState == ThreadState.Suspended)
             {
                 threadPrimes.Resume();
-                threadPrimesSuspended = false;
             }
 
         }
@@ -100,7 +95,7 @@ namespace SpHomeWork3_1
         {
             if (threadPrimes != null && threadPrimes.IsAlive)
             {
-                if(threadPrimesSuspended)threadPrimes.Resume();
+                if(threadPrimes.ThreadState == ThreadState.Suspended) threadPrimes.Resume();
                 threadPrimes.Abort();
                 btnPrimesStop.BackColor = Color.Coral;
             }
@@ -129,6 +124,7 @@ namespace SpHomeWork3_1
         {
             Action a = () =>
             {
+                if(threadFibon != null)
                 lbFibonacci.Items.Add(obj);
             };
             if (InvokeRequired)
@@ -139,10 +135,9 @@ namespace SpHomeWork3_1
 
         private void btnFibonacciFreeze_Click(object sender, EventArgs e)
         {
-            if (threadFibon != null && threadFibon.IsAlive && !threadFibonSuspended)
+            if (threadFibon != null && threadFibon.IsAlive && threadFibon.ThreadState != ThreadState.SuspendRequested && threadFibon.ThreadState != ThreadState.Suspended)
             {
                 threadFibon.Suspend();
-                threadFibonSuspended = true;
             }
         }
 
@@ -150,7 +145,7 @@ namespace SpHomeWork3_1
         {
             if (threadFibon != null && threadFibon.IsAlive)
             {
-                if(threadFibonSuspended)threadFibon.Resume();
+                if(threadFibon.ThreadState == ThreadState.Suspended) threadFibon.Resume();
                 threadFibon.Abort();
                 btnFibonacciStop.BackColor = Color.Coral;
             }
@@ -158,10 +153,9 @@ namespace SpHomeWork3_1
 
         private void btnFibonacciUnfreeze_Click(object sender, EventArgs e)
         {
-            if (threadFibon != null && threadFibon.IsAlive && threadFibonSuspended)
+            if (threadFibon != null && threadFibon.IsAlive && threadFibon.ThreadState == ThreadState.Suspended)
             {
                 threadFibon.Resume();
-                threadFibonSuspended = false;
             }
         }
 
@@ -172,7 +166,6 @@ namespace SpHomeWork3_1
             btnFibonacciStart.Enabled = true;
             lbFibonacci.Items.Clear();
             btnFibonacciStop.BackColor = Color.White;
-            threadFibonSuspended = false;
             threadFibon = null;
         }
 #endregion
