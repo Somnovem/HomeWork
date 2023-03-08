@@ -97,7 +97,7 @@ namespace Practice1_1
             Action a = () =>
             {
                 progress += res;
-                edProgress.Value = (progress / lbFiles.Items.Count) * 100;
+                edProgress.Value = (int)(((decimal)progress / lbFiles.Items.Count) * 100);
             };
             if (InvokeRequired)
                 Invoke(a);
