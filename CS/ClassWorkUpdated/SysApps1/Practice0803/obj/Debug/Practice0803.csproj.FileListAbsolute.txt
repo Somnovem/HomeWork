@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\bin\Debug\Practice0803.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\bin\Debug\Practice0803.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\bin\Debug\Practice0803.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\obj\Debug\Practice0803.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\obj\Debug\Practice0803.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\obj\Debug\Practice0803.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\obj\Debug\Practice0803.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803\obj\Debug\Practice0803.pdb

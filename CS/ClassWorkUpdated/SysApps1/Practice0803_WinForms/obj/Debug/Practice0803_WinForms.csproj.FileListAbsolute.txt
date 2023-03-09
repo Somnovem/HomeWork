@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.MainFormMutex.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\bin\Debug\Practice0803_WinForms.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\bin\Debug\Practice0803_WinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\bin\Debug\Practice0803_WinForms.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\Practice0803_WinForms\obj\Debug\Practice0803_WinForms.pdb

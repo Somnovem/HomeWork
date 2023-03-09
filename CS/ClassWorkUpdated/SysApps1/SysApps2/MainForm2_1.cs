@@ -69,7 +69,16 @@ namespace SysApps2
 
         private void Process_Exited(object sender, EventArgs e)
         {
-            MessageBox.Show("Process ended", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            Process process = sender as Process;
+            if (process == null)
+            {
+                MessageBox.Show("Process ended", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show($"Process ended by {process.ProcessName}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private int GetParentProcessId(int Id) 
