@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice0803", "Practice080
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice0803_WinForms", "Practice0803_WinForms\Practice0803_WinForms.csproj", "{CA08FE05-4A24-4BBD-8F24-A0D7BAF1EA8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps6_1", "SysApps6_1\SysApps6_1.csproj", "{B575B329-C00C-4EA6-8493-1BF75AD05DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps6_2", "SysApps6_2\SysApps6_2.csproj", "{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{CA08FE05-4A24-4BBD-8F24-A0D7BAF1EA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA08FE05-4A24-4BBD-8F24-A0D7BAF1EA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA08FE05-4A24-4BBD-8F24-A0D7BAF1EA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B575B329-C00C-4EA6-8493-1BF75AD05DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B575B329-C00C-4EA6-8493-1BF75AD05DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B575B329-C00C-4EA6-8493-1BF75AD05DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B575B329-C00C-4EA6-8493-1BF75AD05DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

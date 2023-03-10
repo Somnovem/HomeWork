@@ -63,6 +63,7 @@ namespace Practice0803_WinForms
         }
         private void btnOperationGenerate_Click(object sender, EventArgs e)
         {
+            lbCounter.Items.Clear();
             mutexAscending = new Mutex(false, "mutexAscending");
             Thread threadAsc = new Thread(NumsAscending);
             Thread threadDesc = new Thread(NumsDescending);
@@ -78,7 +79,6 @@ namespace Practice0803_WinForms
         private static List<int> list;
         private static int max;
 
-
         private static void FillAraay()
         {
             mutexFill.WaitOne();
@@ -93,18 +93,18 @@ namespace Practice0803_WinForms
         {
             Mutex mutexIncrease = new Mutex(false, "mutexIncreaseArray");
             mutexIncrease.WaitOne();
-                Mutex mut;
-                while (!Mutex.TryOpenExisting("mutexFillArray", out mut))
-                {
-                    Thread.Sleep(1000);
-                }
-                mut.WaitOne();
-                int ampl = new Random().Next(1, 11);
-                for (int i = 0; i < list.Count; i++)
-                {
-                    list[i] += ampl;
-                }
-                mutexIncrease.ReleaseMutex();
+            Mutex mut;
+            while (!Mutex.TryOpenExisting("mutexFillArray", out mut))
+            {
+                Thread.Sleep(1000);
+            }
+            mut.WaitOne();
+            int ampl = new Random().Next(1, 11);
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] += ampl;
+            }
+            mutexIncrease.ReleaseMutex();
             mut.ReleaseMutex();
         }
         private static void FindMax()
@@ -125,10 +125,7 @@ namespace Practice0803_WinForms
         {
             lbArray.Items.Clear();
             list = new List<int>();
-            if (!Mutex.TryOpenExisting("mutexFillArray",out mutexFill))
-            {
-                mutexFill = new Mutex(false, "mutexFillArray");
-            }
+            mutexFill = new Mutex(false, "mutexFillArray");
             Thread threadFill = new Thread(FillAraay);
             Thread threadIncrease = new Thread(IncreaseArray);
             Thread threadMax = new Thread(FindMax);
@@ -139,19 +136,20 @@ namespace Practice0803_WinForms
             Mutex mut;
             while (!Mutex.TryOpenExisting("mutexFindMax", out mut))
             {
-                
+
             }
 
             mut.WaitOne();
-                foreach (var item in list)
-                {
-                    lbArray.Items.Add(item);
-                }
-                edMax.Value = max;
-                btnOperationArray.Enabled = false;
+            foreach (var item in list)
+            {
+                lbArray.Items.Add(item);
+            }
+            edMax.Value = max;
+            btnOperationArray.Enabled = false;
             mut.ReleaseMutex();
 
         }
+
         #endregion
 
     }
