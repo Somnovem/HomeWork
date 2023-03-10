@@ -32,12 +32,6 @@ namespace Practice2_1
             //Console.WriteLine($"Minumum: {min}");
             //Console.WriteLine($"Average: {avg}");
             #endregion
-            #region Task 3 Main
-            Thread thread1 = new Thread(SortArray);
-            thread1.Start(list);
-            Thread thread2 = new Thread(ArrayContains);
-            thread2.Start(1);
-            #endregion
             #region Task 2 Main
             //Console.Write("Enter path to the file: ");
             //string path = Console.ReadLine();
@@ -50,6 +44,12 @@ namespace Practice2_1
             //thread1.Start(path);
             //Thread thread2 = new Thread(Replacer);
             //thread2.Start(path);
+            #endregion
+            #region Task 3 Main
+            Thread thread1 = new Thread(SortArray);
+            thread1.Start(list);
+            Thread thread2 = new Thread(ArrayContains);
+            thread2.Start(1);
             #endregion
             Console.WriteLine("Press Enter...");
             Console.Read();
@@ -93,32 +93,6 @@ namespace Practice2_1
         //    analyzeNumbers.Set();
         //}
         #endregion
-        #region Task 3
-        private static List<int> list = new List<int> { 8, 99, 4, 10, 2, 634 };
-        private static void SortArray(object obj)
-        {
-            List<int> temp = (List<int>)obj;
-            lock (lockObject)
-            {
-                temp.Sort();
-                for (int i = 0; i < temp.Count; i++)
-                {
-                    Console.WriteLine(temp[i]);
-                }
-            }
-        }
-        private static void ArrayContains(object obj)
-        {
-
-            lock (lockObject)
-            {
-                int num = (int)obj;
-                string res = list.Contains(num) ? "contains" : "does not contain";
-                Console.WriteLine($"Array {res} {num}");
-            }
-
-        }
-        #endregion
         #region Task 2
         //private static void CountSentences(object obj) 
         //{
@@ -151,6 +125,32 @@ namespace Practice2_1
         //        Console.WriteLine("Replacing end");
         //    }
         //}
+        #endregion
+        #region Task 3
+        private static List<int> list = new List<int> { 8, 99, 4, 10, 2, 634 };
+        private static void SortArray(object obj)
+        {
+            List<int> temp = (List<int>)obj;
+            lock (lockObject)
+            {
+                temp.Sort();
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    Console.WriteLine(temp[i]);
+                }
+            }
+        }
+        private static void ArrayContains(object obj)
+        {
+
+            lock (lockObject)
+            {
+                int num = (int)obj;
+                string res = list.Contains(num) ? "contains" : "does not contain";
+                Console.WriteLine($"Array {res} {num}");
+            }
+
+        }
         #endregion
     }
 }
