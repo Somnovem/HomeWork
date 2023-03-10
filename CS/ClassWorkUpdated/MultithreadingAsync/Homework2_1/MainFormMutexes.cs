@@ -36,15 +36,17 @@ namespace Homework2_1
             Action a = () =>
             {
                 lblState.Text = "Finished";
-                performedAction = true;
+                didGenerateFiles = true;
                 btnPerformOperations.Enabled = true;
             };
             if (InvokeRequired) Invoke(a);
             else a();
         }
 
-        private bool performedAction = false;
+        private bool didGenerateFiles = false;
         private event Action GenerationFinished;
+
+
         private void btnPerformOperations_Click(object sender, EventArgs e)
         {
             Reset();
@@ -60,7 +62,7 @@ namespace Homework2_1
 
         private void Reset()
         {
-            performedAction = false;
+            didGenerateFiles = false;
             btnPerformOperations.Enabled = false;
             lblState.Text = "Running";
             Mutex mut;
@@ -92,17 +94,17 @@ namespace Homework2_1
                 Thread.Sleep(1000);
             }
             mut.WaitOne();
-                Mutex mutexPrimeNumbers = new Mutex(false, "mutexPrimeNumbers");
-                mutexPrimeNumbers.WaitOne();
-                    List<int> initialNumbers = (from n in File.ReadAllLines("InitialNumbers.txt") select int.Parse(n)).ToList();
-                    using (StreamWriter writer = new StreamWriter("PrimeNumbers.txt"))
-                    {
-                        for (int i = 0; i < initialNumbers.Count; i++)
-                        {
-                           if(initialNumbers[i].IsPrime())writer.WriteLine(initialNumbers[i].ToString());
-                        }
-                    }
-                mutexPrimeNumbers.ReleaseMutex();
+            Mutex mutexPrimeNumbers = new Mutex(false, "mutexPrimeNumbers");
+            mutexPrimeNumbers.WaitOne();
+            List<int> initialNumbers = (from n in File.ReadAllLines("InitialNumbers.txt") select int.Parse(n)).ToList();
+            using (StreamWriter writer = new StreamWriter("PrimeNumbers.txt"))
+            {
+                for (int i = 0; i < initialNumbers.Count; i++)
+                {
+                    if (initialNumbers[i].IsPrime()) writer.WriteLine(initialNumbers[i].ToString());
+                }
+            }
+            mutexPrimeNumbers.ReleaseMutex();
             mut.ReleaseMutex();
         }
 
@@ -114,17 +116,17 @@ namespace Homework2_1
                 Thread.Sleep(1000);
             }
             mut.WaitOne();
-                Mutex mutexPrimeNumbersEnding7 = new Mutex(false, "mutexPrimeNumbersEnding7");
-                mutexPrimeNumbersEnding7.WaitOne();
-                    List<int> primeNumbers = (from n in File.ReadAllLines("PrimeNumbers.txt") select int.Parse(n)).ToList();
-                    using (StreamWriter writer = new StreamWriter("PrimeNumbersEnding7.txt"))
-                    {
-                        for (int i = 0; i < primeNumbers.Count; i++)
-                        {
-                            if (primeNumbers[i] % 10 == 7) writer.WriteLine(primeNumbers[i].ToString());
-                        }
-                    }
-                mutexPrimeNumbersEnding7.ReleaseMutex();
+            Mutex mutexPrimeNumbersEnding7 = new Mutex(false, "mutexPrimeNumbersEnding7");
+            mutexPrimeNumbersEnding7.WaitOne();
+            List<int> primeNumbers = (from n in File.ReadAllLines("PrimeNumbers.txt") select int.Parse(n)).ToList();
+            using (StreamWriter writer = new StreamWriter("PrimeNumbersEnding7.txt"))
+            {
+                for (int i = 0; i < primeNumbers.Count; i++)
+                {
+                    if (primeNumbers[i] % 10 == 7) writer.WriteLine(primeNumbers[i].ToString());
+                }
+            }
+            mutexPrimeNumbersEnding7.ReleaseMutex();
             mut.ReleaseMutex();
         }
 
@@ -174,24 +176,29 @@ namespace Homework2_1
             mut.ReleaseMutex();
         }
 
+        private void OpenFile(string path) 
+        {
+            if (didGenerateFiles) Process.Start(path);
+        }
+
         private void btnOpenInit_Click(object sender, EventArgs e)
         {
-            if (performedAction) Process.Start("InitialNumbers.txt");
+            OpenFile("InitialNumbers.txt");
         }
 
         private void btnOpenPrimes_Click(object sender, EventArgs e)
         {
-            if (performedAction) Process.Start("PrimeNumbers.txt");
+            OpenFile("PrimeNumbers.txt");
         }
 
         private void btnOpenPrimes7_Click(object sender, EventArgs e)
         {
-            if (performedAction) Process.Start("PrimeNumbersEnding7.txt");
+            OpenFile("PrimeNumbersEnding7.txt");
         }
 
         private void btnOpenAnalysis_Click(object sender, EventArgs e)
         {
-            if (performedAction) Process.Start("Analysis.txt");
+            OpenFile("Analysis.txt");
         }
     }
 }
