@@ -33,26 +33,28 @@ namespace Practice2_1
             //Console.WriteLine($"Average: {avg}");
             #endregion
             #region Task 2 Main
-            //Console.Write("Enter path to the file: ");
-            //string path = Console.ReadLine();
-            //if (!File.Exists(path))
-            //{
-            //    Console.WriteLine("No such file exists");
-            //    return;
-            //} 
-            //Thread thread1 = new Thread(CountSentences);
-            //thread1.Start(path);
-            //Thread thread2 = new Thread(Replacer);
-            //thread2.Start(path);
+            Console.Write("Enter path to the file: ");
+            string path = Console.ReadLine();
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("No such file exists");
+                Console.WriteLine("Press Enter to exit...");
+                Console.ReadLine();
+                return;
+            }
+            Thread thread1 = new Thread(CountSentences);
+            thread1.Start(path);
+            Thread thread2 = new Thread(Replacer);
+            thread2.Start(path);
             #endregion
             #region Task 3 Main
-            Thread thread1 = new Thread(SortArray);
-            thread1.Start(list);
-            Thread thread2 = new Thread(ArrayContains);
-            thread2.Start(1);
+            //Thread thread1 = new Thread(SortArray);
+            //thread1.Start(list);
+            //Thread thread2 = new Thread(ArrayContains);
+            //thread2.Start(1);
             #endregion
-            Console.WriteLine("Press Enter...");
-            Console.Read();
+            Console.WriteLine("Press Enter to exit...");
+            Console.ReadLine();
         }
         #region Task 1
         //private static List<int> list;
@@ -94,63 +96,57 @@ namespace Practice2_1
         //}
         #endregion
         #region Task 2
-        //private static void CountSentences(object obj) 
-        //{
-        //    lock (lockObject)
-        //    {
-        //        Console.WriteLine("Counting start");
-        //        string path = (string)obj;
-        //        string content = "";
-        //        foreach (var item in File.ReadAllLines(path))
-        //        {
-        //            content += item;
-        //        }
-        //        Console.WriteLine("Number of sentences = " + content.Split(".?!".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Count());
-        //        Console.WriteLine("Counting end");
-        //    }
-        //}
-        //private static void Replacer(object obj)
-        //{
-        //    lock (lockObject)
-        //    {
-        //        Console.WriteLine("Replacing start");
-        //        string path = (string)obj;
-        //        string content = "";
-        //        foreach (var item in File.ReadAllLines(path))
-        //        {
-        //            content += item + '\n';
-        //        }
-        //        content = content.Replace('!', '#');
-        //        File.WriteAllLines(path, content.Split('\n'));
-        //        Console.WriteLine("Replacing end");
-        //    }
-        //}
+        private static void CountSentences(object obj)
+        {
+            lock (lockObject)
+            {
+                string path = (string)obj;
+                string content = "";
+                foreach (var item in File.ReadAllLines(path))
+                {
+                    content += item;
+                }
+                Console.WriteLine("Number of sentences = " + content.Split(".?!".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Count());
+            }
+        }
+        private static void Replacer(object obj)
+        {
+            lock (lockObject)
+            {
+                string path = (string)obj;
+                string content = "";
+                foreach (var item in File.ReadAllLines(path))
+                {
+                    content += item + '\n';
+                }
+                content = content.Replace('!', '#');
+                File.WriteAllLines(path, content.Split('\n'));
+            }
+        }
         #endregion
         #region Task 3
-        private static List<int> list = new List<int> { 8, 99, 4, 10, 2, 634 };
-        private static void SortArray(object obj)
-        {
-            List<int> temp = (List<int>)obj;
-            lock (lockObject)
-            {
-                temp.Sort();
-                for (int i = 0; i < temp.Count; i++)
-                {
-                    Console.WriteLine(temp[i]);
-                }
-            }
-        }
-        private static void ArrayContains(object obj)
-        {
-
-            lock (lockObject)
-            {
-                int num = (int)obj;
-                string res = list.Contains(num) ? "contains" : "does not contain";
-                Console.WriteLine($"Array {res} {num}");
-            }
-
-        }
+        //private static List<int> list = new List<int> { 8, 99, 4, 10, 2, 634 };
+        //private static void SortArray(object obj)
+        //{
+        //    lock (lockObject)
+        //    {
+        //        List<int> temp = (List<int>)obj;
+        //        temp.Sort();
+        //        for (int i = 0; i < temp.Count; i++)
+        //        {
+        //            Console.WriteLine(temp[i]);
+        //        }
+        //    }
+        //}
+        //private static void ArrayContains(object obj)
+        //{
+        //    lock (lockObject)
+        //    {
+        //        int num = (int)obj;
+        //        string res = list.Contains(num) ? "contains" : "does not contain";
+        //        Console.WriteLine($"Array {res} {num}");
+        //    }
+        //}
         #endregion
     }
 }
