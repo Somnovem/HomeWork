@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps6_1", "SysApps6_1\Sy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps6_2", "SysApps6_2\SysApps6_2.csproj", "{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps7_1", "SysApps7_1\SysApps7_1.csproj", "{667ED7C7-6C31-48FB-8365-E5C2786ACF7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93246CD1-D5CA-42C4-BDC9-CC6D7B4065B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{667ED7C7-6C31-48FB-8365-E5C2786ACF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667ED7C7-6C31-48FB-8365-E5C2786ACF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667ED7C7-6C31-48FB-8365-E5C2786ACF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667ED7C7-6C31-48FB-8365-E5C2786ACF7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

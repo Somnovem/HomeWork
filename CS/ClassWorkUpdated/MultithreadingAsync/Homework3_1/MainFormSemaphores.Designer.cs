@@ -45,6 +45,7 @@
             this.lbWorkingThreads.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWorkingThreads.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbWorkingThreads.FormattingEnabled = true;
             this.lbWorkingThreads.Location = new System.Drawing.Point(12, 33);
             this.lbWorkingThreads.Name = "lbWorkingThreads";
@@ -57,6 +58,7 @@
             this.lbWaitingThreads.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWaitingThreads.BackColor = System.Drawing.Color.LightGray;
             this.lbWaitingThreads.FormattingEnabled = true;
             this.lbWaitingThreads.Location = new System.Drawing.Point(184, 33);
             this.lbWaitingThreads.Name = "lbWaitingThreads";
@@ -68,6 +70,7 @@
             this.lbCreatedThreads.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCreatedThreads.BackColor = System.Drawing.Color.Silver;
             this.lbCreatedThreads.FormattingEnabled = true;
             this.lbCreatedThreads.Location = new System.Drawing.Point(356, 33);
             this.lbCreatedThreads.Name = "lbCreatedThreads";
@@ -164,10 +167,11 @@
             this.btnCreateThread.UseVisualStyleBackColor = true;
             this.btnCreateThread.Click += new System.EventHandler(this.btnCreateThread_Click);
             // 
-            // MainFormSempahores
+            // MainFormSemaphores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(537, 169);
             this.Controls.Add(this.btnCreateThread);
             this.Controls.Add(this.edSemaphoreSitCount);
@@ -178,11 +182,12 @@
             this.Controls.Add(this.lbCreatedThreads);
             this.Controls.Add(this.lbWaitingThreads);
             this.Controls.Add(this.lbWorkingThreads);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(553, 208);
-            this.Name = "MainFormSempahores";
+            this.Name = "MainFormSemaphores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test semaphores";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormSemaphores_FormClosing);

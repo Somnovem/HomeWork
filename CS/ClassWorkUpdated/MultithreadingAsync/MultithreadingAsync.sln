@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice2_1", "Practice2_1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_1", "Homework3_1\Homework3_1.csproj", "{1DEC12F0-703E-414D-8864-F767C9F3B418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_2", "Homework3_@\Homework3_2.csproj", "{1DC25224-FBC4-4EF9-B01D-AA6EECCF2F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_2", "Homework3_2\Homework3_2.csproj", "{1DC25224-FBC4-4EF9-B01D-AA6EECCF2F06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

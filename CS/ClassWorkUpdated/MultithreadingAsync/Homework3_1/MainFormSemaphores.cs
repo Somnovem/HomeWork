@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Management;
+using ThreadState = System.Threading.ThreadState;
 
 namespace Homework3_1
 {
@@ -104,15 +105,41 @@ namespace Homework3_1
             int newCount = (int)edSemaphoreSitCount.Value;
             Counter.semaphoreSize = newCount;
             Counter.RecreateSemaphore();
+
+
             if (lastSitCount > newCount)
             {
-                lbWorkingThreads.Items.Clear();
-                foreach (var item in counters.Where(c => c.wasRunning).ToList())
+                Counter oldestCounter = counters.First();
+                oldestCounter.mainThread.Abort();
+                List<string> workingThreads = lbWorkingThreads.Items.Cast<string>().ToList();
+                string threadName = oldestCounter.mainThread.Name;
+                for (int i = 0; i < workingThreads.Count; i++)
                 {
-                    counters.Remove(item);
+                    if (workingThreads[i].Contains(threadName)) 
+                    {
+                        lbWorkingThreads.Items.RemoveAt(i);
+                        break;
+                    }
                 }
+                counters.Remove(oldestCounter);
             }
-            foreach (var item in counters.Where(c => c.mainThread.ThreadState == System.Threading.ThreadState.WaitSleepJoin).ToList())
+
+
+            List<string> threadsList = lbWorkingThreads.Items.Cast<string>().ToList();
+            for (int i = 0; i < threadsList.Count; i++)
+            {
+                threadsList[i] = threadsList[i].Split('-')[0].Trim();
+            }
+            StartThreadsFromList(counters.Where(c => threadsList.Contains(c.mainThread.Name)));
+            List <Counter> threadsWaitingList = lbWaitingThreads.Items.Cast<Counter>().ToList();
+            StartThreadsFromList(counters.Where(c => threadsWaitingList.Contains(c)));
+            lastSitCount = newCount;
+            CheckResizeNeeded();
+        }
+
+        private void StartThreadsFromList(IEnumerable<object> arr)
+        {
+            foreach (Counter item in arr)
             {
                 string name = item.mainThread.Name;
                 item.mainThread.Abort();
@@ -120,10 +147,8 @@ namespace Homework3_1
                 item.mainThread.Name = name;
                 item.mainThread.Start();
             }
-            lastSitCount = newCount;
-            CheckResizeNeeded();
         }
-        
+
         /// <summary>
         /// Send a created counter to semaphore
         /// </summary>
