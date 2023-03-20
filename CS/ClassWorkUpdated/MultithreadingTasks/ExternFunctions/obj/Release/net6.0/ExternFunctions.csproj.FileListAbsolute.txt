@@ -1,0 +1,12 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\bin\Release\net6.0\ExternFunctions.deps.json
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\bin\Release\net6.0\ExternFunctions.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\bin\Release\net6.0\ExternFunctions.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.AssemblyInfoInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.AssemblyInfo.cs
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\refint\ExternFunctions.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ExternFunctions.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\MultithreadingTasks\ExternFunctions\obj\Release\net6.0\ref\ExternFunctions.dll

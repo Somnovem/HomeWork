@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\bin\Debug\SysApps8_1.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\bin\Debug\SysApps8_1.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\bin\Debug\SysApps8_1.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\obj\Debug\SysApps8_1.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\obj\Debug\SysApps8_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\obj\Debug\SysApps8_1.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\obj\Debug\SysApps8_1.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\SysApps1\SysApps8_1\obj\Debug\SysApps8_1.pdb

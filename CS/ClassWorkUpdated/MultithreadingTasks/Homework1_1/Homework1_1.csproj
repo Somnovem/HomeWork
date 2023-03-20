@@ -5,6 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="2822708.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="2822708.png" />
+  </ItemGroup>
 
 </Project>

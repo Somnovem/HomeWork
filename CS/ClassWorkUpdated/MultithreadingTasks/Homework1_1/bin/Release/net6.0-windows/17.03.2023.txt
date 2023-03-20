@@ -1,0 +1,3 @@
+Number of files proccesed: 3
+Number of files with same names proccesed: 2
+Number of copies found: 0

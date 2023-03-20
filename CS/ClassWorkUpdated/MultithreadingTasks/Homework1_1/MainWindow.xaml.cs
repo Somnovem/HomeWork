@@ -14,6 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
+using WinForms = System.Windows.Forms;
+using System.Drawing;
+using System.Reflection;
+using System.Windows.Forms;
+using ListBox = System.Windows.Controls.ListBox;
+using MessageBox = System.Windows.MessageBox;
+using Path = System.IO.Path;
+using System.Windows.Media.Animation;
+using static System.Net.WebRequestMethods;
+using File = System.IO.File;
 namespace Homework1_1
 {
     /// <summary>
@@ -46,7 +58,7 @@ namespace Homework1_1
                 return;
             }
             btnStart.IsEnabled = false;
-            performedOperation = false;
+            if (!outputToMessage) performedOperation = false;
             text = edText.Text;
             if (cbCountSentences.IsChecked != true) numSentences = -1;
             if (cbCountSymbols.IsChecked != true) numChars = -1;
@@ -63,19 +75,19 @@ namespace Homework1_1
             taskAnalyze.Start();
             taskDoOutput.Wait();
             btnStart.IsEnabled = true;
-            performedOperation = true;
+            if(!outputToMessage)performedOperation = true;
         }
 
         private void AnalyzeText()
         {
-            string[] sentences = text.Split(".!?".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            string[] sentences = text.Split(".?!");
              if(numSentences != -1)
                 numSentences = sentences.Length;
 
              if (numChars != -1)
                 numChars = text.Length;
 
-             if (tokenAnalyzing.IsCancellationRequested)
+            if (tokenAnalyzing.IsCancellationRequested)
                 {
                     MessageBox.Show("Operation canceled");
                     return;
@@ -84,10 +96,10 @@ namespace Homework1_1
                 numWords = text.Split(' ', StringSplitOptions.RemoveEmptyEntries).Count();
 
              if (numQuestions != -1)
-                numQuestions = sentences.Select(c => c.EndsWith('?')).Count();
+                numQuestions = sentences.Where(c => c.EndsWith('?')).Count();
 
              if (numExclamations != -1)
-                numExclamations = sentences.Select(c => c.EndsWith('!')).Count();
+                numExclamations = sentences.Where(c=>c.EndsWith('!')).Count();
         }
 
         private void WriteAnalysis()
@@ -141,13 +153,199 @@ namespace Homework1_1
         {
             sourceAnalyzing.Cancel();
             sourceWriting.Cancel();
-
         }
 
         private void btnOpenFileText_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!performedOperation)return;
+            var p = new Process();
+            p.StartInfo = new ProcessStartInfo("Analysis.txt")
+            {
+                UseShellExecute = true
+            };
+            p.Start();
         }
         #endregion
+        #region Task 2
+
+        private static string destinationPath;
+        private static List<string> sourceFiles = new List<string>();
+        private static List<string> newFilesInDestinaton = new List<string>();
+        private void FillListBox(ListBox lb) 
+        {
+            string fillingPath;
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            if (dialog.ShowDialog() != WinForms.DialogResult.OK) return;
+            fillingPath = dialog.SelectedPath;
+            lb.Items.Clear();
+            var files = Directory.GetFiles(fillingPath, "*.*", SearchOption.AllDirectories);
+            if (lb.Name == "lbSourceFiles") sourceFiles = files.ToList();
+            else destinationPath = fillingPath;
+            foreach (var file in files)
+            {
+                lb.Items.Add(file);
+            }
+        }
+
+        private void RunProcessFromListbox(ListBox lb) 
+        {
+            var p = new Process();
+            p.StartInfo = new ProcessStartInfo((string)lb.SelectedItem)
+            {
+                UseShellExecute = true
+            };
+            p.Start();
+        }
+
+        private static bool IsFileCopy(string file1Path, string file2Path)
+        {
+            using (var file1 = new FileStream(file1Path, FileMode.Open,FileAccess.Read))
+            using (var file2 = new FileStream(file2Path, FileMode.Open,FileAccess.Read))
+            {
+                if (file1.Length != file2.Length)
+                {
+                    return false;
+                }
+
+                int b1, b2;
+                do
+                {
+                    b1 = file1.ReadByte();
+                    b2 = file2.ReadByte();
+                } while (b1 == b2 && b1 != -1);
+
+                return b1 == b2;
+            }
+        }
+
+        private void btnChangeSource_Click(object sender, RoutedEventArgs e)
+        {
+            FillListBox(lbSourceFiles);
+        }
+
+        private void btnChangeDestination_Click(object sender, RoutedEventArgs e)
+        {
+            FillListBox(lbDestinationFiles);
+            lblDestination.Content = destinationPath;
+        }
+
+        private void btnTransferFiles_Click(object sender, RoutedEventArgs e)
+        {
+            if (lbSourceFiles.Items.Count == 0 || string.IsNullOrEmpty(destinationPath))
+            {
+                MessageBox.Show("Source or destination folder wan't chosen","Error",MessageBoxButton.OK,MessageBoxImage.Error);
+                return;
+            }
+
+            Dictionary<string, string> filesSent = new Dictionary<string, string>();
+            int numberOfFilesChecked = 0;
+            int sameNameFilesFound = 0;
+            int copiesFound = 0;
+            Task taskSearching = Task.Run(() => 
+            {
+                foreach (string file in sourceFiles)
+                {
+                    FileInfo f = new FileInfo(file);
+                    string pathToAlreadyExsistingName;
+                    if (filesSent.TryGetValue(f.Name, out pathToAlreadyExsistingName))
+                    {
+                        if (!IsFileCopy(file, pathToAlreadyExsistingName))
+                        {
+                            string newFileName = f.Name.Split('.')[0];
+                            while (File.Exists(Path.Combine(destinationPath, newFileName + f.Extension)))
+                            {
+                                newFileName += "-Copy";
+                            }
+                            CopyFileWithNewName(file, newFileName + f.Extension);
+                            filesSent.Add(newFileName + f.Extension, file);
+                        }
+                        else
+                        {
+                            //Found the exact copy of a file
+                            copiesFound++;
+                        }
+                        //Found a file with a not-unique name
+                        sameNameFilesFound++;
+                    }
+                    else
+                    {
+                        CopyFileWithNewName(file, f.Name);
+                        filesSent.Add(f.Name, file);
+                    }
+                    //Found a file
+                    numberOfFilesChecked++;
+                }
+            });
+
+            Task taskWriting = null;
+            if (cbGenerateAnalysis.IsChecked == true) 
+            {
+                taskWriting = taskSearching.ContinueWith((t) => 
+                {
+                    using (StreamWriter writer = new StreamWriter(new FileStream(Path.Combine(destinationPath, "TransferringResults.txt"), FileMode.Create)))
+                    {
+                        writer.WriteLine($"These files were added/overwritten with the last transfer made {DateTime.Now}");
+                        writer.WriteLine("------------------------------------------------------------------");
+                        foreach (var item in newFilesInDestinaton)
+                        {
+                            writer.WriteLine(new FileInfo(item).Name);
+                        }
+                        writer.WriteLine("------------------------------------------------------------------");
+                        writer.WriteLine($"Number of files proccesed: {numberOfFilesChecked}");
+                        writer.WriteLine($"Number of files with same names proccesed: {sameNameFilesFound}");
+                        writer.WriteLine($"Number of copies found: {copiesFound}");
+                    }
+                });
+            }
+
+            MessageBox.Show("Started transferring!","Status",MessageBoxButton.OK,MessageBoxImage.Information);
+            taskSearching.Wait();
+            MessageBox.Show("Transfer complete!", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (cbGenerateAnalysis.IsChecked == true) 
+            {
+                MessageBox.Show("Started writing results!", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+                taskWriting.Wait();
+                MessageBox.Show("Finished writing results!", "Status", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            //Enlist all new items in the destination folder 
+            var files = Directory.GetFiles(destinationPath, "*.*", SearchOption.AllDirectories);
+            if(!lbDestinationFiles.Items.IsEmpty)lbDestinationFiles.Items.Clear();
+            foreach (var file in files)
+            {
+                lbDestinationFiles.Items.Add(file);
+            }
+        }
+
+        private void CopyFileWithNewName(string sourcePath,string newName) 
+        {
+            string newPath = Path.Combine(destinationPath, newName);
+            newFilesInDestinaton.Add(newPath);
+            File.Copy(sourcePath, newPath,true);
+        }
+
+        #endregion
+
+        private void lbSourceFiles_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lbSourceFiles.SelectedItem == null) return;
+            if (rbDeleteFile.IsChecked == true) 
+            {
+                sourceFiles.Remove((string)lbSourceFiles.SelectedItem);
+                if (!lbSourceFiles.Items.IsEmpty) lbSourceFiles.Items.Clear();
+                foreach (var item in sourceFiles)
+                {
+                    lbSourceFiles.Items.Add(item);
+                }
+            }
+            else RunProcessFromListbox(lbSourceFiles);
+
+        }
+
+        private void lbDestinationFiles_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lbDestinationFiles.SelectedItem == null) return;
+            RunProcessFromListbox(lbDestinationFiles);
+        }
     }
 }

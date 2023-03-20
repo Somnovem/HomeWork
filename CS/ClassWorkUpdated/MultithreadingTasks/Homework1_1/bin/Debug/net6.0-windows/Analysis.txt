@@ -1,0 +1,6 @@
+Number of sentences: 1
+Number of symbols: 12
+Number of words: 1
+Number of questions: 1
+Number of exclamations: 1
+Analysis done: 15.03.2023 18:06:01

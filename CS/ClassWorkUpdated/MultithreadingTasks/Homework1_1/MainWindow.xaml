@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework1_1"
         mc:Ignorable="d"
-        Title="Multithreading Tasks" Height="450" Width="800" Background="#C2C2FF" MinWidth="800" MinHeight="450">
+        Title="Multithreading Tasks" Height="600" Width="1000" Background="#C2C2FF" MinWidth="1000" MinHeight="600" Icon="/2822708.png" WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl>
             <TabItem Header="Task 1">
@@ -30,7 +30,7 @@
                             <RowDefinition Height="80*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0" Grid.Column="0" Content="Settings" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                        <GroupBox Header="Output destination" FontFamily="Bold" FontSize="12" Grid.Row="1" Grid.Column="0" 
+                        <GroupBox Header="Output destination" FontWeight="Bold" FontSize="13" Grid.Row="1" Grid.Column="0" 
                                   BorderBrush="CadetBlue" Background="BurlyWood" Margin="10">
                             <GroupBox.Resources>
                                 <Style TargetType="RadioButton">
@@ -52,7 +52,7 @@
                                 <RadioButton x:Name="rbOutputFile" Content="To file"/>
                             </StackPanel>
                         </GroupBox>
-                        <GroupBox Header="Output content" FontFamily="Bold" FontSize="12" Grid.Row="1" Grid.Column="1"
+                        <GroupBox Header="Output content" FontWeight="DemiBold" FontSize="13" Grid.Row="1" Grid.Column="1"
                                   BorderBrush="CadetBlue" Background="Cornsilk" Margin="10">
                             <GroupBox.Resources>
                                 <Style TargetType="CheckBox">
@@ -91,7 +91,7 @@
                         </Grid.RowDefinitions>
                         <Grid.Resources>
                             <Style TargetType="Button">
-                                <Setter Property="Margin" Value="5,25"/>
+                                <Setter Property="Margin" Value="5,23"/>
                                 <Setter Property="BorderBrush" Value="#0D5F82"/>
                                 <Setter Property="Background" Value="#58C1EE"/>
                             </Style>
@@ -99,13 +99,76 @@
                         <Button Name="btnStart" Grid.Row="0" Grid.Column="0" Content="Start" Click="btnStart_Click"/>
                         <Button Name="btnStop" Grid.Row="0" Grid.Column="2" Content="Stop" Click="btnStop_Click"/>
                         <Button Name="btnOpenFileText" Grid.Row="1" Grid.Column="1" Click="btnOpenFileText_Click">
-                            <TextBox TextWrapping="Wrap" Text="Open file(if one was generated)" BorderBrush="Transparent" Background="Transparent" Width="127" FontSize="14"/>
+                            <TextBlock TextWrapping="Wrap" Text="Open file(if one was generated)"  Background="Transparent" Width="127" FontSize="14" Focusable="False"/>
                         </Button>
                     </Grid>
+                    <MediaElement Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="104,29,0,0" VerticalAlignment="Top" Width="100"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Task 2">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Source Directory" FontSize="14" FontWeight="ExtraBold" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                        <ListBox Name="lbSourceFiles"  Grid.Row="2" Margin="5,10" MouseDoubleClick="lbSourceFiles_MouseDoubleClick"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Destination Directory" FontSize="14" FontWeight="ExtraBold"  HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent"/>
+                        <Label Name="lblDestination" Content="" Grid.Row="1" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <ListBox Name="lbDestinationFiles" Grid.Row="2" Margin="5,10" MouseDoubleClick="lbDestinationFiles_MouseDoubleClick"/>
+                    </Grid>
+                    <StackPanel Grid.Column="2" Margin="5,25,5,15">
+                        <StackPanel.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Height" Value="60"/>
+                                <Setter Property="Margin" Value="2,20"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="ExtraLight"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <Button Name="btnChangeSource" Content="Change Source Directory" Click="btnChangeSource_Click"/>
+                        <Button Name="btnChangeDestination" Content="Change Destination Directory" Click="btnChangeDestination_Click"/>
+                        <CheckBox Name="cbGenerateAnalysis" Content="Generate analysis file?" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium"/>
+                        <Button Name="btnTransferFiles" Content="Transfer original files to destination" Click="btnTransferFiles_Click"/>
+                        <GroupBox Header="List of files from source" FontSize="14" BorderThickness="0">
+                            <GroupBox.Resources>
+                                <Style TargetType="RadioButton">
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Margin" Value="5,4"/>
+                                    <Setter Property="FontWeight" Value="DemiBold"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </GroupBox.Resources>
+                            <StackPanel VerticalAlignment="Center">
+                                <RadioButton x:Name="rbOpenFile" Content="Double-click opens file" IsChecked="True"/>
+                                <RadioButton x:Name="rbDeleteFile" Content="Double-click removes file from copying"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
