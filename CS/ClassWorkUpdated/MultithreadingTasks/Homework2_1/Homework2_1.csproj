@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Reference Include="ExternFunctions">
-      <HintPath>..\ExternFunctions\bin\Debug\net6.0\ExternFunctions.dll</HintPath>
+      <HintPath>..\ExternFunctions\bin\Release\net6.0\ExternFunctions.dll</HintPath>
     </Reference>
   </ItemGroup>
 

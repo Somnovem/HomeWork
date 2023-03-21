@@ -9,44 +9,22 @@ namespace Homework2_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(SearchWordInDirectory("one","C:\\Users\\Artem\\Desktop", "C:\\Users\\Artem\\Desktop\\Analysis2.txt"));
+            Console.WriteLine(ExternAreaFunctions.AreaSquare(5));
+            Console.WriteLine(ExternAreaFunctions.AreaRectangular(5,6));
+            Console.WriteLine(ExternAreaFunctions.AreaTriangle(5,6));
+            Console.WriteLine(ExternAreaFunctions.AreaTriangle(3,4,5));
+
+            Console.WriteLine(ExternTextFunctions.IsTextPalindrome("mama"));
+            Console.WriteLine(ExternTextFunctions.CountSentences("Forefathers, one and all! Bear witness!"));
+            Console.WriteLine(ExternTextFunctions.ReverseText("amam"));
+
+            Console.WriteLine(ExternContactFunctions.NameContainsOnlyLetters("Godrick","the","Grafted"));
+            Console.WriteLine(ExternContactFunctions.AgeContainsOnlyDigits("1852"));
+            Console.WriteLine(ExternContactFunctions.NumberInCorrectFormat("+380674563421"));
+            Console.WriteLine(ExternContactFunctions.EmailInCorrectFormat("office_nik@itstep.org"));
+
+
             Console.ReadLine();
-        }
-        private static readonly object lockObject = new object();
-        public static int SearchWordInDirectory(string word, string sourceDirectory, string logfilePath)
-        {
-            if (!Directory.Exists(sourceDirectory)) return -1;
-            Regex regex = new Regex("^[a-zA-Z]:[\\\\\\/][\\w\\\\\\/]+\\w+\\.txt$");
-            if (!regex.IsMatch(logfilePath)) return -2;
-            int count = 0;
-            using (StreamWriter writer = new StreamWriter(File.Create(logfilePath))) //ensures file is created, or cleared
-            {
-                writer.WriteLine($"Word(s) scanned for: {word}");
-                writer.WriteLine($"Date of search: {DateTime.Now}");
-                writer.WriteLine("------------------------------------------------------------------------------");
-                foreach (var filename in Directory.GetFiles(sourceDirectory, "*.txt", SearchOption.AllDirectories))
-                {
-                    count += CountWordInFile(word,filename,writer);
-                }
-
-            }
-            return count;
-        }
-        private static int CountWordInFile(string word, string filepath,StreamWriter writer)
-        {
-            try
-            {
-                Monitor.Enter(lockObject);
-                int appearences = File.ReadAllLines(filepath).Count(c => c.Contains(word));
-                writer.WriteLine($"File scanned: {filepath}");
-                writer.WriteLine($"Number of appearences: {appearences}");
-                return appearences;
-            }
-            finally
-            {
-                Monitor.Exit(lockObject);
-            }
-
         }
     }
 }

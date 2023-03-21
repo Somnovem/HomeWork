@@ -297,22 +297,33 @@ namespace ExternFunctions
         /// <param name="word">Word to search for</param>
         /// <param name="sourcePath">Path to the file to search in</param>
         /// <param name="logfilePath">Path to the file to log to</param>
-        /// <returns>-1 if source didn't exist, -2 if logFilePath was invalid,0 and bigger as number of appearences</returns>
+        /// <returns>-1 if any of the parameteres was empty,-2 if sourceDirectory doesn't exist ,-3 if logFilePath was invalid,0 and bigger as number of appearences</returns>
         public static int SearchWordInDirectory(string word, string sourceDirectory, string logfilePath) 
         {
-            if (!Directory.Exists(sourceDirectory)) return -1;
-            if (logfilePath.Length < 5 || !logfilePath.EndsWith(".txt")) return -2;
+            if (string.IsNullOrEmpty(word) || string.IsNullOrEmpty(sourceDirectory) || string.IsNullOrEmpty(logfilePath)) return -1;
+            if (!Directory.Exists(sourceDirectory)) return -2;
+            Regex regex = new Regex("^[a-zA-Z]:[\\\\\\/][\\w\\\\\\/]+\\w+\\.txt$");
+            if (!regex.IsMatch(logfilePath)) return -3;
             int count = 0;
-            using (StreamWriter writer = new StreamWriter(File.Create(logfilePath))) //ensures file is created, or cleared
+            using (StreamWriter writer = new StreamWriter(new FileStream(logfilePath, FileMode.Create, FileAccess.ReadWrite))) //ensures file is created, or cleared
             {
                 writer.WriteLine($"Word(s) scanned for: {word}");
-                writer.WriteLine($"Date of search: {DateTime.Now}");
+                writer.WriteLine($"Time of search: {DateTime.Now}");
                 writer.WriteLine("------------------------------------------------------------------------------");
+                int appearences = 0;
                 foreach (var filename in Directory.GetFiles(sourceDirectory, "*.txt", SearchOption.AllDirectories))
                 {
-                    int appearences = File.ReadAllLines(filename).Count(c => c.Contains(word));
                     writer.WriteLine($"File scanned: {filename}");
-                    writer.WriteLine($"Number of appearences: {appearences}");
+                    try
+                    {
+                        appearences = File.ReadAllLines(filename).Count(c => c.Contains(word));
+                    }
+                    catch (Exception ex)
+                    {
+                        writer.WriteLine($"Encountered error: {ex.Message} \n");
+                        continue;
+                    }
+                    writer.WriteLine($"Number of appearences: {appearences}\n");
                     count += appearences;
                 }
             }
