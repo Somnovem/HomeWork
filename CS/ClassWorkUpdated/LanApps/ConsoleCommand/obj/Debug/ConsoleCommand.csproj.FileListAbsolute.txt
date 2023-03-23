@@ -1,0 +1,6 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\bin\Debug\ConsoleCommand.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\bin\Debug\ConsoleCommand.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\obj\Debug\ConsoleCommand.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\obj\Debug\ConsoleCommand.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\obj\Debug\ConsoleCommand.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\ConsoleCommand\obj\Debug\ConsoleCommand.pdb

@@ -14,9 +14,7 @@ namespace LanApp2_1
     {
         static void Main(string[] args)
         {
-            Console.Title = "Test TCP server";
-            MyServer server = new MyServer(IPAddress.Parse("127.0.0.1"),1000);//Any -для любого,Loopback - если сам для себя, лиюо парс если юзер вводит
-                                                                              //нельзя поставить 2 одинаковых порта
+            MyServer server = new MyServer(IPAddress.Any, 1000);
             Thread thread = new Thread(server.StartServer);
             thread.IsBackground = true;
             thread.Start();
@@ -41,39 +39,30 @@ namespace LanApp2_1
         }
         public void StartServer() 
         {
-            //прием и обработка подключений
             if (server != null)
             {
                 return;
             }
 
-            //создание сокета
-            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); //Датаграмма не контролирует доставку - UDP
-
-            //конечная точка для получения подключений
+            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint localEndPoint = new IPEndPoint(ip, port);
 
             string answerText = "Your message has been delivered";
             byte[] answerData = Encoding.UTF8.GetBytes(answerText);
+            bool exitRequested = false;
             try
             {
-                //привязуем сокет к точке
                 server.Bind(localEndPoint);
 
-                //начинаем послушивать подключения
-                server.Listen(10); //максимальное количество ожидающих подключений, следующие будут кинуты в отказ
+                server.Listen(10);
                 Console.WriteLine("Server started and is ready for connections!");
+                Socket client = server.Accept();
+                Console.WriteLine($"Accepted: {client.RemoteEndPoint.ToString()}");
+                StringBuilder stringBuilder = new StringBuilder();
                 while (true)
                 {
-                    Socket client = server.Accept(); //принимаем подлкючение из очереди и записываем себе кто именно подключился
-                    Console.WriteLine($"Accepted: {client.RemoteEndPoint.ToString()}");
-
-
-                    //строковый буфер для получения сообщений
-                    StringBuilder stringBuilder = new StringBuilder();
-                    int len = 0;//кол-во прочитанных байт
-                    byte[] buffer = new byte[256]; //буфферный массив
-                    
+                    int len = 0;
+                    byte[] buffer = new byte[256];
                     do
                     {
                        len = client.Receive(buffer);
@@ -84,12 +73,14 @@ namespace LanApp2_1
 
                     //отправка ответа клиенту
                     client.Send(answerData);
+                    if (exitRequested)
+                    {
+                        client.Shutdown(SocketShutdown.Both);
+                        client.Close();
+                    }
 
-                    //отключить сокет
-                    client.Shutdown(SocketShutdown.Both);
 
-                    //закрыть сокет
-                    client.Close();
+                    stringBuilder.Clear();
                 }
             }
             catch (Exception ex)

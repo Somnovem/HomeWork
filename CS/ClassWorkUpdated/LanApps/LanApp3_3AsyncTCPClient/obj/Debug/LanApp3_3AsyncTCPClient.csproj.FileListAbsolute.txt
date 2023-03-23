@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\bin\Debug\LanApp3_3AsyncTCPClient.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\bin\Debug\LanApp3_3AsyncTCPClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\bin\Debug\LanApp3_3AsyncTCPClient.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\obj\Debug\LanApp3_3AsyncTCPClient.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\obj\Debug\LanApp3_3AsyncTCPClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\obj\Debug\LanApp3_3AsyncTCPClient.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\obj\Debug\LanApp3_3AsyncTCPClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_3AsyncTCPClient\obj\Debug\LanApp3_3AsyncTCPClient.pdb

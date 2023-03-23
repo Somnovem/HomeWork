@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\bin\Debug\LanApp3_2AsyncTCPServer.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\bin\Debug\LanApp3_2AsyncTCPServer.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\bin\Debug\LanApp3_2AsyncTCPServer.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\obj\Debug\LanApp3_2AsyncTCPServer.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\obj\Debug\LanApp3_2AsyncTCPServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\obj\Debug\LanApp3_2AsyncTCPServer.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\obj\Debug\LanApp3_2AsyncTCPServer.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp3_2AsyncTCPServer\obj\Debug\LanApp3_2AsyncTCPServer.pdb
