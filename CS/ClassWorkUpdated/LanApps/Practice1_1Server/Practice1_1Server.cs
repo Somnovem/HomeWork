@@ -135,7 +135,7 @@ namespace Practice1_1Server
                 return;
             }
             Socket client = server.EndAccept(result);
-            Console.WriteLine($"({DateTime.Now.ToLongTimeString()}) Accepted: {client.LocalEndPoint}");
+            Console.WriteLine($"({DateTime.Now.ToLongTimeString()}) Accepted: {client.RemoteEndPoint}");
             ClientConnection clientConnection = new ClientConnection(client);
             clientConnection.StartMessagingAsync();
 

@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\bin\Debug\LanApp4_1TCPListener.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\bin\Debug\LanApp4_1TCPListener.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\bin\Debug\LanApp4_1TCPListener.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\obj\Debug\LanApp4_1TCPListener.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\obj\Debug\LanApp4_1TCPListener.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\obj\Debug\LanApp4_1TCPListener.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\obj\Debug\LanApp4_1TCPListener.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp4_1TCPListener\obj\Debug\LanApp4_1TCPListener.pdb
