@@ -1,0 +1,14 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\bin\Debug\Homework2_3Client.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\bin\Debug\Homework2_3Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\bin\Debug\Homework2_3Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\bin\Debug\TcpClasses.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\bin\Debug\TcpClasses.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.MainFormTcpDialogClient.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework2_3Client\obj\Debug\Homework2_3Client.pdb

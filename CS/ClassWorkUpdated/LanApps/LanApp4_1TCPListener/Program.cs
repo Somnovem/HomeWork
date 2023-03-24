@@ -12,7 +12,7 @@ namespace LanApp4_1TCPListener
         static void Main(string[] args)
         {
             Console.Title = "Test TCPListener";
-            TCPServer server = new TCPServer(IPAddress.Any, 5000);
+            TCPServer server = new TCPServer(IPAddress.Any, 1000);
             server.StringMessage += Server_StringMessage;
             Task listeningTask = server.StartListenAsync();
             Console.WriteLine("Press Enter...");

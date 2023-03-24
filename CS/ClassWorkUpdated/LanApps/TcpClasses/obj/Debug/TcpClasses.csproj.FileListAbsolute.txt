@@ -1,0 +1,6 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\bin\Debug\TcpClasses.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\bin\Debug\TcpClasses.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\obj\Debug\TcpClasses.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\obj\Debug\TcpClasses.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\obj\Debug\TcpClasses.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\TcpClasses\obj\Debug\TcpClasses.pdb
