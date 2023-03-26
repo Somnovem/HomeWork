@@ -1,5 +1,0 @@
-26.03.2023 11:10:28 Server started! Accepting connections...
-26.03.2023 11:10:36 Accepted: 127.0.0.1:58927
-26.03.2023 11:10:39 server >> For 1 USD you get 0,929187 EUR
-26.03.2023 11:10:41 Client 127.0.0.1:58927 is disconnected!
-26.03.2023 11:10:47 Server stopped!
