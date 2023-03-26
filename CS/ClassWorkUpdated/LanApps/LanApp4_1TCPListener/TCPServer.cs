@@ -17,7 +17,6 @@ namespace LanApp4_1TCPListener
         public delegate void StringMessageDelegate(string message);
         public event StringMessageDelegate StringMessage;
 
-
         public TCPServer(IPAddress address,int port)
         {
             this.listener = null;

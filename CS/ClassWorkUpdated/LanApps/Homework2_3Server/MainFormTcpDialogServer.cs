@@ -49,7 +49,7 @@ namespace Homework2_3Server
         {
             Action a = () => 
             {
-                lbMessages.Items.Insert(0,message);
+                lbMessages.Items.Insert(0, message);
             };
             if (InvokeRequired) Invoke(a);
             else a();
