@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QueueLogger = Loggers.QueueLogger;
 namespace Homework3_1Server
 {
     internal class TCPServer : IDisposable
@@ -18,12 +18,13 @@ namespace Homework3_1Server
         private int maxConcurrentClients;
         private int requestsPerClient;
         private QueueLogger logger;
+        private string connectionString;
 
         public delegate void StringMessageDelegate(string message);
         public event StringMessageDelegate StringMessage;
 
 
-        public TCPServer(IPAddress address, int port, int maxConcurrentClients, int requestsPerClient)
+        public TCPServer(IPAddress address, int port, int maxConcurrentClients, int requestsPerClient, string connectionString)
         {
             this.listener = null;
             this.port = port;
@@ -32,6 +33,7 @@ namespace Homework3_1Server
             this.maxConcurrentClients = maxConcurrentClients;
             this.requestsPerClient = requestsPerClient;
             logger = new QueueLogger();
+            this.connectionString = connectionString;
         }
         public Task StartListenAsync() => Task.Run(StartListen);
         public async void StartListen()
@@ -63,7 +65,7 @@ namespace Homework3_1Server
                 StringMessage?.Invoke($"Accepted: {client.Client.RemoteEndPoint}");
                 logger.AddToQueue($"{DateTime.Now} Accepted: {client.Client.RemoteEndPoint}");
                 bool isServerOverflown = connectedClients.Count == maxConcurrentClients;
-                TcpClientConnection clientConnection = new TcpClientConnection(client,requestsPerClient, isServerOverflown);
+                TcpClientConnection clientConnection = new TcpClientConnection(client,requestsPerClient, isServerOverflown,connectionString);
                 connectedClients.Add(clientConnection);
                 clientConnection.MessageText += ClientConnection_MessageText;
                 clientConnection.ServerResponse += ClientConnection_ServerResponse;

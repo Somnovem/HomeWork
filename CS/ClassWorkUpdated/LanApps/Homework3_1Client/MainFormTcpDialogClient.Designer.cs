@@ -45,7 +45,6 @@
             this.cbCurrencyTo = new System.Windows.Forms.ComboBox();
             this.cbCurrencyFrom = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lbMessages = new System.Windows.Forms.ListBox();
             this.gbConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edRemotePort)).BeginInit();
             this.gbRequest.SuspendLayout();
@@ -236,22 +235,11 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // lbMessages
-            // 
-            this.lbMessages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbMessages.FormattingEnabled = true;
-            this.lbMessages.ItemHeight = 16;
-            this.lbMessages.Location = new System.Drawing.Point(13, 323);
-            this.lbMessages.Name = "lbMessages";
-            this.lbMessages.Size = new System.Drawing.Size(509, 276);
-            this.lbMessages.TabIndex = 3;
-            // 
             // MainFormTcpDialogClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 611);
-            this.Controls.Add(this.lbMessages);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.gbRequest);
             this.Controls.Add(this.gbConnection);
@@ -283,7 +271,6 @@
         private System.Windows.Forms.ComboBox cbCurrencyTo;
         private System.Windows.Forms.ComboBox cbCurrencyFrom;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.ListBox lbMessages;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox edLogin;
         private System.Windows.Forms.Label label6;

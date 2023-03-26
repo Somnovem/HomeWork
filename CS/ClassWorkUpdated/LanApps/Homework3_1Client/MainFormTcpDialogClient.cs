@@ -9,17 +9,23 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CustomControls;
 namespace Homework3_1Client
 {
     public partial class MainFormTcpDialogClient : Form
     {
-        TcpConnection connection;
+        private TcpConnection connection;
+        private ListBoxMultiline lbMessages;
         public MainFormTcpDialogClient()
         {
+            lbMessages = new ListBoxMultiline();
+            lbMessages.Size = new Size(509, 270);
+            lbMessages.Location = new Point(12, 320);
+            this.Controls.Add(lbMessages);
             InitializeComponent();
             connection = null;
             this.FormClosing += MainFormTcpDialogClient_FormClosing;
+            this.Icon = new Icon(@"..\..\icon.ico");
         }
 
         private void MainFormTcpDialogClient_FormClosing(object sender, FormClosingEventArgs e)

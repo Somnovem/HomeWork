@@ -9,16 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using CustomControls;
 namespace Homework3_1Server
 {
     public partial class MainFormCurrencies_Server : Form
     {
         private TCPServer mainServer;
-        string connectionString = @"Data Source=..\..\credentials.db;Version=3;";
+        private ListBoxMultiline lbMessages;
+        private string connectionString = @"Data Source=..\..\credentials.db;Version=3;";
         public MainFormCurrencies_Server()
         {
             InitializeComponent();
             this.FormClosing += MainFormCurrencies_Server_FormClosing;
+            this.Icon = new Icon(@"..\..\icon.ico");
+            lbMessages = new ListBoxMultiline();
+            lbMessages.Size = new Size(509, 310);
+            lbMessages.Location = new Point(12, 239);
+            tabConnection.Controls.Add(lbMessages);
             UpdateUserView();
 
         }
@@ -36,13 +43,12 @@ namespace Homework3_1Server
 
         private void Server_StringMessage(string message)
         {
-            string datedMessage = $"({DateTime.Now.ToLongTimeString()}){message}";
-            ChangeVisualFromAction(() => { lbMessages.Items.Insert(0, datedMessage); });
+            ChangeVisualFromAction(() => { lbMessages.Items.Insert(0, $"({DateTime.Now.ToLongTimeString()}){message}"); });
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            mainServer = new TCPServer(IPAddress.Any, 1000, (int)edMaxClients.Value, (int)edRequestsPerClient.Value);
+            mainServer = new TCPServer(IPAddress.Any, 1000, (int)edMaxClients.Value, (int)edRequestsPerClient.Value,connectionString);
             mainServer.StringMessage += Server_StringMessage;
             _ = mainServer.StartListenAsync();
             gbSettings.Enabled = false;
@@ -111,6 +117,7 @@ namespace Homework3_1Server
                 var deleteCommand = new SQLiteCommand("DELETE FROM Logins WHERE Login = @username", connection);
                 deleteCommand.Parameters.AddWithValue("@username", selectedLogin);
                 deleteCommand.ExecuteNonQuery();
+                UpdateUserView();
             }
 
         }

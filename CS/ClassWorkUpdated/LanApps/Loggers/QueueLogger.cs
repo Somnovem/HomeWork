@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-namespace Homework3_1Server
+
+namespace Loggers
 {
-    internal class QueueLogger
+    public class QueueLogger
     {
         private List<string> loggingQueue;
         private string logPath;

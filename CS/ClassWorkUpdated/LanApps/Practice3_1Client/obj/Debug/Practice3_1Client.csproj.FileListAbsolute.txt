@@ -1,0 +1,14 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\bin\Debug\Practice3_1Client.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\bin\Debug\Practice3_1Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\bin\Debug\Practice3_1Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.MainFormQuotes_Client.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\bin\Debug\CustomControls.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\bin\Debug\CustomControls.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice3_1Client\obj\Debug\Practice3_1Client.csproj.CopyComplete

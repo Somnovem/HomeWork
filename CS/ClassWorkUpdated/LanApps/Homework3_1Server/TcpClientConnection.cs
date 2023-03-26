@@ -29,6 +29,7 @@ namespace Homework3_1Server
         private int counter;
         private bool serverOverflow;
         private Timer regainRequestsTimer;
+        private string connectionString;
 
         public delegate void MessageDelegate(TcpClientConnection clientConnection, string message);
         public delegate void ServerResponseDelegate(string message);
@@ -39,7 +40,7 @@ namespace Homework3_1Server
         public event ServerResponseDelegate ServerResponse;
 
 
-        public TcpClientConnection(TcpClient client, int requestsPerClient, bool serverOverflow)
+        public TcpClientConnection(TcpClient client, int requestsPerClient, bool serverOverflow, string connectionString)
         {
             if (client == null)
                 throw new ArgumentNullException("client has to be initialized");
@@ -49,6 +50,7 @@ namespace Homework3_1Server
             ConnectionStateChanged?.Invoke(this, true);
             this.requestsPerClient = requestsPerClient;
             this.serverOverflow = serverOverflow;
+            this.connectionString = connectionString;
         }
         public async void StartMessaging()
         {
