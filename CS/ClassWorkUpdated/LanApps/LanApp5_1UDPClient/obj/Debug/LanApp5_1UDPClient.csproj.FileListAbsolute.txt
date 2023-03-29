@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\bin\Debug\LanApp5_1UDPClient.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\bin\Debug\LanApp5_1UDPClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\bin\Debug\LanApp5_1UDPClient.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.MainFormUDPClient.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp5_1UDPClient\obj\Debug\LanApp5_1UDPClient.pdb
