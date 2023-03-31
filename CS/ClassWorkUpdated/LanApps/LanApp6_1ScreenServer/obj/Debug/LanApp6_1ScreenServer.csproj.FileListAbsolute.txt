@@ -1,0 +1,8 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\bin\Debug\LanApp6_1ScreenServer.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\bin\Debug\LanApp6_1ScreenServer.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\bin\Debug\LanApp6_1ScreenServer.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\obj\Debug\LanApp6_1ScreenServer.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\obj\Debug\LanApp6_1ScreenServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\obj\Debug\LanApp6_1ScreenServer.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\obj\Debug\LanApp6_1ScreenServer.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenServer\obj\Debug\LanApp6_1ScreenServer.pdb

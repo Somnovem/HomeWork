@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\bin\Debug\LanApp6_1ScreenClient.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\bin\Debug\LanApp6_1ScreenClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\bin\Debug\LanApp6_1ScreenClient.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.MainFromScreen_Client.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1ScreenClient\obj\Debug\LanApp6_1ScreenClient.pdb

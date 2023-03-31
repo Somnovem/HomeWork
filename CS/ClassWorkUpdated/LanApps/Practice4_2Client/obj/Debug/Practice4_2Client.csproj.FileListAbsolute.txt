@@ -1,0 +1,16 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\Practice4_2Client.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\Practice4_2Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\Practice4_2Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\CustomControls.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\CustomControls.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.MainFormBroadcast_Client.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\obj\Debug\Practice4_2Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\Chatters.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Client\bin\Debug\Chatters.pdb

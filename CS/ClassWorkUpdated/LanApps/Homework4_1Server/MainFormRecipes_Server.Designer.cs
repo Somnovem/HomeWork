@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.gbSettings = new System.Windows.Forms.GroupBox();
-            this.edRequestsPerHour = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.edMaxClients = new System.Windows.Forms.NumericUpDown();
-            this.btnStart = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.edRequestsPerHour = new System.Windows.Forms.NumericUpDown();
             this.lbMessages = new CustomControls.ListBoxMultiline();
-            this.btnStop = new System.Windows.Forms.Button();
             this.gbSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edRequestsPerHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edMaxClients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edRequestsPerHour)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSettings
@@ -56,31 +56,26 @@
             this.gbSettings.TabStop = false;
             this.gbSettings.Text = "Settings";
             // 
-            // edRequestsPerHour
+            // btnStop
             // 
-            this.edRequestsPerHour.Location = new System.Drawing.Point(26, 41);
-            this.edRequestsPerHour.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.edRequestsPerHour.Name = "edRequestsPerHour";
-            this.edRequestsPerHour.Size = new System.Drawing.Size(192, 20);
-            this.edRequestsPerHour.TabIndex = 0;
-            this.edRequestsPerHour.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.btnStop.Enabled = false;
+            this.btnStop.Location = new System.Drawing.Point(284, 76);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(176, 44);
+            this.btnStop.TabIndex = 5;
+            this.btnStop.Text = "Stop the server";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // label1
+            // btnStart
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Requests per hour";
+            this.btnStart.Location = new System.Drawing.Point(284, 25);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(176, 44);
+            this.btnStart.TabIndex = 4;
+            this.btnStart.Text = "Start the server";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // label2
             // 
@@ -95,7 +90,7 @@
             // 
             this.edMaxClients.Location = new System.Drawing.Point(26, 90);
             this.edMaxClients.Minimum = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
@@ -103,20 +98,36 @@
             this.edMaxClients.Size = new System.Drawing.Size(192, 20);
             this.edMaxClients.TabIndex = 2;
             this.edMaxClients.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
             // 
-            // btnStart
+            // label1
             // 
-            this.btnStart.Location = new System.Drawing.Point(284, 25);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(176, 44);
-            this.btnStart.TabIndex = 4;
-            this.btnStart.Text = "Start the server";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Requests per hour";
+            // 
+            // edRequestsPerHour
+            // 
+            this.edRequestsPerHour.Location = new System.Drawing.Point(26, 41);
+            this.edRequestsPerHour.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.edRequestsPerHour.Name = "edRequestsPerHour";
+            this.edRequestsPerHour.Size = new System.Drawing.Size(192, 20);
+            this.edRequestsPerHour.TabIndex = 0;
+            this.edRequestsPerHour.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // lbMessages
             // 
@@ -127,17 +138,6 @@
             this.lbMessages.Name = "lbMessages";
             this.lbMessages.Size = new System.Drawing.Size(517, 460);
             this.lbMessages.TabIndex = 1;
-            // 
-            // btnStop
-            // 
-            this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(284, 76);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(176, 44);
-            this.btnStop.TabIndex = 5;
-            this.btnStop.Text = "Stop the server";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // MainFormRecipes_Server
             // 
@@ -150,8 +150,8 @@
             this.Text = "Recipes - Server";
             this.gbSettings.ResumeLayout(false);
             this.gbSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edRequestsPerHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edMaxClients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edRequestsPerHour)).EndInit();
             this.ResumeLayout(false);
 
         }

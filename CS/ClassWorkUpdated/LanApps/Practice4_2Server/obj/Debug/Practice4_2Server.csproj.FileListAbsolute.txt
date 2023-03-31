@@ -1,0 +1,14 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\bin\Debug\Practice4_2Server.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\bin\Debug\Practice4_2Server.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\bin\Debug\Practice4_2Server.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\bin\Debug\Chatters.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\bin\Debug\Chatters.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.MainFormBroadcast_Server.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Practice4_2Server\obj\Debug\Practice4_2Server.pdb

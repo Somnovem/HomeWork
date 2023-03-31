@@ -1,5 +1,5 @@
 Ceasar salad
-C:\Users\Artem\Downloads\ceasar.jpg
+..\..\Images\ceasar.jpg
 Bread
 Salad
 Tomato

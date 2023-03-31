@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\bin\Debug\LanApp6_1Multicast.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\bin\Debug\LanApp6_1Multicast.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\bin\Debug\LanApp6_1Multicast.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp7_1Multicast.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp7_1Multicast.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp6_1Multicast.MainFormMulticast.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp6_1Multicast.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp7_1Multicast.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp7_1Multicast.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp6_1Multicast.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp6_1Multicast\obj\Debug\LanApp6_1Multicast.pdb

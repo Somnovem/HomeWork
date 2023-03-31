@@ -34,7 +34,7 @@ namespace Homework4_1Client
         private void LbRecipes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbRecipes.SelectedItem == null || lbRecipes.Items.Count == 0) return;
-            imgRecipe.Image = recipes[lbRecipes.SelectedIndex].image;
+            imgRecipe.Image = recipes[recipes.Count - lbRecipes.SelectedIndex - 1].image;
         }
 
         private void MainFormRecipes_Client_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,7 +93,7 @@ namespace Homework4_1Client
         
         private async void btnSend_Click(object sender, EventArgs e)
         {
-            if (client == null) return;
+            if (client == null || productList.Count == 0) return;
             btnSend.Enabled = false;
             try
             {
@@ -102,7 +102,7 @@ namespace Homework4_1Client
                 {
                     products += productList[i] + ";";
                 }
-                bytesSend = Encoding.UTF8.GetBytes(products);
+                bytesSend = Encoding.UTF8.GetBytes($"{(int)edLocalPort.Value}:{products}");
                 await client.SendAsync(bytesSend, bytesSend.Length,
                     new IPEndPoint(IPAddress.Parse(edRemoteAdress.Text), (int)edRemotePort.Value));
             }
@@ -124,47 +124,72 @@ namespace Homework4_1Client
 
         public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
+            try
+            {
+                MemoryStream ms = new MemoryStream(byteArrayIn);
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+            catch (Exception)
+            {
+                return null; //Not enough info was transported(average UDP moment)
+            }
+
         }
 
         private void UpdateRecipes()
         {
-            lbRecipes.Items.Clear();
-            for (int i = 0; i < recipes.Count; i++)
+            Action a = () => 
             {
-                lbRecipes.Items.Insert(0, recipes[i].recipe);
-            }
-            lbRecipes.SelectedIndex = 0;
+                lbRecipes.Items.Clear();
+                for (int i = 0; i < recipes.Count; i++)
+                {
+                    lbRecipes.Items.Insert(0, recipes[i].recipe);
+                }
+                if(recipes.Count > 0)lbRecipes.SelectedIndex = 0;
+            };
+            if (InvokeRequired) Invoke(a);
+            else a();
         }
-
 
         private void ReceiveMessages()
         {
 
             IPEndPoint remotePoint = null;
-            StringBuilder builderRecipe = new StringBuilder();
             try
             {
+                int count = 0;
+                recipes = new List<Recipe>();
                 while (true)
                 {
-                    recipes = new List<Recipe>();
+                    List<byte> receivedFirstMessage = new List<byte>();
                     do
                     {
                         byte[] data = receiver.Receive(ref remotePoint);
-                        builderRecipe.Append(Encoding.UTF8.GetString(data));
+                        receivedFirstMessage.AddRange(data);
                     } while (receiver.Available > 0);
-                    List<byte> receivedByteImage = new List<byte>();
+                    List<byte> receivedSecondMessage = new List<byte>();
                     do
                     {
                         byte[] imageData = receiver.Receive(ref remotePoint);
-                        receivedByteImage.AddRange(imageData);
+                        receivedSecondMessage.AddRange(imageData);
                     } while (receiver.Available > 0);
-                    Image receivedImage = ByteArrayToImage(receivedByteImage.ToArray());
-                    recipes.Add(new Recipe(builderRecipe.ToString(), receivedImage));
+                    count++;
+                    List<byte> messageBytes = null;
+                    List<byte> imageBytes = null;
+                    if (receivedFirstMessage.Count > receivedSecondMessage.Count)
+                    {
+                        messageBytes = receivedSecondMessage;
+                        imageBytes = receivedFirstMessage;
+                    }
+                    else
+                    {
+                        messageBytes = receivedFirstMessage;
+                        imageBytes = receivedSecondMessage;
+                    }
+                    Image receivedImage = ByteArrayToImage(imageBytes.ToArray());
+                    recipes.Add(new Recipe(Encoding.UTF8.GetString(messageBytes.ToArray()), receivedImage));
                     UpdateRecipes();
-                    builderRecipe.Clear();
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -172,7 +197,20 @@ namespace Homework4_1Client
             {
                 receiver = null;
             }
+        }
 
+        private void btnRemoveSelectedProduct_Click(object sender, EventArgs e)
+        {
+            if (lbProducts.SelectedItem == null) return;
+            string removedProduct = (string)lbProducts.SelectedItem;
+            productList.Remove(removedProduct);
+            UpdateProductList();
+        }
+
+        private void btlClearHistory_Click(object sender, EventArgs e)
+        {
+            if (lbRecipes.Items.Count != 0) recipes.Clear();
+            UpdateRecipes();
         }
     }
 

@@ -45,6 +45,9 @@
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.edNewProduct = new System.Windows.Forms.TextBox();
+            this.btnRemoveSelectedProduct = new System.Windows.Forms.Button();
+            this.btlClearHistory = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbConnection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edLocalPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edRemotePort)).BeginInit();
@@ -152,10 +155,12 @@
             // 
             // lbProducts
             // 
+            this.lbProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbProducts.FormattingEnabled = true;
+            this.lbProducts.ItemHeight = 20;
             this.lbProducts.Location = new System.Drawing.Point(10, 161);
             this.lbProducts.Name = "lbProducts";
-            this.lbProducts.Size = new System.Drawing.Size(277, 160);
+            this.lbProducts.Size = new System.Drawing.Size(277, 144);
             this.lbProducts.TabIndex = 8;
             // 
             // btnDisconnect
@@ -204,6 +209,7 @@
             this.imgRecipe.Location = new System.Drawing.Point(304, 397);
             this.imgRecipe.Name = "imgRecipe";
             this.imgRecipe.Size = new System.Drawing.Size(226, 202);
+            this.imgRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgRecipe.TabIndex = 16;
             this.imgRecipe.TabStop = false;
             // 
@@ -247,11 +253,43 @@
             this.edNewProduct.Size = new System.Drawing.Size(202, 20);
             this.edNewProduct.TabIndex = 12;
             // 
+            // btnRemoveSelectedProduct
+            // 
+            this.btnRemoveSelectedProduct.Location = new System.Drawing.Point(147, 312);
+            this.btnRemoveSelectedProduct.Name = "btnRemoveSelectedProduct";
+            this.btnRemoveSelectedProduct.Size = new System.Drawing.Size(140, 23);
+            this.btnRemoveSelectedProduct.TabIndex = 18;
+            this.btnRemoveSelectedProduct.Text = "Remove selected";
+            this.btnRemoveSelectedProduct.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedProduct.Click += new System.EventHandler(this.btnRemoveSelectedProduct_Click);
+            // 
+            // btlClearHistory
+            // 
+            this.btlClearHistory.Location = new System.Drawing.Point(19, 328);
+            this.btlClearHistory.Name = "btlClearHistory";
+            this.btlClearHistory.Size = new System.Drawing.Size(75, 23);
+            this.btlClearHistory.TabIndex = 19;
+            this.btlClearHistory.Text = "Clear list";
+            this.btlClearHistory.UseVisualStyleBackColor = true;
+            this.btlClearHistory.Click += new System.EventHandler(this.btlClearHistory_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(301, 369);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(244, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "(If there is no image, there was an error in sending)";
+            // 
             // MainFormRecipes_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 660);
+            this.ClientSize = new System.Drawing.Size(563, 660);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btlClearHistory);
+            this.Controls.Add(this.btnRemoveSelectedProduct);
             this.Controls.Add(this.gbSending);
             this.Controls.Add(this.imgRecipe);
             this.Controls.Add(this.lbRecipes);
@@ -271,6 +309,7 @@
             this.gbSending.ResumeLayout(false);
             this.gbSending.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,6 +332,9 @@
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox edNewProduct;
+        private System.Windows.Forms.Button btnRemoveSelectedProduct;
+        private System.Windows.Forms.Button btlClearHistory;
+        private System.Windows.Forms.Label label5;
     }
 }
 
