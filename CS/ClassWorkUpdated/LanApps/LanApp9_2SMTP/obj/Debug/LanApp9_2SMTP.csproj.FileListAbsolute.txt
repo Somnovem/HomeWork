@@ -1,0 +1,11 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\bin\Debug\LanApp9_2SMTP.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\bin\Debug\LanApp9_2SMTP.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\bin\Debug\LanApp9_2SMTP.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.MainFormSMTP.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\LanApp9_2SMTP\obj\Debug\LanApp9_2SMTP.pdb

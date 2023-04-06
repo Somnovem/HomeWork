@@ -1,0 +1,17 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.MainFormChat_Client.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\Homework6_1Client.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\Homework6_1Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\Homework6_1Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\System.Data.SQLite.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\System.Data.SQLite.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\obj\Debug\Homework6_1Client.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\StandartChat.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\StandartChat.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\LanApps\Homework6_1Client\bin\Debug\StandartChat.dll.config
