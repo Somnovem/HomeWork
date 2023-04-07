@@ -1,0 +1,15 @@
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\Homework1_1Images.exe.config
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\Homework1_1Images.exe
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\Homework1_1Images.pdb
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\HtmlAgilityPack.dll
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\HtmlAgilityPack.pdb
+D:\testProjects\Homework1_1Images\Homework1_1Images\bin\Debug\HtmlAgilityPack.xml
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.csproj.AssemblyReference.cache
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.csproj.SuggestedBindingRedirects.cache
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.MainFormHTTPImages.resources
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.Properties.Resources.resources
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.csproj.GenerateResource.cache
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.csproj.CoreCompileInputs.cache
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.csproj.CopyComplete
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.exe
+D:\testProjects\Homework1_1Images\Homework1_1Images\obj\Debug\Homework1_1Images.pdb

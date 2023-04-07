@@ -1,0 +1,11 @@
+D:\testProjects\Homework1_1Images\Classwork1_1\bin\Debug\Classwork1_1.exe.config
+D:\testProjects\Homework1_1Images\Classwork1_1\bin\Debug\Classwork1_1.exe
+D:\testProjects\Homework1_1Images\Classwork1_1\bin\Debug\Classwork1_1.pdb
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.csproj.AssemblyReference.cache
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.csproj.SuggestedBindingRedirects.cache
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.MainFormFTP.resources
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.Properties.Resources.resources
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.csproj.GenerateResource.cache
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.csproj.CoreCompileInputs.cache
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.exe
+D:\testProjects\Homework1_1Images\Classwork1_1\obj\Debug\Classwork1_1.pdb
