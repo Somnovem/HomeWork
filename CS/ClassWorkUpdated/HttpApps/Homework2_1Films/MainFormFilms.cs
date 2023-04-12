@@ -82,7 +82,7 @@ namespace Homework2_1Films
 
         private void btnSendMail_Click(object sender, EventArgs e)
         {
-            MailSender.SendMessage(edSenderMail.Text, edReceiverEmail.Text, edPassword.Text, "Film info", lblInfo.Text);
+            MailSender.SendFilmInfo(edSenderMail.Text, edReceiverEmail.Text, edPassword.Text, "Film info", edBody.Text,lblInfo.Text);
             btnSendMail.Enabled = false;
         }
     }

@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.edReceiverEmail = new System.Windows.Forms.TextBox();
             this.btnSendMail = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.edBody = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +97,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.edBody);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.edPassword);
             this.groupBox1.Controls.Add(this.label3);
@@ -103,7 +107,7 @@
             this.groupBox1.Controls.Add(this.edReceiverEmail);
             this.groupBox1.Location = new System.Drawing.Point(643, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 167);
+            this.groupBox1.Size = new System.Drawing.Size(315, 262);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send info via email";
@@ -161,13 +165,31 @@
             // 
             this.btnSendMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSendMail.Enabled = false;
-            this.btnSendMail.Location = new System.Drawing.Point(816, 185);
+            this.btnSendMail.Location = new System.Drawing.Point(822, 301);
             this.btnSendMail.Name = "btnSendMail";
             this.btnSendMail.Size = new System.Drawing.Size(136, 40);
             this.btnSendMail.TabIndex = 6;
             this.btnSendMail.Text = "Send results to mail";
             this.btnSendMail.UseVisualStyleBackColor = true;
             this.btnSendMail.Click += new System.EventHandler(this.btnSendMail_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 169);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Body";
+            // 
+            // edBody
+            // 
+            this.edBody.Location = new System.Drawing.Point(7, 186);
+            this.edBody.Multiline = true;
+            this.edBody.Name = "edBody";
+            this.edBody.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.edBody.Size = new System.Drawing.Size(301, 70);
+            this.edBody.TabIndex = 7;
             // 
             // MainFormFilms
             // 
@@ -208,6 +230,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox edReceiverEmail;
         private System.Windows.Forms.Button btnSendMail;
+        private System.Windows.Forms.TextBox edBody;
+        private System.Windows.Forms.Label label5;
     }
 }
 
