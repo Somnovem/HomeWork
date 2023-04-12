@@ -1,0 +1,14 @@
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\bin\Debug\Homework2_1Weather.exe.config
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\bin\Debug\Homework2_1Weather.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\bin\Debug\Homework2_1Weather.pdb
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.csproj.AssemblyReference.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.csproj.SuggestedBindingRedirects.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.MainFormWeather.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.Properties.Resources.resources
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.csproj.GenerateResource.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.csproj.CoreCompileInputs.cache
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.csproj.CopyComplete
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.exe
+C:\Users\Artem\Documents\GitHub\HomeWork\CS\ClassWorkUpdated\HttpApps\Homework2_1Weather\obj\Debug\Homework2_1Weather.pdb

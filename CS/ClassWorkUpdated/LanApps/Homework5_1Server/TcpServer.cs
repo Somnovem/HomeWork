@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Linq;
 using System.Threading;
-using Timer = System.Windows.Forms.Timer;
 namespace Homework5_1Server
 {
     internal class TCPServer : IDisposable
