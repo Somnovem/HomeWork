@@ -15,7 +15,7 @@ namespace Homework2_1Weather
 {
     public partial class MainFormWeather : Form
     {
-        private string weatherAPIKey = "7ccd5870232a435d72577db422ec6b7f";
+        private string weatherAPIKey = "confidential";
         private static Dictionary<string, Image> weatherImages;
         private List<WeatherDailyReport> weatherReports;
         public MainFormWeather()
